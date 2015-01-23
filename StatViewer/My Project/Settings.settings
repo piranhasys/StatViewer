@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServerIPAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="ServerPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10540</Value>
+    </Setting>
+    <Setting Name="FontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
+    <Setting Name="URL1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost/racebuilder/betting.htm</Value>
+    </Setting>
+    <Setting Name="URL2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost/racebuilder/result.htm</Value>
+    </Setting>
+    <Setting Name="URL3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost/racebuilder/jockeylb.htm</Value>
+    </Setting>
+    <Setting Name="URL4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost/racebuilder/trainerlb.htm</Value>
+    </Setting>
+    <Setting Name="URL5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost/racebuilder/wintimelb.htm</Value>
+    </Setting>
+    <Setting Name="URL6" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="URL7" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="URL8" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="URL9" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="URL10" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Left" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Top" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
