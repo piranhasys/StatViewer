@@ -150,6 +150,7 @@ Public Class Form1
             End Select
 
         Catch ex As Exception
+            Console.WriteLine(ex.Message)
         End Try
     End Sub
 
@@ -191,9 +192,14 @@ Public Class Form1
         My.Settings.Save()
     End Sub
     Private Sub ReloadPage()
-        If WebBrowser1.IsBusy = False Then
+        Try
+            Console.WriteLine("Refreshing")
             WebBrowser1.Refresh()
-        End If
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
+        'If WebBrowser1.IsBusy = False Then
+        'End If
     End Sub
     Private Sub LoadPage(pageIndex As Integer)
         Select Case pageIndex
