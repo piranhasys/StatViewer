@@ -170,71 +170,71 @@ Partial Class Form1
         '
         Me.Page1ToolStripMenuItem.Name = "Page1ToolStripMenuItem"
         Me.Page1ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D1), System.Windows.Forms.Keys)
-        Me.Page1ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page1ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page1ToolStripMenuItem.Text = "Page 1"
         '
         'Page2ToolStripMenuItem
         '
         Me.Page2ToolStripMenuItem.Name = "Page2ToolStripMenuItem"
         Me.Page2ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D2), System.Windows.Forms.Keys)
-        Me.Page2ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page2ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page2ToolStripMenuItem.Text = "Page 2"
         '
         'Page3ToolStripMenuItem
         '
         Me.Page3ToolStripMenuItem.Name = "Page3ToolStripMenuItem"
         Me.Page3ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D3), System.Windows.Forms.Keys)
-        Me.Page3ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page3ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page3ToolStripMenuItem.Text = "Page 3"
         '
         'Page4ToolStripMenuItem
         '
         Me.Page4ToolStripMenuItem.Name = "Page4ToolStripMenuItem"
         Me.Page4ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D4), System.Windows.Forms.Keys)
-        Me.Page4ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page4ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page4ToolStripMenuItem.Text = "Page 4"
         '
         'Page5ToolStripMenuItem
         '
         Me.Page5ToolStripMenuItem.Name = "Page5ToolStripMenuItem"
         Me.Page5ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D5), System.Windows.Forms.Keys)
-        Me.Page5ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page5ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page5ToolStripMenuItem.Text = "Page 5"
         '
         'Page6ToolStripMenuItem
         '
         Me.Page6ToolStripMenuItem.Name = "Page6ToolStripMenuItem"
         Me.Page6ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D6), System.Windows.Forms.Keys)
-        Me.Page6ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page6ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page6ToolStripMenuItem.Text = "Page 6"
         '
         'Page7ToolStripMenuItem
         '
         Me.Page7ToolStripMenuItem.Name = "Page7ToolStripMenuItem"
         Me.Page7ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D7), System.Windows.Forms.Keys)
-        Me.Page7ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page7ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page7ToolStripMenuItem.Text = "Page 7"
         '
         'Page8ToolStripMenuItem
         '
         Me.Page8ToolStripMenuItem.Name = "Page8ToolStripMenuItem"
         Me.Page8ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D8), System.Windows.Forms.Keys)
-        Me.Page8ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page8ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page8ToolStripMenuItem.Text = "Page 8"
         '
         'Page9ToolStripMenuItem
         '
         Me.Page9ToolStripMenuItem.Name = "Page9ToolStripMenuItem"
         Me.Page9ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D9), System.Windows.Forms.Keys)
-        Me.Page9ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.Page9ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page9ToolStripMenuItem.Text = "Page 9"
         '
         'Page10ToolStripMenuItem
         '
         Me.Page10ToolStripMenuItem.Name = "Page10ToolStripMenuItem"
         Me.Page10ToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
-        Me.Page10ToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.Page10ToolStripMenuItem.Text = "Page 10"
+        Me.Page10ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.Page10ToolStripMenuItem.Text = "Refresh"
         '
         'Form1
         '

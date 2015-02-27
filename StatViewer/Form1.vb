@@ -22,6 +22,7 @@ Public Class Form1
     Private fontSize As Integer = 0
     Private left As Integer = 0
     Private top As Integer = 0
+    Private lastPageName As String = ""
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
     End Sub
@@ -143,6 +144,8 @@ Public Class Form1
                             If pageIndex > 0 Then
                                 LoadPage(pageIndex)
                             End If
+                        Case "REFRESH"
+                            ReloadPage()
                     End Select
             End Select
 
@@ -187,7 +190,11 @@ Public Class Form1
         My.Settings.FontSize = dispfontsize
         My.Settings.Save()
     End Sub
-
+    Private Sub ReloadPage()
+        If WebBrowser1.IsBusy = False Then
+            WebBrowser1.Refresh()
+        End If
+    End Sub
     Private Sub LoadPage(pageIndex As Integer)
         Select Case pageIndex
             Case 1
@@ -211,6 +218,9 @@ Public Class Form1
             Case 10
                 WebBrowser1.Url = New Uri(My.Settings.URL10)
         End Select
+        'will load cached version
+        'Threading.Thread.Sleep(2000)
+        'WebBrowser1.Refresh()
     End Sub
     Private Sub Page1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Page1ToolStripMenuItem.Click
         LoadPage(1)
@@ -249,7 +259,7 @@ Public Class Form1
     End Sub
 
     Private Sub Page10ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Page10ToolStripMenuItem.Click
-        LoadPage(10)
+        ReloadPage()
     End Sub
 
     Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
@@ -290,5 +300,16 @@ Public Class Form1
     Private Sub RightToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RightToolStripMenuItem.Click
         left += 2
         RepositionBrowser()
+    End Sub
+
+    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
+        Console.WriteLine(WebBrowser1.Url)
+        'may be from cache if first time - refresh
+        If lastPageName <> WebBrowser1.Url.ToString Then
+            'new
+            Console.WriteLine("Refreshing")
+            WebBrowser1.Refresh()
+            lastPageName = WebBrowser1.Url.ToString
+        End If
     End Sub
 End Class

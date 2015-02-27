@@ -27,19 +27,19 @@
       <Value Profile="(Default)">http://localhost/racebuilder/wintimelb.htm</Value>
     </Setting>
     <Setting Name="URL6" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://localhost/racebuilder/betting.htm</Value>
     </Setting>
     <Setting Name="URL7" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://localhost/racebuilder/betting.htm</Value>
     </Setting>
     <Setting Name="URL8" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://localhost/racebuilder/betting.htm</Value>
     </Setting>
     <Setting Name="URL9" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://localhost/racebuilder/betting.htm</Value>
     </Setting>
     <Setting Name="URL10" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://localhost/racebuilder/betting.htm</Value>
     </Setting>
     <Setting Name="Left" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
