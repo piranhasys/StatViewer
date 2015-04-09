@@ -233,6 +233,18 @@ Namespace My
                 Me("Top") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property DisplayType() As Integer
+            Get
+                Return CType(Me("DisplayType"),Integer)
+            End Get
+            Set
+                Me("DisplayType") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

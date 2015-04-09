@@ -49,7 +49,11 @@ Partial Class Form1
         Me.Page8ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Page9ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Page10ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PanelRTE = New System.Windows.Forms.Panel()
+        Me.lablHomeTeam = New System.Windows.Forms.Label()
+        Me.lablAwayTeam = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
+        Me.PanelRTE.SuspendLayout()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -62,7 +66,7 @@ Partial Class Form1
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.ScrollBarsEnabled = False
-        Me.WebBrowser1.Size = New System.Drawing.Size(984, 3000)
+        Me.WebBrowser1.Size = New System.Drawing.Size(1362, 3259)
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
         '
@@ -76,7 +80,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SetupToolStripMenuItem, Me.PageToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(984, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1362, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -236,12 +240,49 @@ Partial Class Form1
         Me.Page10ToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.Page10ToolStripMenuItem.Text = "Refresh"
         '
+        'PanelRTE
+        '
+        Me.PanelRTE.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelRTE.Controls.Add(Me.lablAwayTeam)
+        Me.PanelRTE.Controls.Add(Me.lablHomeTeam)
+        Me.PanelRTE.Location = New System.Drawing.Point(0, 0)
+        Me.PanelRTE.Name = "PanelRTE"
+        Me.PanelRTE.Size = New System.Drawing.Size(1362, 820)
+        Me.PanelRTE.TabIndex = 2
+        '
+        'lablHomeTeam
+        '
+        Me.lablHomeTeam.BackColor = System.Drawing.Color.Gainsboro
+        Me.lablHomeTeam.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeTeam.ForeColor = System.Drawing.Color.White
+        Me.lablHomeTeam.Location = New System.Drawing.Point(43, 42)
+        Me.lablHomeTeam.Name = "lablHomeTeam"
+        Me.lablHomeTeam.Size = New System.Drawing.Size(242, 37)
+        Me.lablHomeTeam.TabIndex = 0
+        Me.lablHomeTeam.Text = "Label1"
+        Me.lablHomeTeam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablAwayTeam
+        '
+        Me.lablAwayTeam.BackColor = System.Drawing.Color.Gainsboro
+        Me.lablAwayTeam.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayTeam.ForeColor = System.Drawing.Color.White
+        Me.lablAwayTeam.Location = New System.Drawing.Point(314, 42)
+        Me.lablAwayTeam.Name = "lablAwayTeam"
+        Me.lablAwayTeam.Size = New System.Drawing.Size(242, 37)
+        Me.lablAwayTeam.TabIndex = 1
+        Me.lablAwayTeam.Text = "Label2"
+        Me.lablAwayTeam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(984, 561)
+        Me.ClientSize = New System.Drawing.Size(1362, 820)
+        Me.Controls.Add(Me.PanelRTE)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -250,6 +291,7 @@ Partial Class Form1
         Me.Text = "Piranha StatViewer"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.PanelRTE.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -279,5 +321,8 @@ Partial Class Form1
     Friend WithEvents DownToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LeftToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RightToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PanelRTE As System.Windows.Forms.Panel
+    Friend WithEvents lablAwayTeam As System.Windows.Forms.Label
+    Friend WithEvents lablHomeTeam As System.Windows.Forms.Label
 
 End Class

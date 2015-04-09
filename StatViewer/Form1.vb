@@ -20,9 +20,11 @@ Public Class Form1
     Private Const OLECMDID_OPTICAL_ZOOM As Integer = 63
     Private Const OLECMDEXECOPT_DONTPROMPTUSER As Integer = 2
     Private fontSize As Integer = 0
+    Private displayStyle As Integer = 0 '0=web, 1=RTE GAA
     Private left As Integer = 0
     Private top As Integer = 0
     Private lastPageName As String = ""
+    Private thisMatch As New clsMatch
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
     End Sub
@@ -34,9 +36,36 @@ Public Class Form1
         fontSize = My.Settings.FontSize
         left = My.Settings.Left
         top = My.Settings.Top
+        displayStyle = My.Settings.DisplayType
+
         ' WebBrowser1.ScriptErrorsSuppressed = True
-        RepositionBrowser()
-        '   ResizeBrowser(fontSize)
+        SetupDisplay()
+       
+    End Sub
+    Sub SetupDisplay()
+        Select Case displayStyle
+            Case 1
+                PanelRTE.BringToFront()
+                LoadRTEStaticData()
+                ShowRTEStaticData()
+            Case Else
+                PanelRTE.SendToBack()
+                RepositionBrowser()
+        End Select
+        'RacingToolStripMenuItem.Checked = (displayStyle = 0)
+        'RTEGAAToolStripMenuItem.Checked = (displayStyle = 1)
+
+    End Sub
+    Sub LoadRTEStaticData()
+
+    End Sub
+    Sub ShowRTEStaticData()
+        lablHomeTeam.Text = thisMatch.HomeTeamName
+        lablHomeTeam.BackColor = thisMatch.HomeBackColour
+        lablHomeTeam.ForeColor = thisMatch.HomeTextColour
+        lablAwayTeam.Text = thisMatch.AwayTeamName
+        lablAwayTeam.BackColor = thisMatch.AwayBackColour
+        lablAwayTeam.ForeColor = thisMatch.AwayTextColour
     End Sub
     Private Sub DoRead(ByVal ar As IAsyncResult)
         Dim BytesRead As Integer
@@ -145,6 +174,8 @@ Public Class Form1
                             If pageIndex > 0 Then
                                 LoadPage(pageIndex)
                             End If
+                        Case "DATA"
+
                         Case "REFRESH"
                             ReloadPage()
                     End Select
@@ -319,4 +350,14 @@ Public Class Form1
             lastPageName = WebBrowser1.Url.ToString
         End If
     End Sub
+
+    'Private Sub RacingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RacingToolStripMenuItem.Click
+    '    displayStyle = 0
+    '    SetupDisplay()
+    'End Sub
+
+    'Private Sub RTEGAAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RTEGAAToolStripMenuItem.Click
+    '    displayStyle = 1
+    '    SetupDisplay()
+    'End Sub
 End Class
