@@ -292,7 +292,40 @@ Public Class Form1
                     Select Case dataArray(1)
                         Case "LOCALMATCHTIME"
                             thisMatch.MatchClock = dataArray(4) '2 = MatchID, 3=period
+                            If dataArray.GetUpperBound(0) > 5 Then
+                                'old RB doesn't send
+                                thisMatch.HomeTimeSinceScore = dataArray(5) '2 = MatchID, 3=period
+                                thisMatch.AwayTimeSinceScore = dataArray(6) '2 = MatchID, 3=period
+                            End If
                             ShowMatchTime()
+                        Case "POSSESSION"
+                            If dataArray.GetUpperBound(0) > 5 Then
+                                'old RB doesn't send
+                                Dim compositeData As String = dataArray(6)
+                                If compositeData.Contains("^") Then
+                                    Dim split() As String = compositeData.Split("^")
+                                    thisMatch.Period = Val(split(1))
+                                    Select Case thisMatch.Period
+                                        Case Is < 3
+                                            'first half
+                                            thisMatch.HomePossession1 = ""
+                                            thisMatch.AwayPossession1 = ""
+                                            thisMatch.HomePossession2 = ""
+                                            thisMatch.AwayPossession2 = ""
+                                            thisMatch.HomePossessionTotal = split(1)
+                                            thisMatch.AwayPossessionTotal = split(2)
+                                        Case Else
+                                            thisMatch.HomePossession1 = split(1)
+                                            thisMatch.AwayPossession1 = split(2)
+                                            thisMatch.HomePossession2 = split(3)
+                                            thisMatch.AwayPossession2 = split(4)
+                                            thisMatch.HomePossessionTotal = split(5)
+                                            thisMatch.AwayPossessionTotal = split(6)
+                                    End Select
+                                    ShowPossession()
+                                End If
+                            End If
+
                     End Select
 
                 Case Else
@@ -305,13 +338,28 @@ Public Class Form1
         End Try
     End Sub
     Delegate Sub ShowMatchTimeCallback()
-
     Sub ShowMatchTime()
         If lablMatchClock.InvokeRequired Then
             Dim d As New ShowMatchTimeCallback(AddressOf ShowMatchTime)
             Me.Invoke(d, New Object() {})
         Else
             lablMatchClock.Text = thisMatch.MatchClock
+            lablHomeTimeSinceScore.Text = thisMatch.HomeTimeSinceScore
+            lablAwayTimeSinceScore.Text = thisMatch.AwayTimeSinceScore
+        End If
+    End Sub
+    Delegate Sub ShowPossessionCallback()
+    Sub ShowPossession()
+        If lablMatchClock.InvokeRequired Then
+            Dim d As New ShowPossessionCallback(AddressOf ShowPossession)
+            Me.Invoke(d, New Object() {})
+        Else
+            lablHomePossession1.Text = thisMatch.HomePossession1
+            lablHomePossession2.Text = thisMatch.HomePossession2
+            lablHomePossessionTotal.Text = thisMatch.HomePossessionTotal
+            lablAwayPossession1.Text = thisMatch.AwayPossession1
+            lablAwayPossession2.Text = thisMatch.AwayPossession2
+            lablAwayPossessionTotal.Text = thisMatch.AwayPossessionTotal
         End If
     End Sub
     Private Sub timerCheckConnections_Tick(sender As Object, e As EventArgs) Handles timerCheckConnections.Tick

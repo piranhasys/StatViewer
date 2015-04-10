@@ -9,6 +9,106 @@
     Private strHomeScoreline As String = "0-00"
     Private strAwayScoreline As String = "0-00"
     Private strMatchClock As String = "00:00"
+    Private strHomeTimeSinceScore As String = "0:00"
+    Private strAwayTimeSinceScore As String = "0:00"
+    Private strHomePossession1 As String = ""
+    Private strHomePossession2 As String = ""
+    Private strHomePossessionTotal As String = ""
+    Private strAwayPossession1 As String = ""
+    Private strAwayPossession2 As String = ""
+    Private strAwayPossessionTotal As String = ""
+    Private iPeriod As Integer = 0
+    Public Property Period() As Integer
+        Get
+            Return iPeriod
+        End Get
+        Set(ByVal value As Integer)
+            iPeriod = value
+        End Set
+    End Property
+
+
+    Public Property AwayPossessionTotal() As String
+        Get
+            Return strAwayPossessionTotal
+        End Get
+        Set(ByVal value As String)
+            strAwayPossessionTotal = value
+        End Set
+    End Property
+
+
+    Public Property AwayPossession2() As String
+        Get
+            Return strAwayPossession2
+        End Get
+        Set(ByVal value As String)
+            strAwayPossession2 = value
+        End Set
+    End Property
+
+
+    Public Property AwayPossession1() As String
+        Get
+            Return strAwayPossession1
+        End Get
+        Set(ByVal value As String)
+            strAwayPossession1 = value
+        End Set
+    End Property
+
+
+    Public Property HomePossessionTotal() As String
+        Get
+            Return strHomePossessionTotal
+        End Get
+        Set(ByVal value As String)
+            strHomePossessionTotal = value
+        End Set
+    End Property
+
+
+    Public Property HomePossession2() As String
+        Get
+            Return strHomePossession2
+        End Get
+        Set(ByVal value As String)
+            strHomePossession2 = value
+        End Set
+    End Property
+
+
+    Public Property HomePossession1() As String
+        Get
+            Return strHomePossession1
+        End Get
+        Set(ByVal value As String)
+            strHomePossession1 = value
+        End Set
+    End Property
+
+
+
+    Public Property AwayTimeSinceScore() As String
+        Get
+            Return strAwayTimeSinceScore
+        End Get
+        Set(ByVal value As String)
+            strAwayTimeSinceScore = value
+        End Set
+    End Property
+
+
+    Public Property HomeTimeSinceScore() As String
+        Get
+            Return strHomeTimeSinceScore
+        End Get
+        Set(ByVal value As String)
+            strHomeTimeSinceScore = value
+        End Set
+    End Property
+
+
     Public Property MatchClock() As String
         Get
             Return strMatchClock

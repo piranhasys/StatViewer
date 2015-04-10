@@ -117,6 +117,18 @@ Partial Class Form1
         Me.lablHomeTeam2 = New System.Windows.Forms.Label()
         Me.lablAwayTeam2 = New System.Windows.Forms.Label()
         Me.lablMatchClock = New System.Windows.Forms.Label()
+        Me.lablHomeTimeSinceScore = New System.Windows.Forms.Label()
+        Me.lablAwayTimeSinceScore = New System.Windows.Forms.Label()
+        Me.lablHomePossessionTotal = New System.Windows.Forms.Label()
+        Me.lablAwayPossessionTotal = New System.Windows.Forms.Label()
+        Me.lablAwayPossession1 = New System.Windows.Forms.Label()
+        Me.lablHomePossession1 = New System.Windows.Forms.Label()
+        Me.lablAwayPossession2 = New System.Windows.Forms.Label()
+        Me.lablHomePossession2 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.SuspendLayout()
@@ -310,6 +322,18 @@ Partial Class Form1
         Me.PanelRTE.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelRTE.Controls.Add(Me.Label10)
+        Me.PanelRTE.Controls.Add(Me.Label9)
+        Me.PanelRTE.Controls.Add(Me.Label8)
+        Me.PanelRTE.Controls.Add(Me.Label7)
+        Me.PanelRTE.Controls.Add(Me.lablAwayPossession2)
+        Me.PanelRTE.Controls.Add(Me.lablHomePossession2)
+        Me.PanelRTE.Controls.Add(Me.lablAwayPossession1)
+        Me.PanelRTE.Controls.Add(Me.lablHomePossession1)
+        Me.PanelRTE.Controls.Add(Me.lablAwayPossessionTotal)
+        Me.PanelRTE.Controls.Add(Me.lablHomePossessionTotal)
+        Me.PanelRTE.Controls.Add(Me.lablAwayTimeSinceScore)
+        Me.PanelRTE.Controls.Add(Me.lablHomeTimeSinceScore)
         Me.PanelRTE.Controls.Add(Me.lablMatchClock)
         Me.PanelRTE.Controls.Add(Me.lablStatAway20)
         Me.PanelRTE.Controls.Add(Me.lablStatAway19)
@@ -387,7 +411,7 @@ Partial Class Form1
         Me.lablAwayScoreline.BackColor = System.Drawing.Color.White
         Me.lablAwayScoreline.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayScoreline.ForeColor = System.Drawing.Color.Black
-        Me.lablAwayScoreline.Location = New System.Drawing.Point(1503, 22)
+        Me.lablAwayScoreline.Location = New System.Drawing.Point(1418, 24)
         Me.lablAwayScoreline.Name = "lablAwayScoreline"
         Me.lablAwayScoreline.Size = New System.Drawing.Size(131, 42)
         Me.lablAwayScoreline.TabIndex = 3
@@ -399,7 +423,7 @@ Partial Class Form1
         Me.lablHomeScoreline.BackColor = System.Drawing.Color.White
         Me.lablHomeScoreline.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomeScoreline.ForeColor = System.Drawing.Color.Black
-        Me.lablHomeScoreline.Location = New System.Drawing.Point(1188, 22)
+        Me.lablHomeScoreline.Location = New System.Drawing.Point(1272, 24)
         Me.lablHomeScoreline.Name = "lablHomeScoreline"
         Me.lablHomeScoreline.Size = New System.Drawing.Size(131, 42)
         Me.lablHomeScoreline.TabIndex = 2
@@ -411,7 +435,7 @@ Partial Class Form1
         Me.lablAwayTeam.BackColor = System.Drawing.Color.Gainsboro
         Me.lablAwayTeam.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayTeam.ForeColor = System.Drawing.Color.White
-        Me.lablAwayTeam.Location = New System.Drawing.Point(1640, 22)
+        Me.lablAwayTeam.Location = New System.Drawing.Point(1555, 24)
         Me.lablAwayTeam.Name = "lablAwayTeam"
         Me.lablAwayTeam.Size = New System.Drawing.Size(242, 42)
         Me.lablAwayTeam.TabIndex = 1
@@ -423,7 +447,7 @@ Partial Class Form1
         Me.lablHomeTeam.BackColor = System.Drawing.Color.Gainsboro
         Me.lablHomeTeam.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomeTeam.ForeColor = System.Drawing.Color.White
-        Me.lablHomeTeam.Location = New System.Drawing.Point(940, 22)
+        Me.lablHomeTeam.Location = New System.Drawing.Point(1024, 24)
         Me.lablHomeTeam.Name = "lablHomeTeam"
         Me.lablHomeTeam.Size = New System.Drawing.Size(242, 42)
         Me.lablHomeTeam.TabIndex = 0
@@ -1177,14 +1201,158 @@ Partial Class Form1
         'lablMatchClock
         '
         Me.lablMatchClock.BackColor = System.Drawing.Color.White
-        Me.lablMatchClock.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablMatchClock.Font = New System.Drawing.Font("Arial", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablMatchClock.ForeColor = System.Drawing.Color.Black
-        Me.lablMatchClock.Location = New System.Drawing.Point(1347, 22)
+        Me.lablMatchClock.Location = New System.Drawing.Point(1272, 133)
         Me.lablMatchClock.Name = "lablMatchClock"
-        Me.lablMatchClock.Size = New System.Drawing.Size(131, 42)
+        Me.lablMatchClock.Size = New System.Drawing.Size(277, 73)
         Me.lablMatchClock.TabIndex = 66
         Me.lablMatchClock.Text = "00:00"
         Me.lablMatchClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomeTimeSinceScore
+        '
+        Me.lablHomeTimeSinceScore.BackColor = System.Drawing.Color.White
+        Me.lablHomeTimeSinceScore.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeTimeSinceScore.ForeColor = System.Drawing.Color.Black
+        Me.lablHomeTimeSinceScore.Location = New System.Drawing.Point(1272, 76)
+        Me.lablHomeTimeSinceScore.Name = "lablHomeTimeSinceScore"
+        Me.lablHomeTimeSinceScore.Size = New System.Drawing.Size(131, 42)
+        Me.lablHomeTimeSinceScore.TabIndex = 67
+        Me.lablHomeTimeSinceScore.Text = "0:00"
+        Me.lablHomeTimeSinceScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablAwayTimeSinceScore
+        '
+        Me.lablAwayTimeSinceScore.BackColor = System.Drawing.Color.White
+        Me.lablAwayTimeSinceScore.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayTimeSinceScore.ForeColor = System.Drawing.Color.Black
+        Me.lablAwayTimeSinceScore.Location = New System.Drawing.Point(1418, 76)
+        Me.lablAwayTimeSinceScore.Name = "lablAwayTimeSinceScore"
+        Me.lablAwayTimeSinceScore.Size = New System.Drawing.Size(131, 42)
+        Me.lablAwayTimeSinceScore.TabIndex = 68
+        Me.lablAwayTimeSinceScore.Text = "0:00"
+        Me.lablAwayTimeSinceScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomePossessionTotal
+        '
+        Me.lablHomePossessionTotal.BackColor = System.Drawing.Color.White
+        Me.lablHomePossessionTotal.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomePossessionTotal.ForeColor = System.Drawing.Color.Black
+        Me.lablHomePossessionTotal.Location = New System.Drawing.Point(1272, 347)
+        Me.lablHomePossessionTotal.Name = "lablHomePossessionTotal"
+        Me.lablHomePossessionTotal.Size = New System.Drawing.Size(131, 42)
+        Me.lablHomePossessionTotal.TabIndex = 69
+        Me.lablHomePossessionTotal.Text = "55%"
+        Me.lablHomePossessionTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablAwayPossessionTotal
+        '
+        Me.lablAwayPossessionTotal.BackColor = System.Drawing.Color.White
+        Me.lablAwayPossessionTotal.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayPossessionTotal.ForeColor = System.Drawing.Color.Black
+        Me.lablAwayPossessionTotal.Location = New System.Drawing.Point(1418, 347)
+        Me.lablAwayPossessionTotal.Name = "lablAwayPossessionTotal"
+        Me.lablAwayPossessionTotal.Size = New System.Drawing.Size(131, 42)
+        Me.lablAwayPossessionTotal.TabIndex = 70
+        Me.lablAwayPossessionTotal.Text = "55%"
+        Me.lablAwayPossessionTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablAwayPossession1
+        '
+        Me.lablAwayPossession1.BackColor = System.Drawing.Color.White
+        Me.lablAwayPossession1.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayPossession1.ForeColor = System.Drawing.Color.Black
+        Me.lablAwayPossession1.Location = New System.Drawing.Point(1418, 403)
+        Me.lablAwayPossession1.Name = "lablAwayPossession1"
+        Me.lablAwayPossession1.Size = New System.Drawing.Size(131, 42)
+        Me.lablAwayPossession1.TabIndex = 72
+        Me.lablAwayPossession1.Text = "55%"
+        Me.lablAwayPossession1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomePossession1
+        '
+        Me.lablHomePossession1.BackColor = System.Drawing.Color.White
+        Me.lablHomePossession1.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomePossession1.ForeColor = System.Drawing.Color.Black
+        Me.lablHomePossession1.Location = New System.Drawing.Point(1272, 403)
+        Me.lablHomePossession1.Name = "lablHomePossession1"
+        Me.lablHomePossession1.Size = New System.Drawing.Size(131, 42)
+        Me.lablHomePossession1.TabIndex = 71
+        Me.lablHomePossession1.Text = "55%"
+        Me.lablHomePossession1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablAwayPossession2
+        '
+        Me.lablAwayPossession2.BackColor = System.Drawing.Color.White
+        Me.lablAwayPossession2.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayPossession2.ForeColor = System.Drawing.Color.Black
+        Me.lablAwayPossession2.Location = New System.Drawing.Point(1418, 457)
+        Me.lablAwayPossession2.Name = "lablAwayPossession2"
+        Me.lablAwayPossession2.Size = New System.Drawing.Size(131, 42)
+        Me.lablAwayPossession2.TabIndex = 74
+        Me.lablAwayPossession2.Text = "55%"
+        Me.lablAwayPossession2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomePossession2
+        '
+        Me.lablHomePossession2.BackColor = System.Drawing.Color.White
+        Me.lablHomePossession2.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomePossession2.ForeColor = System.Drawing.Color.Black
+        Me.lablHomePossession2.Location = New System.Drawing.Point(1272, 457)
+        Me.lablHomePossession2.Name = "lablHomePossession2"
+        Me.lablHomePossession2.Size = New System.Drawing.Size(131, 42)
+        Me.lablHomePossession2.TabIndex = 73
+        Me.lablHomePossession2.Text = "55%"
+        Me.lablHomePossession2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label7
+        '
+        Me.Label7.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label7.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(1088, 347)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(156, 42)
+        Me.Label7.TabIndex = 75
+        Me.Label7.Text = "TOTAL"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label8
+        '
+        Me.Label8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label8.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(1088, 403)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(156, 42)
+        Me.Label8.TabIndex = 76
+        Me.Label8.Text = "1st HALF"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label9.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(1088, 457)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(156, 42)
+        Me.Label9.TabIndex = 77
+        Me.Label9.Text = "2nd HALF"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label10
+        '
+        Me.Label10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label10.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(1272, 288)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(277, 42)
+        Me.Label10.TabIndex = 78
+        Me.Label10.Text = "POSSESSION"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Form1
         '
@@ -1299,5 +1467,17 @@ Partial Class Form1
     Friend WithEvents lablAwayTeam2 As System.Windows.Forms.Label
     Friend WithEvents lablHomeTeam2 As System.Windows.Forms.Label
     Friend WithEvents lablMatchClock As System.Windows.Forms.Label
+    Friend WithEvents lablAwayTimeSinceScore As System.Windows.Forms.Label
+    Friend WithEvents lablHomeTimeSinceScore As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lablAwayPossession2 As System.Windows.Forms.Label
+    Friend WithEvents lablHomePossession2 As System.Windows.Forms.Label
+    Friend WithEvents lablAwayPossession1 As System.Windows.Forms.Label
+    Friend WithEvents lablHomePossession1 As System.Windows.Forms.Label
+    Friend WithEvents lablAwayPossessionTotal As System.Windows.Forms.Label
+    Friend WithEvents lablHomePossessionTotal As System.Windows.Forms.Label
 
 End Class
