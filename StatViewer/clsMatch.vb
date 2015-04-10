@@ -5,7 +5,47 @@
     Private colAwayTextColour As Color = Color.White
     Private colHomeBackColour As Color = Color.Red
     Private colAwayBackColour As Color = Color.Green
+    Private cStat(20) As clsSVStat
+    Private strHomeScoreline As String = "0-00"
+    Private strAwayScoreline As String = "0-00"
+    Private strMatchClock As String = "00:00"
+    Public Property MatchClock() As String
+        Get
+            Return strMatchClock
+        End Get
+        Set(ByVal value As String)
+            strMatchClock = value
+        End Set
+    End Property
 
+
+    Public Property AwayScoreline() As String
+        Get
+            Return strAwayScoreline
+        End Get
+        Set(ByVal value As String)
+            strAwayScoreline = value
+        End Set
+    End Property
+
+    Public Property HomeScoreline() As String
+        Get
+            Return strHomeScoreline
+        End Get
+        Set(ByVal value As String)
+            strHomeScoreline = value
+        End Set
+    End Property
+
+
+    Public Property Stat() As clsSVStat()
+        Get
+            Return cStat
+        End Get
+        Set(ByVal value As clsSVStat())
+            cStat = value
+        End Set
+    End Property
     Public Property HomeTextColour() As Color
         Get
             Return colHomeTextColour

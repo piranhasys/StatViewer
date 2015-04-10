@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsMatch.vb" />
+    <Compile Include="clsSVStat.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

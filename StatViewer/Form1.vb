@@ -37,10 +37,16 @@ Public Class Form1
         left = My.Settings.Left
         top = My.Settings.Top
         displayStyle = My.Settings.DisplayType
-
+        Select Case displayStyle
+            Case 0
+            Case Else
+                For incStat As Integer = 0 To thisMatch.Stat.GetUpperBound(0)
+                    thisMatch.Stat(incStat) = New clsSVStat
+                Next
+        End Select
         ' WebBrowser1.ScriptErrorsSuppressed = True
         SetupDisplay()
-       
+
     End Sub
     Sub SetupDisplay()
         Select Case displayStyle
@@ -57,6 +63,36 @@ Public Class Form1
 
     End Sub
     Sub LoadRTEStaticData()
+        Dim inc As Integer
+        Dim strTextLine As String = ""
+        Dim strFilename As String = My.Settings.DataFilename
+        Dim inputFile As System.IO.StreamReader
+        Dim TempArray() As String
+        Try
+           
+            If Not System.IO.File.Exists(strFilename) Then
+                Exit Sub
+            Else
+                inputFile = System.IO.File.OpenText(strFilename)
+                thisMatch.HomeTeamName = inputFile.ReadLine.ToUpper
+                thisMatch.AwayTeamName = inputFile.ReadLine.ToUpper
+                thisMatch.HomeScoreline = inputFile.ReadLine
+                thisMatch.AwayScoreline = inputFile.ReadLine
+                thisMatch.HomeBackColour = Color.FromArgb(Val(inputFile.ReadLine))
+                thisMatch.HomeTextColour = Color.FromArgb(Val(inputFile.ReadLine))
+                thisMatch.AwayBackColour = Color.FromArgb(Val(inputFile.ReadLine))
+                thisMatch.AwayTextColour = Color.FromArgb(Val(inputFile.ReadLine))
+
+                For incStat As Integer = 1 To 20
+                    thisMatch.Stat(incStat).AssignData(inputFile.ReadLine)
+                Next
+
+
+                inputFile.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString, "Error reading stat names")
+        End Try
 
     End Sub
     Sub ShowRTEStaticData()
@@ -66,6 +102,79 @@ Public Class Form1
         lablAwayTeam.Text = thisMatch.AwayTeamName
         lablAwayTeam.BackColor = thisMatch.AwayBackColour
         lablAwayTeam.ForeColor = thisMatch.AwayTextColour
+
+        lablHomeTeam2.Text = thisMatch.HomeTeamName
+        lablHomeTeam2.BackColor = thisMatch.HomeBackColour
+        lablHomeTeam2.ForeColor = thisMatch.HomeTextColour
+        lablAwayTeam2.Text = thisMatch.AwayTeamName
+        lablAwayTeam2.BackColor = thisMatch.AwayBackColour
+        lablAwayTeam2.ForeColor = thisMatch.AwayTextColour
+
+        lablHomeScoreline.Text = thisMatch.HomeScoreline
+        lablAwayScoreline.Text = thisMatch.AwayScoreline
+
+        lablStatName01.Text = thisMatch.Stat(1).Name
+        lablStatName02.Text = thisMatch.Stat(2).Name
+        lablStatName03.Text = thisMatch.Stat(3).Name
+        lablStatName04.Text = thisMatch.Stat(4).Name
+        lablStatName05.Text = thisMatch.Stat(5).Name
+        lablStatName06.Text = thisMatch.Stat(6).Name
+        lablStatName07.Text = thisMatch.Stat(7).Name
+        lablStatName08.Text = thisMatch.Stat(8).Name
+        lablStatName09.Text = thisMatch.Stat(9).Name
+        lablStatName10.Text = thisMatch.Stat(10).Name
+        lablStatName11.Text = thisMatch.Stat(11).Name
+        lablStatName12.Text = thisMatch.Stat(12).Name
+        lablStatName13.Text = thisMatch.Stat(13).Name
+        lablStatName14.Text = thisMatch.Stat(14).Name
+        lablStatName15.Text = thisMatch.Stat(15).Name
+        lablStatName16.Text = thisMatch.Stat(16).Name
+        lablStatName17.Text = thisMatch.Stat(17).Name
+        lablStatName18.Text = thisMatch.Stat(18).Name
+        lablStatName19.Text = thisMatch.Stat(19).Name
+        lablStatName20.Text = thisMatch.Stat(20).Name
+
+        lablStatHome01.Text = thisMatch.Stat(1).HomeNum
+        lablStatHome02.Text = thisMatch.Stat(2).HomeNum
+        lablStatHome03.Text = thisMatch.Stat(3).HomeNum
+        lablStatHome04.Text = thisMatch.Stat(4).HomeNum
+        lablStatHome05.Text = thisMatch.Stat(5).HomeNum
+        lablStatHome06.Text = thisMatch.Stat(6).HomeNum
+        lablStatHome07.Text = thisMatch.Stat(7).HomeNum
+        lablStatHome08.Text = thisMatch.Stat(8).HomeNum
+        lablStatHome09.Text = thisMatch.Stat(9).HomeNum
+        lablStatHome10.Text = thisMatch.Stat(10).HomeNum
+        lablStatHome11.Text = thisMatch.Stat(11).HomeNum
+        lablStatHome12.Text = thisMatch.Stat(12).HomeNum
+        lablStatHome13.Text = thisMatch.Stat(13).HomeNum
+        lablStatHome14.Text = thisMatch.Stat(14).HomeNum
+        lablStatHome15.Text = thisMatch.Stat(15).HomeNum
+        lablStatHome16.Text = thisMatch.Stat(16).HomeNum
+        lablStatHome17.Text = thisMatch.Stat(17).HomeNum
+        lablStatHome18.Text = thisMatch.Stat(18).HomeNum
+        lablStatHome19.Text = thisMatch.Stat(19).HomeNum
+        lablStatHome20.Text = thisMatch.Stat(20).HomeNum
+
+        lablStatAway01.Text = thisMatch.Stat(1).AwayNum
+        lablStatAway02.Text = thisMatch.Stat(2).AwayNum
+        lablStatAway03.Text = thisMatch.Stat(3).AwayNum
+        lablStatAway04.Text = thisMatch.Stat(4).AwayNum
+        lablStatAway05.Text = thisMatch.Stat(5).AwayNum
+        lablStatAway06.Text = thisMatch.Stat(6).AwayNum
+        lablStatAway07.Text = thisMatch.Stat(7).AwayNum
+        lablStatAway08.Text = thisMatch.Stat(8).AwayNum
+        lablStatAway09.Text = thisMatch.Stat(9).AwayNum
+        lablStatAway10.Text = thisMatch.Stat(10).AwayNum
+        lablStatAway11.Text = thisMatch.Stat(11).AwayNum
+        lablStatAway12.Text = thisMatch.Stat(12).AwayNum
+        lablStatAway13.Text = thisMatch.Stat(13).AwayNum
+        lablStatAway14.Text = thisMatch.Stat(14).AwayNum
+        lablStatAway15.Text = thisMatch.Stat(15).AwayNum
+        lablStatAway16.Text = thisMatch.Stat(16).AwayNum
+        lablStatAway17.Text = thisMatch.Stat(17).AwayNum
+        lablStatAway18.Text = thisMatch.Stat(18).AwayNum
+        lablStatAway19.Text = thisMatch.Stat(19).AwayNum
+        lablStatAway20.Text = thisMatch.Stat(20).AwayNum
     End Sub
     Private Sub DoRead(ByVal ar As IAsyncResult)
         Dim BytesRead As Integer
@@ -179,13 +288,32 @@ Public Class Form1
                         Case "REFRESH"
                             ReloadPage()
                     End Select
+                Case "MATCHDATA"
+                    Select Case dataArray(1)
+                        Case "LOCALMATCHTIME"
+                            thisMatch.MatchClock = dataArray(4) '2 = MatchID, 3=period
+                            ShowMatchTime()
+                    End Select
+
+                Case Else
+                    Console.WriteLine(strMessage)
+
             End Select
 
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         End Try
     End Sub
+    Delegate Sub ShowMatchTimeCallback()
 
+    Sub ShowMatchTime()
+        If lablMatchClock.InvokeRequired Then
+            Dim d As New ShowMatchTimeCallback(AddressOf ShowMatchTime)
+            Me.Invoke(d, New Object() {})
+        Else
+            lablMatchClock.Text = thisMatch.MatchClock
+        End If
+    End Sub
     Private Sub timerCheckConnections_Tick(sender As Object, e As EventArgs) Handles timerCheckConnections.Tick
         If DateDiff(DateInterval.Minute, dtLastPAData, Now) > 1 Then
             If bConnectedToServer = True Then
@@ -360,4 +488,8 @@ Public Class Form1
     '    displayStyle = 1
     '    SetupDisplay()
     'End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles lablStatHome20.Click
+
+    End Sub
 End Class
