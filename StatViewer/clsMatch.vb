@@ -18,6 +18,150 @@
     Private strAwayPossession2 As String = ""
     Private strAwayPossessionTotal As String = ""
     Private iPeriod As Integer = 0
+    Private strActionAreaA1 As String = ""
+    Private strActionAreaB1 As String = ""
+    Private strActionAreaC1 As String = ""
+    Private strActionAreaA2 As String = ""
+    Private strActionAreaB2 As String = ""
+    Private strActionAreaC2 As String = ""
+
+    Private strTimesLevel As String = ""
+
+    Private strTimeInPlay1 As String = ""
+    Private strTimeOutOfPlay1 As String = ""
+
+    Private strTimeInPlay2 As String = ""
+    Private strTimeOutOfPlay2 As String = ""
+
+    Private strTimeInPlayTotal As String = ""
+    Private strTimeOutOfPlayTotal As String = ""
+    Public Property TimesLevel() As String
+        Get
+            Return strTimesLevel
+        End Get
+        Set(ByVal value As String)
+            strTimesLevel = value
+        End Set
+    End Property
+
+
+    Public Property TimeOutOfPlay1() As String
+        Get
+            Return strTimeOutOfPlay1
+        End Get
+        Set(ByVal value As String)
+            strTimeOutOfPlay1 = value
+        End Set
+    End Property
+
+
+    Public Property TimeInPlay1() As String
+        Get
+            Return strTimeInPlay1
+        End Get
+        Set(ByVal value As String)
+            strTimeInPlay1 = value
+        End Set
+    End Property
+
+    Public Property TimeOutOfPlay2() As String
+        Get
+            Return strTimeOutOfPlay2
+        End Get
+        Set(ByVal value As String)
+            strTimeOutOfPlay2 = value
+        End Set
+    End Property
+
+
+    Public Property TimeInPlay2() As String
+        Get
+            Return strTimeInPlay2
+        End Get
+        Set(ByVal value As String)
+            strTimeInPlay2 = value
+        End Set
+    End Property
+
+    Public Property TimeOutOfPlayTotal() As String
+        Get
+            Return strTimeOutOfPlayTotal
+        End Get
+        Set(ByVal value As String)
+            strTimeOutOfPlayTotal = value
+        End Set
+    End Property
+
+
+    Public Property TimeInPlayTotal() As String
+        Get
+            Return strTimeInPlayTotal
+        End Get
+        Set(ByVal value As String)
+            strTimeInPlayTotal = value
+        End Set
+    End Property
+
+    Public Property ActionAreaC1() As String
+        Get
+            Return strActionAreaC1
+        End Get
+        Set(ByVal value As String)
+            strActionAreaC1 = value
+        End Set
+    End Property
+
+
+    Public Property ActionAreaB1() As String
+        Get
+            Return strActionAreaB1
+        End Get
+        Set(ByVal value As String)
+            strActionAreaB1 = value
+        End Set
+    End Property
+
+
+    Public Property ActionAreaA1() As String
+        Get
+            Return strActionAreaA1
+        End Get
+        Set(ByVal value As String)
+            strActionAreaA1 = value
+        End Set
+    End Property
+    Public Property ActionAreaC2() As String
+        Get
+            Return strActionAreaC2
+        End Get
+        Set(ByVal value As String)
+            strActionAreaC2 = value
+        End Set
+    End Property
+
+
+    Public Property ActionAreaB2() As String
+        Get
+            Return strActionAreaB2
+        End Get
+        Set(ByVal value As String)
+            strActionAreaB2 = value
+        End Set
+    End Property
+
+
+    Public Property ActionAreaA2() As String
+        Get
+            Return strActionAreaA2
+        End Get
+        Set(ByVal value As String)
+            strActionAreaA2 = value
+        End Set
+    End Property
+
+
+
+
     Public Property Period() As Integer
         Get
             Return iPeriod
@@ -197,6 +341,34 @@
         Set(ByVal value As String)
             strHomeTeamName = value
         End Set
+    End Property
+
+    Public ReadOnly Property TimeInPlayText1() As String
+        Get
+            If strTimeOutOfPlay1 <> "" Then
+                Return strTimeInPlay1 + " / " + strTimeOutOfPlay1
+            Else
+                Return ""
+            End If
+        End Get
+    End Property
+    Public ReadOnly Property TimeInPlayText2() As String
+        Get
+            If strTimeOutOfPlay2 <> "" Then
+                Return strTimeInPlay2 + " / " + strTimeOutOfPlay2
+            Else
+                Return ""
+            End If
+        End Get
+    End Property
+    Public ReadOnly Property TimeInPlayTextTotal() As String
+        Get
+            If strTimeOutOfPlayTotal <> "" Then
+                Return strTimeInPlayTotal + " / " + strTimeOutOfPlayTotal
+            Else
+                Return ""
+            End If
+        End Get
     End Property
 
 

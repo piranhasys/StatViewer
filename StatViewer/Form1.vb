@@ -360,8 +360,22 @@ Public Class Form1
             lablAwayPossession1.Text = thisMatch.AwayPossession1
             lablAwayPossession2.Text = thisMatch.AwayPossession2
             lablAwayPossessionTotal.Text = thisMatch.AwayPossessionTotal
+
+            lablActionAreaA1.Text = thisMatch.ActionAreaA1
+            lablActionAreaB1.Text = thisMatch.ActionAreaB1
+            lablActionAreaC1.Text = thisMatch.ActionAreaC1
+            lablActionAreaA2.Text = thisMatch.ActionAreaA2
+            lablActionAreaB2.Text = thisMatch.ActionAreaB2
+            lablActionAreaC2.Text = thisMatch.ActionAreaC2
+
+            lablTimeInPlay1.Text = thisMatch.TimeInPlayText1
+            lablTimeInPlay2.Text = thisMatch.TimeInPlayText2
+            lablTimeInPlayTotal.Text = thisMatch.TimeInplaytextTotal
+
+            lablTimesLevel.Text = thisMatch.TimesLevel
         End If
     End Sub
+
     Private Sub timerCheckConnections_Tick(sender As Object, e As EventArgs) Handles timerCheckConnections.Tick
         If DateDiff(DateInterval.Minute, dtLastPAData, Now) > 1 Then
             If bConnectedToServer = True Then
@@ -538,6 +552,14 @@ Public Class Form1
     'End Sub
 
     Private Sub Label15_Click(sender As Object, e As EventArgs) Handles lablStatHome20.Click
+
+    End Sub
+
+    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+
+    End Sub
+
+    Private Sub lablTimeInPlay_Click(sender As Object, e As EventArgs) Handles lablTimeInPlayTotal.Click
 
     End Sub
 End Class
