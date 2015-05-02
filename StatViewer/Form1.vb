@@ -31,6 +31,9 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'initial HP commit
+        For incStat As Integer = 0 To RBTeamStats.GetUpperBound(0)
+            RBTeamStats(incStat) = New clsRBTeamStat
+        Next
         dtLastPAData = Now.AddDays(-1)
         timerCheckConnections.Start()
         fontSize = My.Settings.FontSize
@@ -54,6 +57,7 @@ Public Class Form1
                 PanelRTE.BringToFront()
                 LoadRTEStaticData()
                 ShowRTEStaticData()
+                ShowRTETeamData()
             Case Else
                 PanelRTE.SendToBack()
                 RepositionBrowser()
@@ -110,71 +114,82 @@ Public Class Form1
         lablAwayTeam2.BackColor = thisMatch.AwayBackColour
         lablAwayTeam2.ForeColor = thisMatch.AwayTextColour
 
-        lablHomeScoreline.Text = thisMatch.HomeScoreline
-        lablAwayScoreline.Text = thisMatch.AwayScoreline
+    End Sub
+    Delegate Sub ShowRTETeamDataCallback()
+    Sub ShowRTETeamData()
+        If lablStatAway01.InvokeRequired Then
+            Dim d As New ShowRTETeamDataCallback(AddressOf ShowRTETeamData)
+            Me.Invoke(d, New Object() {})
+        Else
+            lablHomeScoreline.Text = thisMatch.HomeScoreline
+            lablAwayScoreline.Text = thisMatch.AwayScoreline
 
-        lablStatName01.Text = thisMatch.Stat(1).Name
-        lablStatName02.Text = thisMatch.Stat(2).Name
-        lablStatName03.Text = thisMatch.Stat(3).Name
-        lablStatName04.Text = thisMatch.Stat(4).Name
-        lablStatName05.Text = thisMatch.Stat(5).Name
-        lablStatName06.Text = thisMatch.Stat(6).Name
-        lablStatName07.Text = thisMatch.Stat(7).Name
-        lablStatName08.Text = thisMatch.Stat(8).Name
-        lablStatName09.Text = thisMatch.Stat(9).Name
-        lablStatName10.Text = thisMatch.Stat(10).Name
-        lablStatName11.Text = thisMatch.Stat(11).Name
-        lablStatName12.Text = thisMatch.Stat(12).Name
-        lablStatName13.Text = thisMatch.Stat(13).Name
-        lablStatName14.Text = thisMatch.Stat(14).Name
-        lablStatName15.Text = thisMatch.Stat(15).Name
-        lablStatName16.Text = thisMatch.Stat(16).Name
-        lablStatName17.Text = thisMatch.Stat(17).Name
-        lablStatName18.Text = thisMatch.Stat(18).Name
-        lablStatName19.Text = thisMatch.Stat(19).Name
-        lablStatName20.Text = thisMatch.Stat(20).Name
+            lablStatName01.Text = thisMatch.Stat(1).Name
+            lablStatName02.Text = thisMatch.Stat(2).Name
+            lablStatName03.Text = thisMatch.Stat(3).Name
+            lablStatName04.Text = thisMatch.Stat(4).Name
+            lablStatName05.Text = thisMatch.Stat(5).Name
+            lablStatName06.Text = thisMatch.Stat(6).Name
+            lablStatName07.Text = thisMatch.Stat(7).Name
+            lablStatName08.Text = thisMatch.Stat(8).Name
+            lablStatName09.Text = thisMatch.Stat(9).Name
+            lablStatName10.Text = thisMatch.Stat(10).Name
+            lablStatName11.Text = thisMatch.Stat(11).Name
+            lablStatName12.Text = thisMatch.Stat(12).Name
+            lablStatName13.Text = thisMatch.Stat(13).Name
+            lablStatName14.Text = thisMatch.Stat(14).Name
+            lablStatName15.Text = thisMatch.Stat(15).Name
+            lablStatName16.Text = thisMatch.Stat(16).Name
+            lablStatName17.Text = thisMatch.Stat(17).Name
+            lablStatName18.Text = thisMatch.Stat(18).Name
+            lablStatName19.Text = thisMatch.Stat(19).Name
+            lablStatName20.Text = thisMatch.Stat(20).Name
 
-        lablStatHome01.Text = thisMatch.Stat(1).HomeNum
-        lablStatHome02.Text = thisMatch.Stat(2).HomeNum
-        lablStatHome03.Text = thisMatch.Stat(3).HomeNum
-        lablStatHome04.Text = thisMatch.Stat(4).HomeNum
-        lablStatHome05.Text = thisMatch.Stat(5).HomeNum
-        lablStatHome06.Text = thisMatch.Stat(6).HomeNum
-        lablStatHome07.Text = thisMatch.Stat(7).HomeNum
-        lablStatHome08.Text = thisMatch.Stat(8).HomeNum
-        lablStatHome09.Text = thisMatch.Stat(9).HomeNum
-        lablStatHome10.Text = thisMatch.Stat(10).HomeNum
-        lablStatHome11.Text = thisMatch.Stat(11).HomeNum
-        lablStatHome12.Text = thisMatch.Stat(12).HomeNum
-        lablStatHome13.Text = thisMatch.Stat(13).HomeNum
-        lablStatHome14.Text = thisMatch.Stat(14).HomeNum
-        lablStatHome15.Text = thisMatch.Stat(15).HomeNum
-        lablStatHome16.Text = thisMatch.Stat(16).HomeNum
-        lablStatHome17.Text = thisMatch.Stat(17).HomeNum
-        lablStatHome18.Text = thisMatch.Stat(18).HomeNum
-        lablStatHome19.Text = thisMatch.Stat(19).HomeNum
-        lablStatHome20.Text = thisMatch.Stat(20).HomeNum
+            lablStatHome01.Text = thisMatch.Stat(1).HomeNum
+            lablStatHome02.Text = thisMatch.Stat(2).HomeNum
+            lablStatHome03.Text = thisMatch.Stat(3).HomeNum
+            lablStatHome04.Text = thisMatch.Stat(4).HomeNum
+            lablStatHome05.Text = thisMatch.Stat(5).HomeNum
+            lablStatHome06.Text = thisMatch.Stat(6).HomeNum
+            lablStatHome07.Text = thisMatch.Stat(7).HomeNum
+            lablStatHome08.Text = thisMatch.Stat(8).HomeNum
+            lablStatHome09.Text = thisMatch.Stat(9).HomeNum
+            lablStatHome10.Text = thisMatch.Stat(10).HomeNum
+            lablStatHome11.Text = thisMatch.Stat(11).HomeNum
+            lablStatHome12.Text = thisMatch.Stat(12).HomeNum
+            lablStatHome13.Text = thisMatch.Stat(13).HomeNum
+            lablStatHome14.Text = thisMatch.Stat(14).HomeNum
+            lablStatHome15.Text = thisMatch.Stat(15).HomeNum
+            lablStatHome16.Text = thisMatch.Stat(16).HomeNum
+            lablStatHome17.Text = thisMatch.Stat(17).HomeNum
+            lablStatHome18.Text = thisMatch.Stat(18).HomeNum
+            lablStatHome19.Text = thisMatch.Stat(19).HomeNum
+            lablStatHome20.Text = thisMatch.Stat(20).HomeNum
 
-        lablStatAway01.Text = thisMatch.Stat(1).AwayNum
-        lablStatAway02.Text = thisMatch.Stat(2).AwayNum
-        lablStatAway03.Text = thisMatch.Stat(3).AwayNum
-        lablStatAway04.Text = thisMatch.Stat(4).AwayNum
-        lablStatAway05.Text = thisMatch.Stat(5).AwayNum
-        lablStatAway06.Text = thisMatch.Stat(6).AwayNum
-        lablStatAway07.Text = thisMatch.Stat(7).AwayNum
-        lablStatAway08.Text = thisMatch.Stat(8).AwayNum
-        lablStatAway09.Text = thisMatch.Stat(9).AwayNum
-        lablStatAway10.Text = thisMatch.Stat(10).AwayNum
-        lablStatAway11.Text = thisMatch.Stat(11).AwayNum
-        lablStatAway12.Text = thisMatch.Stat(12).AwayNum
-        lablStatAway13.Text = thisMatch.Stat(13).AwayNum
-        lablStatAway14.Text = thisMatch.Stat(14).AwayNum
-        lablStatAway15.Text = thisMatch.Stat(15).AwayNum
-        lablStatAway16.Text = thisMatch.Stat(16).AwayNum
-        lablStatAway17.Text = thisMatch.Stat(17).AwayNum
-        lablStatAway18.Text = thisMatch.Stat(18).AwayNum
-        lablStatAway19.Text = thisMatch.Stat(19).AwayNum
-        lablStatAway20.Text = thisMatch.Stat(20).AwayNum
+            lablStatAway01.Text = thisMatch.Stat(1).AwayNum
+            lablStatAway02.Text = thisMatch.Stat(2).AwayNum
+            lablStatAway03.Text = thisMatch.Stat(3).AwayNum
+            lablStatAway04.Text = thisMatch.Stat(4).AwayNum
+            lablStatAway05.Text = thisMatch.Stat(5).AwayNum
+            lablStatAway06.Text = thisMatch.Stat(6).AwayNum
+            lablStatAway07.Text = thisMatch.Stat(7).AwayNum
+            lablStatAway08.Text = thisMatch.Stat(8).AwayNum
+            lablStatAway09.Text = thisMatch.Stat(9).AwayNum
+            lablStatAway10.Text = thisMatch.Stat(10).AwayNum
+            lablStatAway11.Text = thisMatch.Stat(11).AwayNum
+            lablStatAway12.Text = thisMatch.Stat(12).AwayNum
+            lablStatAway13.Text = thisMatch.Stat(13).AwayNum
+            lablStatAway14.Text = thisMatch.Stat(14).AwayNum
+            lablStatAway15.Text = thisMatch.Stat(15).AwayNum
+            lablStatAway16.Text = thisMatch.Stat(16).AwayNum
+            lablStatAway17.Text = thisMatch.Stat(17).AwayNum
+            lablStatAway18.Text = thisMatch.Stat(18).AwayNum
+            lablStatAway19.Text = thisMatch.Stat(19).AwayNum
+            lablStatAway20.Text = thisMatch.Stat(20).AwayNum
+
+
+        End If
+
     End Sub
     Private Sub DoRead(ByVal ar As IAsyncResult)
         Dim BytesRead As Integer
@@ -298,6 +313,26 @@ Public Class Form1
                                 thisMatch.AwayTimeSinceScore = dataArray(6) '2 = MatchID, 3=period
                             End If
                             ShowMatchTime()
+                        Case "ALLTEAMSTATS"
+                            'MATCHDATA|ALLTEAMSTATS|29793|565^1^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^|578^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^|
+                            If dataArray.GetUpperBound(0) > 3 Then
+                                Dim homeData As String = dataArray(3)
+                                If homeData.Contains("^") Then
+                                    Dim split() As String = homeData.Split("^")
+                                    For incStat As Integer = 1 To split.GetUpperBound(0)
+                                        RBTeamStats(incStat).HomeValue = Val(split(incStat))
+                                    Next
+                                End If
+                                Dim awayData As String = dataArray(4)
+                                If awayData.Contains("^") Then
+                                    Dim split() As String = awayData.Split("^")
+                                    For incStat As Integer = 1 To split.GetUpperBound(0)
+                                        RBTeamStats(incStat).AwayValue = Val(split(incStat))
+                                    Next
+                                End If
+                                AssignRBStats()
+                                ShowRTETeamData()
+                            End If
                         Case "POSSESSION"
                             If dataArray.GetUpperBound(0) > 5 Then
                                 'old RB doesn't send
@@ -336,6 +371,43 @@ Public Class Form1
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         End Try
+    End Sub
+    Sub AssignRBStats()
+        'RBStats are in RB order
+        thisMatch.Stat(SVFStatIndex.Wides).HomeNum = RBTeamStats(RBTeamStatIndex.Wides).HomeValue.ToString
+        thisMatch.Stat(SVFStatIndex.Wides).AwayNum = RBTeamStats(RBTeamStatIndex.Wides).AwayValue.ToString
+        thisMatch.Stat(SVFStatIndex.ScoringChanges).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoringChanges).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConverted).HomeNum = (RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConverted).AwayNum = (RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoresFromPlay).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoresFromPlay).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.OwnKickoutsWon).HomeNum = (RBTeamStats(RBTeamStatIndex.OwnKickoutsWon).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.Kickouts).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.OwnKickoutsWon).AwayNum = (RBTeamStats(RBTeamStatIndex.OwnKickoutsWon).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.Kickouts).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.KickoutsWonClean).HomeNum = (RBTeamStats(RBTeamStatIndex.KickoutsWonClean).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.KickoutsWonClean).AwayNum = (RBTeamStats(RBTeamStatIndex.KickoutsWonClean).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.KickoutsWonBroken).HomeNum = (RBTeamStats(RBTeamStatIndex.KickoutsWonBroken).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.KickoutsWonBroken).AwayNum = (RBTeamStats(RBTeamStatIndex.KickoutsWonBroken).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConcededOwnHalf).HomeNum = (RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConcededOwnHalf).AwayNum = (RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConcededOppHalf).HomeNum = (RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConcededOppHalf).AwayNum = (RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.Blacks).HomeNum = (RBTeamStats(RBTeamStatIndex.BlackCards).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.Blacks).AwayNum = (RBTeamStats(RBTeamStatIndex.BlackCards).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.Yellows).HomeNum = (RBTeamStats(RBTeamStatIndex.YellowCards).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.Yellows).AwayNum = (RBTeamStats(RBTeamStatIndex.YellowCards).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.Reds).HomeNum = (RBTeamStats(RBTeamStatIndex.RedCards).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.Reds).AwayNum = (RBTeamStats(RBTeamStatIndex.RedCards).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.SubsMade).HomeNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.SubsMade).AwayNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.LostPossession).HomeNum = (RBTeamStats(RBTeamStatIndex.LostPossession).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.LostPossession).AwayNum = (RBTeamStats(RBTeamStatIndex.LostPossession).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.HandPasses).HomeNum = (RBTeamStats(RBTeamStatIndex.HandPasses).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.HandPasses).AwayNum = (RBTeamStats(RBTeamStatIndex.HandPasses).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.FootPasses).HomeNum = (RBTeamStats(RBTeamStatIndex.FootPasses).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.FootPasses).AwayNum = (RBTeamStats(RBTeamStatIndex.FootPasses).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.FortyFives).HomeNum = (RBTeamStats(RBTeamStatIndex.FortyFives).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.FortyFives).AwayNum = (RBTeamStats(RBTeamStatIndex.FortyFives).AwayValue).ToString
     End Sub
     Delegate Sub ShowMatchTimeCallback()
     Sub ShowMatchTime()
