@@ -339,7 +339,7 @@ Public Class Form1
                                 Dim compositeData As String = dataArray(6)
                                 If compositeData.Contains("^") Then
                                     Dim split() As String = compositeData.Split("^")
-                                    thisMatch.Period = Val(split(1))
+                                    thisMatch.Period = Val(split(0))
                                     Select Case thisMatch.Period
                                         Case Is < 3
                                             'first half
@@ -349,6 +349,19 @@ Public Class Form1
                                             thisMatch.AwayPossession2 = ""
                                             thisMatch.HomePossessionTotal = split(1)
                                             thisMatch.AwayPossessionTotal = split(2)
+                                            thisMatch.ActionAreaA1 = split(7)
+                                            thisMatch.ActionAreaB1 = split(8)
+                                            thisMatch.ActionAreaC1 = split(9)
+                                            thisMatch.ActionAreaA2 = split(10)
+                                            thisMatch.ActionAreaB2 = split(11)
+                                            thisMatch.ActionAreaC2 = split(12)
+
+                                            thisMatch.MatchTime1 = ""
+                                            thisMatch.TimeInPlay1 = ""
+                                            thisMatch.MatchTime2 = ""
+                                            thisMatch.TimeInPlay2 = ""
+                                            thisMatch.MatchTimeTotal = split(17)
+                                            thisMatch.TimeInPlayTotal = split(18)
                                         Case Else
                                             thisMatch.HomePossession1 = split(1)
                                             thisMatch.AwayPossession1 = split(2)
@@ -356,6 +369,21 @@ Public Class Form1
                                             thisMatch.AwayPossession2 = split(4)
                                             thisMatch.HomePossessionTotal = split(5)
                                             thisMatch.AwayPossessionTotal = split(6)
+
+                                            thisMatch.ActionAreaA1 = split(7)
+                                            thisMatch.ActionAreaB1 = split(8)
+                                            thisMatch.ActionAreaC1 = split(9)
+                                            thisMatch.ActionAreaA2 = split(10)
+                                            thisMatch.ActionAreaB2 = split(11)
+                                            thisMatch.ActionAreaC2 = split(12)
+
+                                            thisMatch.MatchTime1 = split(13)
+                                            thisMatch.TimeInPlay1 = split(14)
+                                            thisMatch.MatchTime2 = split(15)
+                                            thisMatch.TimeInPlay2 = split(16)
+                                            thisMatch.MatchTimeTotal = split(17)
+                                            thisMatch.TimeInPlayTotal = split(18)
+
                                     End Select
                                     ShowPossession()
                                 End If

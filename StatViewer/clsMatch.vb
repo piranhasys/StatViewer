@@ -28,13 +28,13 @@
     Private strTimesLevel As String = ""
 
     Private strTimeInPlay1 As String = ""
-    Private strTimeOutOfPlay1 As String = ""
+    Private strMatchTime1 As String = ""
 
     Private strTimeInPlay2 As String = ""
-    Private strTimeOutOfPlay2 As String = ""
+    Private strMatchTime2 As String = ""
 
     Private strTimeInPlayTotal As String = ""
-    Private strTimeOutOfPlayTotal As String = ""
+    Private strMatchTimeTotal As String = ""
     Public Property TimesLevel() As String
         Get
             Return strTimesLevel
@@ -45,12 +45,12 @@
     End Property
 
 
-    Public Property TimeOutOfPlay1() As String
+    Public Property MatchTime1() As String
         Get
-            Return strTimeOutOfPlay1
+            Return strMatchTime1
         End Get
         Set(ByVal value As String)
-            strTimeOutOfPlay1 = value
+            strMatchTime1 = value
         End Set
     End Property
 
@@ -64,12 +64,12 @@
         End Set
     End Property
 
-    Public Property TimeOutOfPlay2() As String
+    Public Property MatchTime2() As String
         Get
-            Return strTimeOutOfPlay2
+            Return strMatchTime2
         End Get
         Set(ByVal value As String)
-            strTimeOutOfPlay2 = value
+            strMatchTime2 = value
         End Set
     End Property
 
@@ -83,12 +83,12 @@
         End Set
     End Property
 
-    Public Property TimeOutOfPlayTotal() As String
+    Public Property MatchTimeTotal() As String
         Get
-            Return strTimeOutOfPlayTotal
+            Return strMatchTimeTotal
         End Get
         Set(ByVal value As String)
-            strTimeOutOfPlayTotal = value
+            strMatchTimeTotal = value
         End Set
     End Property
 
@@ -345,8 +345,8 @@
 
     Public ReadOnly Property TimeInPlayText1() As String
         Get
-            If strTimeOutOfPlay1 <> "" Then
-                Return strTimeInPlay1 + " / " + strTimeOutOfPlay1
+            If strMatchTime1 <> "" Then
+                Return strTimeInPlay1 + " / " + strMatchTime1
             Else
                 Return ""
             End If
@@ -354,8 +354,8 @@
     End Property
     Public ReadOnly Property TimeInPlayText2() As String
         Get
-            If strTimeOutOfPlay2 <> "" Then
-                Return strTimeInPlay2 + " / " + strTimeOutOfPlay2
+            If strMatchTime2 <> "" Then
+                Return strTimeInPlay2 + " / " + strMatchTime2
             Else
                 Return ""
             End If
@@ -363,8 +363,8 @@
     End Property
     Public ReadOnly Property TimeInPlayTextTotal() As String
         Get
-            If strTimeOutOfPlayTotal <> "" Then
-                Return strTimeInPlayTotal + " / " + strTimeOutOfPlayTotal
+            If strMatchTimeTotal <> "" Then
+                Return strTimeInPlayTotal + " / " + strMatchTimeTotal
             Else
                 Return ""
             End If
