@@ -29,6 +29,10 @@ Public Class Form1
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
     End Sub
 
+    Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
+
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'initial HP commit
         For incStat As Integer = 0 To RBTeamStats.GetUpperBound(0)
@@ -95,25 +99,30 @@ Public Class Form1
                 inputFile.Close()
             End If
         Catch ex As Exception
-            MessageBox.Show(ex.ToString, "Error reading stat names")
+            ' MessageBox.Show(ex.ToString, "Error reading stat names")
         End Try
 
     End Sub
+    Delegate Sub ShowRTEStaticDataCallback()
     Sub ShowRTEStaticData()
-        lablHomeTeam.Text = thisMatch.HomeTeamName
-        lablHomeTeam.BackColor = thisMatch.HomeBackColour
-        lablHomeTeam.ForeColor = thisMatch.HomeTextColour
-        lablAwayTeam.Text = thisMatch.AwayTeamName
-        lablAwayTeam.BackColor = thisMatch.AwayBackColour
-        lablAwayTeam.ForeColor = thisMatch.AwayTextColour
+        If lablHomeTeam.InvokeRequired Then
+            Dim d As New ShowRTEStaticDataCallback(AddressOf ShowRTEStaticData)
+            Me.Invoke(d, New Object() {})
+        Else
+            lablHomeTeam.Text = thisMatch.HomeTeamName
+            lablHomeTeam.BackColor = thisMatch.HomeBackColour
+            lablHomeTeam.ForeColor = thisMatch.HomeTextColour
+            lablAwayTeam.Text = thisMatch.AwayTeamName
+            lablAwayTeam.BackColor = thisMatch.AwayBackColour
+            lablAwayTeam.ForeColor = thisMatch.AwayTextColour
 
-        lablHomeTeam2.Text = thisMatch.HomeTeamName
-        lablHomeTeam2.BackColor = thisMatch.HomeBackColour
-        lablHomeTeam2.ForeColor = thisMatch.HomeTextColour
-        lablAwayTeam2.Text = thisMatch.AwayTeamName
-        lablAwayTeam2.BackColor = thisMatch.AwayBackColour
-        lablAwayTeam2.ForeColor = thisMatch.AwayTextColour
-
+            lablHomeTeam2.Text = thisMatch.HomeTeamName
+            lablHomeTeam2.BackColor = thisMatch.HomeBackColour
+            lablHomeTeam2.ForeColor = thisMatch.HomeTextColour
+            lablAwayTeam2.Text = thisMatch.AwayTeamName
+            lablAwayTeam2.BackColor = thisMatch.AwayBackColour
+            lablAwayTeam2.ForeColor = thisMatch.AwayTextColour
+        End If
     End Sub
     Delegate Sub ShowRTETeamDataCallback()
     Sub ShowRTETeamData()
@@ -188,6 +197,17 @@ Public Class Form1
             lablStatAway20.Text = thisMatch.Stat(20).AwayNum
 
 
+        End If
+
+    End Sub
+    Delegate Sub ShowRTEScoreDataCallback()
+    Sub ShowRTEScoreData()
+        If lablHomeScoreline.InvokeRequired Then
+            Dim d As New ShowRTEScoreDataCallback(AddressOf ShowRTEScoreData)
+            Me.Invoke(d, New Object() {})
+        Else
+            lablHomeScoreline.Text = thisMatch.HomeScoreline
+            lablAwayScoreline.Text = thisMatch.AwayScoreline
         End If
 
     End Sub
@@ -305,6 +325,20 @@ Public Class Form1
                     End Select
                 Case "MATCHDATA"
                     Select Case dataArray(1)
+                        Case "LIVEMATCHDETAILS"
+                            'Reload static data
+                            LoadRTEStaticData()
+                            ShowRTEStaticData()
+                        Case "SCOREUPDATE"
+                            If dataArray.GetUpperBound(0) > 5 Then
+                                Dim scoreData As String = dataArray(6)
+                                If scoreData.Contains("^") Then
+                                    Dim split() As String = scoreData.Split("^")
+                                    thisMatch.HomeScoreline = split(0)
+                                    thisMatch.AwayScoreline = split(1)
+                                End If
+                                ShowRTEScoreData()
+                            End If
                         Case "LOCALMATCHTIME"
                             thisMatch.MatchClock = dataArray(4) '2 = MatchID, 3=period
                             If dataArray.GetUpperBound(0) > 5 Then
@@ -404,10 +438,10 @@ Public Class Form1
         'RBStats are in RB order
         thisMatch.Stat(SVFStatIndex.Wides).HomeNum = RBTeamStats(RBTeamStatIndex.Wides).HomeValue.ToString
         thisMatch.Stat(SVFStatIndex.Wides).AwayNum = RBTeamStats(RBTeamStatIndex.Wides).AwayValue.ToString
-        thisMatch.Stat(SVFStatIndex.ScoringChanges).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.ScoringChanges).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue).ToString
-        thisMatch.Stat(SVFStatIndex.FreesConverted).HomeNum = (RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.FreesConverted).AwayNum = (RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoringChanges).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).AwayValue + RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).AwayValue).ToString 'other team's conceded
+        thisMatch.Stat(SVFStatIndex.ScoringChanges).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).HomeValue + RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConverted).HomeNum = (RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).AwayValue + RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).AwayValue).ToString  'other team's conceded
+        thisMatch.Stat(SVFStatIndex.FreesConverted).AwayNum = (RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).HomeValue + RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.ScoresFromPlay).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.ScoresFromPlay).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.OwnKickoutsWon).HomeNum = (RBTeamStats(RBTeamStatIndex.OwnKickoutsWon).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.Kickouts).HomeValue).ToString
@@ -428,14 +462,14 @@ Public Class Form1
         thisMatch.Stat(SVFStatIndex.Reds).AwayNum = (RBTeamStats(RBTeamStatIndex.RedCards).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.SubsMade).HomeNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.SubsMade).AwayNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).AwayValue).ToString
-        thisMatch.Stat(SVFStatIndex.LostPossession).HomeNum = (RBTeamStats(RBTeamStatIndex.LostPossession).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.LostPossession).AwayNum = (RBTeamStats(RBTeamStatIndex.LostPossession).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.TurnoversWon).HomeNum = (RBTeamStats(RBTeamStatIndex.TurnoversWon).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.TurnoversWon).AwayNum = (RBTeamStats(RBTeamStatIndex.TurnoversWon).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.HandPasses).HomeNum = (RBTeamStats(RBTeamStatIndex.HandPasses).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.HandPasses).AwayNum = (RBTeamStats(RBTeamStatIndex.HandPasses).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.FootPasses).HomeNum = (RBTeamStats(RBTeamStatIndex.FootPasses).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.FootPasses).AwayNum = (RBTeamStats(RBTeamStatIndex.FootPasses).AwayValue).ToString
-        thisMatch.Stat(SVFStatIndex.FortyFives).HomeNum = (RBTeamStats(RBTeamStatIndex.FortyFives).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.FortyFives).AwayNum = (RBTeamStats(RBTeamStatIndex.FortyFives).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.FortyFives).HomeNum = (RBTeamStats(RBTeamStatIndex.FortyFive).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.FortyFives).AwayNum = (RBTeamStats(RBTeamStatIndex.FortyFive).AwayValue).ToString
     End Sub
     Delegate Sub ShowMatchTimeCallback()
     Sub ShowMatchTime()

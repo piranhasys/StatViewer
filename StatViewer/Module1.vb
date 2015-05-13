@@ -1,5 +1,6 @@
 ﻿Module Module1
     Enum RBTeamStatIndex As Integer
+        FreeTakenNotUsed = 0
         Kickouts = 1
         OwnKickoutsWon = 2
         KickoutsWonClean = 3
@@ -7,18 +8,37 @@
         Wides = 5
         FreesConcededOwnHalf = 6
         FreesConcededOppHalf = 7
-        YellowCards = 8
-        RedCards = 9
-        BlackCards = 10
-        HandPasses = 11
-        FootPasses = 12
-        ScoringChanceFromPlay = 13
-        ScoreFromPlay = 14
-        FreeTaken = 15
-        FreeScored = 16
-        SubsUsed = 17
-        FortyFives = 18
-        LostPossession = 19
+        HandPasses = 8
+        FootPasses = 9
+        ScoringChanceFromPlay = 10
+        ScoreFromPlay = 11
+        FreeScored = 12
+        SubsUsed = 13
+        FortyFive = 14
+        TurnoversWon = 15
+        BlackCards = 16
+        YellowCards = 17
+        RedCards = 18
+
+        'Kickouts = 1
+        'OwnKickoutsWon = 2
+        'KickoutsWonClean = 3
+        'KickoutsWonBroken = 4
+        'Wides = 5
+        'FreesConcededOwnHalf = 6
+        'FreesConcededOppHalf = 7
+        'YellowCards = 8
+        'RedCards = 9
+        'BlackCards = 10
+        'HandPasses = 11
+        'FootPasses = 12
+        'ScoringChanceFromPlay = 13
+        'ScoreFromPlay = 14
+        'FreeTaken = 15
+        'FreeScored = 16
+        'SubsUsed = 17
+        'FortyFives = 18
+        'LostPossession = 19
     End Enum
     'Enum RTEGAAHTeamStatIndex As Integer
     '    Puckouts = 1
@@ -56,7 +76,7 @@
         Yellows = 11
         Reds = 12
         SubsMade = 13
-        LostPossession = 14
+        TurnoversWon = 14
         HandPasses = 15
         FootPasses = 16
         FortyFives = 17
