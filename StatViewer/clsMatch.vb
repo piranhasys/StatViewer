@@ -370,6 +370,25 @@
             End If
         End Get
     End Property
-
+    ReadOnly Property HomeScore As String
+        Get
+            If strHomeScoreline.Contains("-") Then
+                Dim split As String() = strHomeScoreline.Split("-")
+                Return ((Val(split(0)) * 3) + Val(split(1))).ToString
+            Else
+                Return "0"
+            End If
+        End Get
+    End Property
+    ReadOnly Property AwayScore As String
+        Get
+            If strAwayScoreline.Contains("-") Then
+                Dim split As String() = strAwayScoreline.Split("-")
+                Return ((Val(split(0)) * 3) + Val(split(1))).ToString
+            Else
+                Return "0"
+            End If
+        End Get
+    End Property
 
 End Class

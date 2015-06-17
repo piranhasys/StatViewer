@@ -147,6 +147,12 @@ Partial Class Form1
         Me.lablHomeTeam = New System.Windows.Forms.Label()
         Me.lablAwayTeam2 = New System.Windows.Forms.Label()
         Me.lablHomeTeam2 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.SuspendLayout()
@@ -340,6 +346,12 @@ Partial Class Form1
         Me.PanelRTE.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelRTE.Controls.Add(Me.Label23)
+        Me.PanelRTE.Controls.Add(Me.Label18)
+        Me.PanelRTE.Controls.Add(Me.Label19)
+        Me.PanelRTE.Controls.Add(Me.Label20)
+        Me.PanelRTE.Controls.Add(Me.Label21)
+        Me.PanelRTE.Controls.Add(Me.Label22)
         Me.PanelRTE.Controls.Add(Me.Label6)
         Me.PanelRTE.Controls.Add(Me.lablTimeInPlay2)
         Me.PanelRTE.Controls.Add(Me.Label4)
@@ -447,7 +459,7 @@ Partial Class Form1
         Me.Label6.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label6.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(1102, 562)
+        Me.Label6.Location = New System.Drawing.Point(1102, 378)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(156, 42)
         Me.Label6.TabIndex = 97
@@ -459,7 +471,7 @@ Partial Class Form1
         Me.lablTimeInPlay2.BackColor = System.Drawing.Color.White
         Me.lablTimeInPlay2.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablTimeInPlay2.ForeColor = System.Drawing.Color.Black
-        Me.lablTimeInPlay2.Location = New System.Drawing.Point(1270, 561)
+        Me.lablTimeInPlay2.Location = New System.Drawing.Point(1270, 377)
         Me.lablTimeInPlay2.Name = "lablTimeInPlay2"
         Me.lablTimeInPlay2.Size = New System.Drawing.Size(277, 42)
         Me.lablTimeInPlay2.TabIndex = 96
@@ -471,7 +483,7 @@ Partial Class Form1
         Me.Label4.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label4.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(1104, 512)
+        Me.Label4.Location = New System.Drawing.Point(1104, 328)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(156, 42)
         Me.Label4.TabIndex = 95
@@ -483,7 +495,7 @@ Partial Class Form1
         Me.Label5.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label5.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(1270, 414)
+        Me.Label5.Location = New System.Drawing.Point(1270, 230)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(277, 42)
         Me.Label5.TabIndex = 94
@@ -495,7 +507,7 @@ Partial Class Form1
         Me.Label12.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label12.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(1041, 981)
+        Me.Label12.Location = New System.Drawing.Point(1320, 987)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(156, 42)
         Me.Label12.TabIndex = 93
@@ -508,7 +520,7 @@ Partial Class Form1
         Me.Label13.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label13.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(1041, 930)
+        Me.Label13.Location = New System.Drawing.Point(1320, 936)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(156, 42)
         Me.Label13.TabIndex = 92
@@ -521,7 +533,7 @@ Partial Class Form1
         Me.lablActionAreaC2.BackColor = System.Drawing.Color.White
         Me.lablActionAreaC2.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablActionAreaC2.ForeColor = System.Drawing.Color.Black
-        Me.lablActionAreaC2.Location = New System.Drawing.Point(1483, 980)
+        Me.lablActionAreaC2.Location = New System.Drawing.Point(1762, 986)
         Me.lablActionAreaC2.Name = "lablActionAreaC2"
         Me.lablActionAreaC2.Size = New System.Drawing.Size(131, 42)
         Me.lablActionAreaC2.TabIndex = 91
@@ -534,7 +546,7 @@ Partial Class Form1
         Me.lablActionAreaB2.BackColor = System.Drawing.Color.White
         Me.lablActionAreaB2.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablActionAreaB2.ForeColor = System.Drawing.Color.Black
-        Me.lablActionAreaB2.Location = New System.Drawing.Point(1343, 980)
+        Me.lablActionAreaB2.Location = New System.Drawing.Point(1622, 986)
         Me.lablActionAreaB2.Name = "lablActionAreaB2"
         Me.lablActionAreaB2.Size = New System.Drawing.Size(131, 42)
         Me.lablActionAreaB2.TabIndex = 90
@@ -547,7 +559,7 @@ Partial Class Form1
         Me.lablActionAreaA2.BackColor = System.Drawing.Color.White
         Me.lablActionAreaA2.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablActionAreaA2.ForeColor = System.Drawing.Color.Black
-        Me.lablActionAreaA2.Location = New System.Drawing.Point(1203, 980)
+        Me.lablActionAreaA2.Location = New System.Drawing.Point(1482, 986)
         Me.lablActionAreaA2.Name = "lablActionAreaA2"
         Me.lablActionAreaA2.Size = New System.Drawing.Size(131, 42)
         Me.lablActionAreaA2.TabIndex = 89
@@ -560,7 +572,7 @@ Partial Class Form1
         Me.Label3.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label3.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(1314, 253)
+        Me.Label3.Location = New System.Drawing.Point(1580, 105)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(195, 42)
         Me.Label3.TabIndex = 88
@@ -573,7 +585,7 @@ Partial Class Form1
         Me.lablTimesLevel.BackColor = System.Drawing.Color.White
         Me.lablTimesLevel.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablTimesLevel.ForeColor = System.Drawing.Color.Black
-        Me.lablTimesLevel.Location = New System.Drawing.Point(1313, 301)
+        Me.lablTimesLevel.Location = New System.Drawing.Point(1579, 153)
         Me.lablTimesLevel.Name = "lablTimesLevel"
         Me.lablTimesLevel.Size = New System.Drawing.Size(196, 42)
         Me.lablTimesLevel.TabIndex = 87
@@ -586,7 +598,7 @@ Partial Class Form1
         Me.lablTimeInPlay1.BackColor = System.Drawing.Color.White
         Me.lablTimeInPlay1.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablTimeInPlay1.ForeColor = System.Drawing.Color.Black
-        Me.lablTimeInPlay1.Location = New System.Drawing.Point(1272, 511)
+        Me.lablTimeInPlay1.Location = New System.Drawing.Point(1272, 327)
         Me.lablTimeInPlay1.Name = "lablTimeInPlay1"
         Me.lablTimeInPlay1.Size = New System.Drawing.Size(277, 42)
         Me.lablTimeInPlay1.TabIndex = 85
@@ -598,7 +610,7 @@ Partial Class Form1
         Me.Label2.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label2.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(1104, 461)
+        Me.Label2.Location = New System.Drawing.Point(1104, 277)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(156, 42)
         Me.Label2.TabIndex = 84
@@ -610,7 +622,7 @@ Partial Class Form1
         Me.lablTimeInPlayTotal.BackColor = System.Drawing.Color.White
         Me.lablTimeInPlayTotal.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablTimeInPlayTotal.ForeColor = System.Drawing.Color.Black
-        Me.lablTimeInPlayTotal.Location = New System.Drawing.Point(1272, 461)
+        Me.lablTimeInPlayTotal.Location = New System.Drawing.Point(1272, 277)
         Me.lablTimeInPlayTotal.Name = "lablTimeInPlayTotal"
         Me.lablTimeInPlayTotal.Size = New System.Drawing.Size(277, 42)
         Me.lablTimeInPlayTotal.TabIndex = 83
@@ -622,7 +634,7 @@ Partial Class Form1
         Me.lablActionAreaC1.BackColor = System.Drawing.Color.White
         Me.lablActionAreaC1.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablActionAreaC1.ForeColor = System.Drawing.Color.Black
-        Me.lablActionAreaC1.Location = New System.Drawing.Point(1483, 930)
+        Me.lablActionAreaC1.Location = New System.Drawing.Point(1762, 936)
         Me.lablActionAreaC1.Name = "lablActionAreaC1"
         Me.lablActionAreaC1.Size = New System.Drawing.Size(131, 42)
         Me.lablActionAreaC1.TabIndex = 82
@@ -635,7 +647,7 @@ Partial Class Form1
         Me.Label1.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label1.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(1270, 877)
+        Me.Label1.Location = New System.Drawing.Point(1211, 972)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(277, 42)
         Me.Label1.TabIndex = 81
@@ -648,7 +660,7 @@ Partial Class Form1
         Me.lablActionAreaB1.BackColor = System.Drawing.Color.White
         Me.lablActionAreaB1.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablActionAreaB1.ForeColor = System.Drawing.Color.Black
-        Me.lablActionAreaB1.Location = New System.Drawing.Point(1343, 930)
+        Me.lablActionAreaB1.Location = New System.Drawing.Point(1622, 936)
         Me.lablActionAreaB1.Name = "lablActionAreaB1"
         Me.lablActionAreaB1.Size = New System.Drawing.Size(131, 42)
         Me.lablActionAreaB1.TabIndex = 80
@@ -661,7 +673,7 @@ Partial Class Form1
         Me.lablActionAreaA1.BackColor = System.Drawing.Color.White
         Me.lablActionAreaA1.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablActionAreaA1.ForeColor = System.Drawing.Color.Black
-        Me.lablActionAreaA1.Location = New System.Drawing.Point(1203, 930)
+        Me.lablActionAreaA1.Location = New System.Drawing.Point(1482, 936)
         Me.lablActionAreaA1.Name = "lablActionAreaA1"
         Me.lablActionAreaA1.Size = New System.Drawing.Size(131, 42)
         Me.lablActionAreaA1.TabIndex = 79
@@ -674,7 +686,7 @@ Partial Class Form1
         Me.Label10.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label10.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(1272, 681)
+        Me.Label10.Location = New System.Drawing.Point(1272, 439)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(277, 42)
         Me.Label10.TabIndex = 78
@@ -686,7 +698,7 @@ Partial Class Form1
         Me.Label9.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label9.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(1104, 830)
+        Me.Label9.Location = New System.Drawing.Point(1104, 588)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(156, 42)
         Me.Label9.TabIndex = 77
@@ -698,7 +710,7 @@ Partial Class Form1
         Me.Label8.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label8.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(1104, 780)
+        Me.Label8.Location = New System.Drawing.Point(1104, 538)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(156, 42)
         Me.Label8.TabIndex = 76
@@ -710,7 +722,7 @@ Partial Class Form1
         Me.Label7.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Label7.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(1104, 730)
+        Me.Label7.Location = New System.Drawing.Point(1104, 488)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(156, 42)
         Me.Label7.TabIndex = 75
@@ -722,7 +734,7 @@ Partial Class Form1
         Me.lablAwayPossession2.BackColor = System.Drawing.Color.White
         Me.lablAwayPossession2.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayPossession2.ForeColor = System.Drawing.Color.Black
-        Me.lablAwayPossession2.Location = New System.Drawing.Point(1418, 830)
+        Me.lablAwayPossession2.Location = New System.Drawing.Point(1418, 588)
         Me.lablAwayPossession2.Name = "lablAwayPossession2"
         Me.lablAwayPossession2.Size = New System.Drawing.Size(131, 42)
         Me.lablAwayPossession2.TabIndex = 74
@@ -734,7 +746,7 @@ Partial Class Form1
         Me.lablHomePossession2.BackColor = System.Drawing.Color.White
         Me.lablHomePossession2.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomePossession2.ForeColor = System.Drawing.Color.Black
-        Me.lablHomePossession2.Location = New System.Drawing.Point(1272, 830)
+        Me.lablHomePossession2.Location = New System.Drawing.Point(1272, 588)
         Me.lablHomePossession2.Name = "lablHomePossession2"
         Me.lablHomePossession2.Size = New System.Drawing.Size(131, 42)
         Me.lablHomePossession2.TabIndex = 73
@@ -746,7 +758,7 @@ Partial Class Form1
         Me.lablAwayPossession1.BackColor = System.Drawing.Color.White
         Me.lablAwayPossession1.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayPossession1.ForeColor = System.Drawing.Color.Black
-        Me.lablAwayPossession1.Location = New System.Drawing.Point(1418, 780)
+        Me.lablAwayPossession1.Location = New System.Drawing.Point(1418, 538)
         Me.lablAwayPossession1.Name = "lablAwayPossession1"
         Me.lablAwayPossession1.Size = New System.Drawing.Size(131, 42)
         Me.lablAwayPossession1.TabIndex = 72
@@ -758,7 +770,7 @@ Partial Class Form1
         Me.lablHomePossession1.BackColor = System.Drawing.Color.White
         Me.lablHomePossession1.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomePossession1.ForeColor = System.Drawing.Color.Black
-        Me.lablHomePossession1.Location = New System.Drawing.Point(1272, 780)
+        Me.lablHomePossession1.Location = New System.Drawing.Point(1272, 538)
         Me.lablHomePossession1.Name = "lablHomePossession1"
         Me.lablHomePossession1.Size = New System.Drawing.Size(131, 42)
         Me.lablHomePossession1.TabIndex = 71
@@ -770,7 +782,7 @@ Partial Class Form1
         Me.lablAwayPossessionTotal.BackColor = System.Drawing.Color.White
         Me.lablAwayPossessionTotal.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayPossessionTotal.ForeColor = System.Drawing.Color.Black
-        Me.lablAwayPossessionTotal.Location = New System.Drawing.Point(1418, 730)
+        Me.lablAwayPossessionTotal.Location = New System.Drawing.Point(1418, 488)
         Me.lablAwayPossessionTotal.Name = "lablAwayPossessionTotal"
         Me.lablAwayPossessionTotal.Size = New System.Drawing.Size(131, 42)
         Me.lablAwayPossessionTotal.TabIndex = 70
@@ -782,7 +794,7 @@ Partial Class Form1
         Me.lablHomePossessionTotal.BackColor = System.Drawing.Color.White
         Me.lablHomePossessionTotal.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomePossessionTotal.ForeColor = System.Drawing.Color.Black
-        Me.lablHomePossessionTotal.Location = New System.Drawing.Point(1272, 730)
+        Me.lablHomePossessionTotal.Location = New System.Drawing.Point(1272, 488)
         Me.lablHomePossessionTotal.Name = "lablHomePossessionTotal"
         Me.lablHomePossessionTotal.Size = New System.Drawing.Size(131, 42)
         Me.lablHomePossessionTotal.TabIndex = 69
@@ -1626,6 +1638,78 @@ Partial Class Form1
         Me.lablHomeTeam2.Text = "TEAM NAME"
         Me.lablHomeTeam2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'Label18
+        '
+        Me.Label18.BackColor = System.Drawing.Color.White
+        Me.Label18.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(1553, 764)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(339, 26)
+        Me.Label18.TabIndex = 107
+        Me.Label18.Text = "John SMITH 1-08 (0-05f)"
+        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label19
+        '
+        Me.Label19.BackColor = System.Drawing.Color.White
+        Me.Label19.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Black
+        Me.Label19.Location = New System.Drawing.Point(1553, 738)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(339, 26)
+        Me.Label19.TabIndex = 106
+        Me.Label19.Text = "John SMITH 1-08 (0-05f)"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label20
+        '
+        Me.Label20.BackColor = System.Drawing.Color.White
+        Me.Label20.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Black
+        Me.Label20.Location = New System.Drawing.Point(1553, 712)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(339, 26)
+        Me.Label20.TabIndex = 105
+        Me.Label20.Text = "John SMITH 1-08 (0-05f)"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label21
+        '
+        Me.Label21.BackColor = System.Drawing.Color.White
+        Me.Label21.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.Black
+        Me.Label21.Location = New System.Drawing.Point(1553, 686)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(339, 26)
+        Me.Label21.TabIndex = 104
+        Me.Label21.Text = "John SMITH 1-08 (0-05f)"
+        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label22
+        '
+        Me.Label22.BackColor = System.Drawing.Color.White
+        Me.Label22.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.Black
+        Me.Label22.Location = New System.Drawing.Point(1553, 660)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(339, 26)
+        Me.Label22.TabIndex = 103
+        Me.Label22.Text = "John SMITH 1-08 (0-05f)"
+        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label23
+        '
+        Me.Label23.BackColor = System.Drawing.Color.Black
+        Me.Label23.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.White
+        Me.Label23.Location = New System.Drawing.Point(927, 661)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(339, 317)
+        Me.Label23.TabIndex = 108
+        Me.Label23.Text = "John SMITH 1-08 (0-05f)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "William FORSYTH-SMYTH 0-23" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label23.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1769,5 +1853,11 @@ Partial Class Form1
     Friend WithEvents lablTimeInPlay2 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents Label23 As System.Windows.Forms.Label
 
 End Class

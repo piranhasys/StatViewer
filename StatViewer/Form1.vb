@@ -298,6 +298,7 @@ Public Class Form1
         Try
             dtLastPAData = Now
             dataArray = strMessage.Split(Chr(124))
+            Console.WriteLine(strMessage)
             Select Case dataArray(0)
                 Case "HEARTBEAT"
                     Select Case dataArray(1)
@@ -348,6 +349,7 @@ Public Class Form1
                             End If
                             ShowMatchTime()
                         Case "ALLTEAMSTATS"
+                            'RTE format
                             'MATCHDATA|ALLTEAMSTATS|29793|565^1^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^|578^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^0^|
                             If dataArray.GetUpperBound(0) > 3 Then
                                 Dim homeData As String = dataArray(3)
@@ -367,6 +369,10 @@ Public Class Form1
                                 AssignRBStats()
                                 ShowRTETeamData()
                             End If
+                        Case "MATCHFACTS"
+                            'MATCHDATA|MATCHFACTS|DATA|KILDARE^LAOIS^10^POSSESSION^^^KICK PASSES^1^0^HAND PASSES^0^0^KICKOUTS WON^0^0^INSIDE 45^0^0^SCORES / SHOTS^1 / 0^0 / 0^WIDES^0^0^FREES CONCEDED^0^0^YELLOW CARDS^0^0^RED CARDS^0^0^TIME IN PLAY: 00:00 OUT OF 00:00^|DONNELLAN 2-1^O'GRADY 0-3^MURNAGHAN 0-1^|R. KEHOE 1-2^M. TIMMONS 0-4^S. ATTRIDE 1-0^|
+                            AssignRBSkyData(strMessage)
+                            ShowRTETeamData()
                         Case "POSSESSION"
                             If dataArray.GetUpperBound(0) > 5 Then
                                 'old RB doesn't send
@@ -434,16 +440,37 @@ Public Class Form1
             Console.WriteLine(ex.Message)
         End Try
     End Sub
+    Sub AssignRBSkyData(dataString As String)
+        'already ordered and labelled
+        'MATCHDATA|MATCHFACTS|DATA|KILDARE^LAOIS^10^POSSESSION^^^KICK PASSES^1^0^HAND PASSES^0^0^KICKOUTS WON^0^0^INSIDE 45^0^0^SCORES / SHOTS^1 / 0^0 / 0^WIDES^0^0^FREES CONCEDED^0^0^YELLOW CARDS^0^0^RED CARDS^0^0^TIME IN PLAY: 00:00 OUT OF 00:00^|DONNELLAN 2-1^O'GRADY 0-3^MURNAGHAN 0-1^|R. KEHOE 1-2^M. TIMMONS 0-4^S. ATTRIDE 1-0^|
+        If dataString.Contains("^") Then
+            Dim baseIndex As Integer = 0
+            Dim splitMain As String() = dataString.Split("|")
+            If splitMain(3).Contains("^") Then
+                Dim split As String() = splitMain(3).Split("^")
+                For incstat As Integer = 1 To 9
+                    baseIndex = (incstat * 3) + 3
+                    thisMatch.Stat(incstat).Name = split(baseIndex)
+                    thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
+                    thisMatch.Stat(incstat).AwayNum = split(baseIndex + 2)
+                Next
+
+            End If
+        End If
+
+
+
+    End Sub
     Sub AssignRBStats()
         'RBStats are in RB order
         thisMatch.Stat(SVFStatIndex.Wides).HomeNum = RBTeamStats(RBTeamStatIndex.Wides).HomeValue.ToString
         thisMatch.Stat(SVFStatIndex.Wides).AwayNum = RBTeamStats(RBTeamStatIndex.Wides).AwayValue.ToString
-        thisMatch.Stat(SVFStatIndex.ScoringChanges).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).AwayValue + RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).AwayValue).ToString 'other team's conceded
-        thisMatch.Stat(SVFStatIndex.ScoringChanges).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).HomeValue + RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.FreesConverted).HomeNum = (RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).AwayValue + RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).AwayValue).ToString  'other team's conceded
-        thisMatch.Stat(SVFStatIndex.FreesConverted).AwayNum = (RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreesConcededOppHalf).HomeValue + RBTeamStats(RBTeamStatIndex.FreesConcededOwnHalf).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.ScoresFromPlay).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.ScoresFromPlay).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoringChanges).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue + RBTeamStats(RBTeamStatIndex.FortyFive).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoringChanges).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue + RBTeamStats(RBTeamStatIndex.FortyFive).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConverted).HomeNum = (RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue + RBTeamStats(RBTeamStatIndex.FortyFive).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.FreesConverted).AwayNum = (RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue + RBTeamStats(RBTeamStatIndex.FortyFive).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoresFromPlay).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue).ToString + "/" + thisMatch.HomeScore
+        thisMatch.Stat(SVFStatIndex.ScoresFromPlay).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue).ToString + "/" + thisMatch.AwayScore
         thisMatch.Stat(SVFStatIndex.OwnKickoutsWon).HomeNum = (RBTeamStats(RBTeamStatIndex.OwnKickoutsWon).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.Kickouts).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.OwnKickoutsWon).AwayNum = (RBTeamStats(RBTeamStatIndex.OwnKickoutsWon).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.Kickouts).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.KickoutsWonClean).HomeNum = (RBTeamStats(RBTeamStatIndex.KickoutsWonClean).HomeValue).ToString
@@ -460,8 +487,8 @@ Public Class Form1
         thisMatch.Stat(SVFStatIndex.Yellows).AwayNum = (RBTeamStats(RBTeamStatIndex.YellowCards).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.Reds).HomeNum = (RBTeamStats(RBTeamStatIndex.RedCards).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.Reds).AwayNum = (RBTeamStats(RBTeamStatIndex.RedCards).AwayValue).ToString
-        thisMatch.Stat(SVFStatIndex.SubsMade).HomeNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.SubsMade).AwayNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).AwayValue).ToString
+        'thisMatch.Stat(SVFStatIndex.SubsMade).HomeNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).HomeValue).ToString
+        'thisMatch.Stat(SVFStatIndex.SubsMade).AwayNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.TurnoversWon).HomeNum = (RBTeamStats(RBTeamStatIndex.TurnoversWon).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.TurnoversWon).AwayNum = (RBTeamStats(RBTeamStatIndex.TurnoversWon).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.HandPasses).HomeNum = (RBTeamStats(RBTeamStatIndex.HandPasses).HomeValue).ToString

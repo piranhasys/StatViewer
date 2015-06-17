@@ -246,15 +246,15 @@ Namespace My
             End Set
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Statviewer\RTE\SVMatchData.txt")>  _
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Statviewer\Sky\SVMatchData.txt")> _
         Public Property DataFilename() As String
             Get
-                Return CType(Me("DataFilename"),String)
+                Return CType(Me("DataFilename"), String)
             End Get
-            Set
-                Me("DataFilename") = value
+            Set(value As String)
+                Me("DataFilename") = Value
             End Set
         End Property
     End Class

@@ -1,24 +1,45 @@
 ﻿Module Module1
     Enum RBTeamStatIndex As Integer
-        FreeTakenNotUsed = 0
         Kickouts = 1
         OwnKickoutsWon = 2
         KickoutsWonClean = 3
         KickoutsWonBroken = 4
-        Wides = 5
-        FreesConcededOwnHalf = 6
-        FreesConcededOppHalf = 7
-        HandPasses = 8
-        FootPasses = 9
-        ScoringChanceFromPlay = 10
-        ScoreFromPlay = 11
-        FreeScored = 12
-        SubsUsed = 13
-        FortyFive = 14
-        TurnoversWon = 15
+        HandPasses = 5
+        FootPasses = 6
+        FreesConcededOwnHalf = 7
+        FreesConcededOppHalf = 8
+        ScoringChanceFromPlay = 9
+        ScoreFromPlay = 10
+        Wides = 11
+        FreeTaken = 12
+        FreeScored = 13
+        TurnoversWon = 14
+        FortyFive = 15
         BlackCards = 16
         YellowCards = 17
         RedCards = 18
+        Hooks = 5
+        Blocks = 6
+
+        'FreeTakenNotUsed = 0
+        'Kickouts = 1
+        'OwnKickoutsWon = 2
+        'KickoutsWonClean = 3
+        'KickoutsWonBroken = 4
+        'Wides = 5
+        'FreesConcededOwnHalf = 6
+        'FreesConcededOppHalf = 7
+        'HandPasses = 8
+        'FootPasses = 9
+        'ScoringChanceFromPlay = 10
+        'ScoreFromPlay = 11
+        'FreeScored = 12
+        'SubsUsed = 13
+        'FortyFive = 14
+        'TurnoversWon = 15
+        'BlackCards = 16
+        'YellowCards = 17
+        'RedCards = 18
 
         'Kickouts = 1
         'OwnKickoutsWon = 2
