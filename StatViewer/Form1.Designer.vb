@@ -50,6 +50,7 @@ Partial Class Form1
         Me.Page9ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Page10ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelRTE = New System.Windows.Forms.Panel()
+        Me.lablHomeScorers = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lablTimeInPlay2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -147,12 +148,7 @@ Partial Class Form1
         Me.lablHomeTeam = New System.Windows.Forms.Label()
         Me.lablAwayTeam2 = New System.Windows.Forms.Label()
         Me.lablHomeTeam2 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
+        Me.lablAwayScorers = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.SuspendLayout()
@@ -346,12 +342,8 @@ Partial Class Form1
         Me.PanelRTE.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PanelRTE.Controls.Add(Me.Label23)
-        Me.PanelRTE.Controls.Add(Me.Label18)
-        Me.PanelRTE.Controls.Add(Me.Label19)
-        Me.PanelRTE.Controls.Add(Me.Label20)
-        Me.PanelRTE.Controls.Add(Me.Label21)
-        Me.PanelRTE.Controls.Add(Me.Label22)
+        Me.PanelRTE.Controls.Add(Me.lablAwayScorers)
+        Me.PanelRTE.Controls.Add(Me.lablHomeScorers)
         Me.PanelRTE.Controls.Add(Me.Label6)
         Me.PanelRTE.Controls.Add(Me.lablTimeInPlay2)
         Me.PanelRTE.Controls.Add(Me.Label4)
@@ -453,6 +445,18 @@ Partial Class Form1
         Me.PanelRTE.Name = "PanelRTE"
         Me.PanelRTE.Size = New System.Drawing.Size(1904, 1041)
         Me.PanelRTE.TabIndex = 2
+        '
+        'lablHomeScorers
+        '
+        Me.lablHomeScorers.BackColor = System.Drawing.Color.Black
+        Me.lablHomeScorers.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeScorers.ForeColor = System.Drawing.Color.White
+        Me.lablHomeScorers.Location = New System.Drawing.Point(927, 660)
+        Me.lablHomeScorers.Name = "lablHomeScorers"
+        Me.lablHomeScorers.Size = New System.Drawing.Size(339, 317)
+        Me.lablHomeScorers.TabIndex = 108
+        Me.lablHomeScorers.Text = "John SMITH 1-08 (0-05f)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "William FORSYTH-SMYTH 0-23" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lablHomeScorers.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label6
         '
@@ -1638,77 +1642,17 @@ Partial Class Form1
         Me.lablHomeTeam2.Text = "TEAM NAME"
         Me.lablHomeTeam2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label18
+        'lablAwayScorers
         '
-        Me.Label18.BackColor = System.Drawing.Color.White
-        Me.Label18.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.Black
-        Me.Label18.Location = New System.Drawing.Point(1553, 764)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(339, 26)
-        Me.Label18.TabIndex = 107
-        Me.Label18.Text = "John SMITH 1-08 (0-05f)"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label19
-        '
-        Me.Label19.BackColor = System.Drawing.Color.White
-        Me.Label19.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.Black
-        Me.Label19.Location = New System.Drawing.Point(1553, 738)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(339, 26)
-        Me.Label19.TabIndex = 106
-        Me.Label19.Text = "John SMITH 1-08 (0-05f)"
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label20
-        '
-        Me.Label20.BackColor = System.Drawing.Color.White
-        Me.Label20.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(1553, 712)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(339, 26)
-        Me.Label20.TabIndex = 105
-        Me.Label20.Text = "John SMITH 1-08 (0-05f)"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label21
-        '
-        Me.Label21.BackColor = System.Drawing.Color.White
-        Me.Label21.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(1553, 686)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(339, 26)
-        Me.Label21.TabIndex = 104
-        Me.Label21.Text = "John SMITH 1-08 (0-05f)"
-        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label22
-        '
-        Me.Label22.BackColor = System.Drawing.Color.White
-        Me.Label22.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.Black
-        Me.Label22.Location = New System.Drawing.Point(1553, 660)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(339, 26)
-        Me.Label22.TabIndex = 103
-        Me.Label22.Text = "John SMITH 1-08 (0-05f)"
-        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label23
-        '
-        Me.Label23.BackColor = System.Drawing.Color.Black
-        Me.Label23.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.White
-        Me.Label23.Location = New System.Drawing.Point(927, 661)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(339, 317)
-        Me.Label23.TabIndex = 108
-        Me.Label23.Text = "John SMITH 1-08 (0-05f)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "William FORSYTH-SMYTH 0-23" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.Label23.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lablAwayScorers.BackColor = System.Drawing.Color.Black
+        Me.lablAwayScorers.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayScorers.ForeColor = System.Drawing.Color.White
+        Me.lablAwayScorers.Location = New System.Drawing.Point(1553, 660)
+        Me.lablAwayScorers.Name = "lablAwayScorers"
+        Me.lablAwayScorers.Size = New System.Drawing.Size(339, 317)
+        Me.lablAwayScorers.TabIndex = 109
+        Me.lablAwayScorers.Text = "John SMITH 1-08 (0-05f)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "William FORSYTH-SMYTH 0-23" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lablAwayScorers.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Form1
         '
@@ -1853,11 +1797,7 @@ Partial Class Form1
     Friend WithEvents lablTimeInPlay2 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Label20 As System.Windows.Forms.Label
-    Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents lablHomeScorers As System.Windows.Forms.Label
+    Friend WithEvents lablAwayScorers As System.Windows.Forms.Label
 
 End Class

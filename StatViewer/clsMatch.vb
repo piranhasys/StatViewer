@@ -35,6 +35,28 @@
 
     Private strTimeInPlayTotal As String = ""
     Private strMatchTimeTotal As String = ""
+    Private strHomeScorers As String = ""
+    Private strAwayScorers As String = ""
+    Public Property AwayScorers() As String
+        Get
+            Return strAwayScorers
+        End Get
+        Set(ByVal value As String)
+            strAwayScorers = value
+        End Set
+    End Property
+
+
+    Public Property HomeScorers() As String
+        Get
+            Return strHomeScorers
+        End Get
+        Set(ByVal value As String)
+            strHomeScorers = value
+        End Set
+    End Property
+
+
     Public Property TimesLevel() As String
         Get
             Return strTimesLevel

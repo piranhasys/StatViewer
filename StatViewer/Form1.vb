@@ -196,6 +196,8 @@ Public Class Form1
             lablStatAway19.Text = thisMatch.Stat(19).AwayNum
             lablStatAway20.Text = thisMatch.Stat(20).AwayNum
 
+            lablHomeScorers.Text = thisMatch.HomeScorers.Replace("^", vbLf)
+            lablAwayScorers.Text = thisMatch.AwayScorers.Replace("^", vbLf)
 
         End If
 
@@ -454,11 +456,14 @@ Public Class Form1
                     thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
                     thisMatch.Stat(incstat).AwayNum = split(baseIndex + 2)
                 Next
-
             End If
+            If splitMain.GetUpperBound(0) > 4 Then
+                'contains scorers data
+                thisMatch.HomeScorers = splitMain(4)
+                thisMatch.AwayScorers = splitMain(5)
+            End If
+
         End If
-
-
 
     End Sub
     Sub AssignRBStats()
