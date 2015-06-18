@@ -196,8 +196,8 @@ Public Class Form1
             lablStatAway19.Text = thisMatch.Stat(19).AwayNum
             lablStatAway20.Text = thisMatch.Stat(20).AwayNum
 
-            lablHomeScorers.Text = thisMatch.HomeScorers.Replace("^", vbLf)
-            lablAwayScorers.Text = thisMatch.AwayScorers.Replace("^", vbLf)
+            lablHomeScorers.Text = thisMatch.HomeScorers.Replace("^", vbLf).Replace(", ", vbLf)
+            lablAwayScorers.Text = thisMatch.AwayScorers.Replace("^", vbLf).Replace(", ", vbLf)
 
         End If
 
