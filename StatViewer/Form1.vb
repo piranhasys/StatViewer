@@ -91,6 +91,14 @@ Public Class Form1
                 thisMatch.AwayBackColour = Color.FromArgb(Val(inputFile.ReadLine))
                 thisMatch.AwayTextColour = Color.FromArgb(Val(inputFile.ReadLine))
 
+                If thisMatch.HomeBackColour = thisMatch.HomeTextColour Then
+                    thisMatch.HomeTextColour = Color.White
+                    thisMatch.HomeBackColour = Color.Gray
+                End If
+                If thisMatch.AwayBackColour = thisMatch.AwayTextColour Then
+                    thisMatch.AwayTextColour = Color.White
+                    thisMatch.AwayBackColour = Color.Gray
+                End If
                 For incStat As Integer = 1 To 20
                     thisMatch.Stat(incStat).AssignData(inputFile.ReadLine)
                 Next
@@ -198,6 +206,11 @@ Public Class Form1
 
             lablHomeScorers.Text = thisMatch.HomeScorers.Replace("^", vbLf).Replace(", ", vbLf)
             lablAwayScorers.Text = thisMatch.AwayScorers.Replace("^", vbLf).Replace(", ", vbLf)
+            'If thisMatch.Stat(9).Name.Trim = "" Then
+            '    lablStatName09.Visible = False
+            '    lablStatHome09.Visible = False
+            '    lablStatAway09.Visible = False
+            'End If
 
         End If
 
@@ -369,6 +382,12 @@ Public Class Form1
                                     Next
                                 End If
                                 AssignRBStats()
+                                If dataArray.GetUpperBound(0) > 5 Then
+                                    'contains scorers data
+                                    thisMatch.HomeScorers = dataArray(5)
+                                    thisMatch.AwayScorers = dataArray(6)
+                                End If
+
                                 ShowRTETeamData()
                             End If
                         Case "MATCHFACTS"
@@ -450,7 +469,7 @@ Public Class Form1
             Dim splitMain As String() = dataString.Split("|")
             If splitMain(3).Contains("^") Then
                 Dim split As String() = splitMain(3).Split("^")
-                For incstat As Integer = 1 To 9
+                For incstat As Integer = 1 To 10
                     baseIndex = (incstat * 3) + 3
                     thisMatch.Stat(incstat).Name = split(baseIndex)
                     thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
