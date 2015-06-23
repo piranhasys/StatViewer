@@ -50,9 +50,16 @@ Partial Class Form1
         Me.Page9ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Page10ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelRTE = New System.Windows.Forms.Panel()
+        Me.lablAwayPossessions = New System.Windows.Forms.Label()
+        Me.lablAwayPossessionsHeader = New System.Windows.Forms.Label()
+        Me.lablHomePossessions = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.lablAwayScorers = New System.Windows.Forms.Label()
         Me.lablHomeScorers = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lablHomePossessionsHeader = New System.Windows.Forms.Label()
         Me.lablTimeInPlay2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -149,10 +156,6 @@ Partial Class Form1
         Me.lablHomeTeam = New System.Windows.Forms.Label()
         Me.lablAwayTeam2 = New System.Windows.Forms.Label()
         Me.lablHomeTeam2 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.SuspendLayout()
@@ -346,13 +349,16 @@ Partial Class Form1
         Me.PanelRTE.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PanelRTE.Controls.Add(Me.lablAwayPossessions)
+        Me.PanelRTE.Controls.Add(Me.lablAwayPossessionsHeader)
+        Me.PanelRTE.Controls.Add(Me.lablHomePossessions)
         Me.PanelRTE.Controls.Add(Me.Label16)
         Me.PanelRTE.Controls.Add(Me.Label15)
         Me.PanelRTE.Controls.Add(Me.Label14)
         Me.PanelRTE.Controls.Add(Me.Label11)
         Me.PanelRTE.Controls.Add(Me.lablAwayScorers)
         Me.PanelRTE.Controls.Add(Me.lablHomeScorers)
-        Me.PanelRTE.Controls.Add(Me.Label6)
+        Me.PanelRTE.Controls.Add(Me.lablHomePossessionsHeader)
         Me.PanelRTE.Controls.Add(Me.lablTimeInPlay2)
         Me.PanelRTE.Controls.Add(Me.Label4)
         Me.PanelRTE.Controls.Add(Me.Label5)
@@ -454,14 +460,96 @@ Partial Class Form1
         Me.PanelRTE.Size = New System.Drawing.Size(1904, 1041)
         Me.PanelRTE.TabIndex = 2
         '
+        'lablAwayPossessions
+        '
+        Me.lablAwayPossessions.BackColor = System.Drawing.Color.Black
+        Me.lablAwayPossessions.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayPossessions.ForeColor = System.Drawing.Color.White
+        Me.lablAwayPossessions.Location = New System.Drawing.Point(1554, 602)
+        Me.lablAwayPossessions.Name = "lablAwayPossessions"
+        Me.lablAwayPossessions.Size = New System.Drawing.Size(340, 306)
+        Me.lablAwayPossessions.TabIndex = 116
+        Me.lablAwayPossessions.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lablAwayPossessionsHeader
+        '
+        Me.lablAwayPossessionsHeader.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablAwayPossessionsHeader.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayPossessionsHeader.ForeColor = System.Drawing.Color.Black
+        Me.lablAwayPossessionsHeader.Location = New System.Drawing.Point(1554, 570)
+        Me.lablAwayPossessionsHeader.Name = "lablAwayPossessionsHeader"
+        Me.lablAwayPossessionsHeader.Size = New System.Drawing.Size(340, 25)
+        Me.lablAwayPossessionsHeader.TabIndex = 115
+        Me.lablAwayPossessionsHeader.Text = "TOP POSSESSIONS"
+        Me.lablAwayPossessionsHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomePossessions
+        '
+        Me.lablHomePossessions.BackColor = System.Drawing.Color.Black
+        Me.lablHomePossessions.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomePossessions.ForeColor = System.Drawing.Color.White
+        Me.lablHomePossessions.Location = New System.Drawing.Point(926, 602)
+        Me.lablHomePossessions.Name = "lablHomePossessions"
+        Me.lablHomePossessions.Size = New System.Drawing.Size(340, 306)
+        Me.lablHomePossessions.TabIndex = 114
+        Me.lablHomePossessions.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label16
+        '
+        Me.Label16.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label16.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Black
+        Me.Label16.Location = New System.Drawing.Point(1272, 770)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(277, 42)
+        Me.Label16.TabIndex = 113
+        Me.Label16.Text = "2nd HALF POSSESSION"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Me.Label15.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label15.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(1272, 670)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(277, 42)
+        Me.Label15.TabIndex = 112
+        Me.Label15.Text = "1st HALF POSSESSION"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label14
+        '
+        Me.Label14.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label14.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(1272, 430)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(277, 42)
+        Me.Label14.TabIndex = 111
+        Me.Label14.Text = "2nd HALF TIME IN PLAY"
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label11
+        '
+        Me.Label11.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label11.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(1272, 330)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(277, 42)
+        Me.Label11.TabIndex = 110
+        Me.Label11.Text = "1st HALF TIME IN PLAY"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'lablAwayScorers
         '
         Me.lablAwayScorers.BackColor = System.Drawing.Color.Black
-        Me.lablAwayScorers.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayScorers.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayScorers.ForeColor = System.Drawing.Color.White
-        Me.lablAwayScorers.Location = New System.Drawing.Point(1556, 76)
+        Me.lablAwayScorers.Location = New System.Drawing.Point(1554, 76)
         Me.lablAwayScorers.Name = "lablAwayScorers"
-        Me.lablAwayScorers.Size = New System.Drawing.Size(339, 440)
+        Me.lablAwayScorers.Size = New System.Drawing.Size(340, 440)
         Me.lablAwayScorers.TabIndex = 109
         Me.lablAwayScorers.Text = "John SMITH 1-08 (0-05f)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "William FORSYTH-SMYTH 0-23" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.lablAwayScorers.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -469,27 +557,26 @@ Partial Class Form1
         'lablHomeScorers
         '
         Me.lablHomeScorers.BackColor = System.Drawing.Color.Black
-        Me.lablHomeScorers.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeScorers.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomeScorers.ForeColor = System.Drawing.Color.White
-        Me.lablHomeScorers.Location = New System.Drawing.Point(927, 76)
+        Me.lablHomeScorers.Location = New System.Drawing.Point(926, 76)
         Me.lablHomeScorers.Name = "lablHomeScorers"
-        Me.lablHomeScorers.Size = New System.Drawing.Size(339, 440)
+        Me.lablHomeScorers.Size = New System.Drawing.Size(340, 440)
         Me.lablHomeScorers.TabIndex = 108
         Me.lablHomeScorers.Text = "John SMITH 1-08 (0-05f)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "William FORSYTH-SMYTH 0-23" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.lablHomeScorers.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label6
+        'lablHomePossessionsHeader
         '
-        Me.Label6.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(925, 589)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(156, 42)
-        Me.Label6.TabIndex = 97
-        Me.Label6.Text = "2nd HALF"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label6.Visible = False
+        Me.lablHomePossessionsHeader.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablHomePossessionsHeader.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomePossessionsHeader.ForeColor = System.Drawing.Color.Black
+        Me.lablHomePossessionsHeader.Location = New System.Drawing.Point(926, 570)
+        Me.lablHomePossessionsHeader.Name = "lablHomePossessionsHeader"
+        Me.lablHomePossessionsHeader.Size = New System.Drawing.Size(340, 25)
+        Me.lablHomePossessionsHeader.TabIndex = 97
+        Me.lablHomePossessionsHeader.Text = "TOP POSSESSIONS"
+        Me.lablHomePossessionsHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lablTimeInPlay2
         '
@@ -1625,7 +1712,7 @@ Partial Class Form1
         Me.lablAwayTeam.BackColor = System.Drawing.Color.Gainsboro
         Me.lablAwayTeam.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayTeam.ForeColor = System.Drawing.Color.White
-        Me.lablAwayTeam.Location = New System.Drawing.Point(1555, 24)
+        Me.lablAwayTeam.Location = New System.Drawing.Point(1554, 24)
         Me.lablAwayTeam.Name = "lablAwayTeam"
         Me.lablAwayTeam.Size = New System.Drawing.Size(340, 42)
         Me.lablAwayTeam.TabIndex = 1
@@ -1637,9 +1724,9 @@ Partial Class Form1
         Me.lablHomeTeam.BackColor = System.Drawing.Color.Gainsboro
         Me.lablHomeTeam.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomeTeam.ForeColor = System.Drawing.Color.White
-        Me.lablHomeTeam.Location = New System.Drawing.Point(921, 24)
+        Me.lablHomeTeam.Location = New System.Drawing.Point(926, 24)
         Me.lablHomeTeam.Name = "lablHomeTeam"
-        Me.lablHomeTeam.Size = New System.Drawing.Size(345, 42)
+        Me.lablHomeTeam.Size = New System.Drawing.Size(340, 42)
         Me.lablHomeTeam.TabIndex = 0
         Me.lablHomeTeam.Text = "Label1"
         Me.lablHomeTeam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1667,54 +1754,6 @@ Partial Class Form1
         Me.lablHomeTeam2.TabIndex = 64
         Me.lablHomeTeam2.Text = "TEAM NAME"
         Me.lablHomeTeam2.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label11
-        '
-        Me.Label11.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label11.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(1272, 330)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(277, 42)
-        Me.Label11.TabIndex = 110
-        Me.Label11.Text = "1st HALF TIME IN PLAY"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label14
-        '
-        Me.Label14.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label14.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(1272, 430)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(277, 42)
-        Me.Label14.TabIndex = 111
-        Me.Label14.Text = "2nd HALF TIME IN PLAY"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label15
-        '
-        Me.Label15.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label15.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(1272, 670)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(277, 42)
-        Me.Label15.TabIndex = 112
-        Me.Label15.Text = "1st HALF POSSESSION"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label16
-        '
-        Me.Label16.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label16.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Black
-        Me.Label16.Location = New System.Drawing.Point(1272, 770)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(277, 42)
-        Me.Label16.TabIndex = 113
-        Me.Label16.Text = "2nd HALF POSSESSION"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Form1
         '
@@ -1855,7 +1894,7 @@ Partial Class Form1
     Friend WithEvents lablActionAreaC2 As System.Windows.Forms.Label
     Friend WithEvents lablActionAreaB2 As System.Windows.Forms.Label
     Friend WithEvents lablActionAreaA2 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lablHomePossessionsHeader As System.Windows.Forms.Label
     Friend WithEvents lablTimeInPlay2 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -1865,5 +1904,8 @@ Partial Class Form1
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents lablAwayPossessions As System.Windows.Forms.Label
+    Friend WithEvents lablAwayPossessionsHeader As System.Windows.Forms.Label
+    Friend WithEvents lablHomePossessions As System.Windows.Forms.Label
 
 End Class
