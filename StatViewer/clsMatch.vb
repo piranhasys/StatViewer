@@ -37,6 +37,28 @@
     Private strMatchTimeTotal As String = ""
     Private strHomeScorers As String = ""
     Private strAwayScorers As String = ""
+    Private strHomePossessions As String = ""
+    Private strAwayPossessions As String = ""
+    Public Property AwayPossessions() As String
+        Get
+            Return strAwayPossessions
+        End Get
+        Set(ByVal value As String)
+            strAwayPossessions = value
+        End Set
+    End Property
+
+
+    Public Property HomePossessions() As String
+        Get
+            Return strHomePossessions
+        End Get
+        Set(ByVal value As String)
+            strHomePossessions = value
+        End Set
+    End Property
+
+
     Public Property AwayScorers() As String
         Get
             Return strAwayScorers
@@ -394,6 +416,7 @@
     End Property
     ReadOnly Property HomeScore As String
         Get
+            'total points: 2-9=15
             If strHomeScoreline.Contains("-") Then
                 Dim split As String() = strHomeScoreline.Split("-")
                 Return ((Val(split(0)) * 3) + Val(split(1))).ToString
@@ -404,9 +427,32 @@
     End Property
     ReadOnly Property AwayScore As String
         Get
+            'total points: 2-9=15
             If strAwayScoreline.Contains("-") Then
                 Dim split As String() = strAwayScoreline.Split("-")
                 Return ((Val(split(0)) * 3) + Val(split(1))).ToString
+            Else
+                Return "0"
+            End If
+        End Get
+    End Property
+    ReadOnly Property HomeScores As String
+        Get
+            'number of scores: 2-9=11
+            If strHomeScoreline.Contains("-") Then
+                Dim split As String() = strHomeScoreline.Split("-")
+                Return (Val(split(0)) + Val(split(1))).ToString
+            Else
+                Return "0"
+            End If
+        End Get
+    End Property
+    ReadOnly Property AwayScores As String
+        Get
+            'number of scores: 2-9=11
+            If strAwayScoreline.Contains("-") Then
+                Dim split As String() = strAwayScoreline.Split("-")
+                Return (Val(split(0)) + Val(split(1))).ToString
             Else
                 Return "0"
             End If
