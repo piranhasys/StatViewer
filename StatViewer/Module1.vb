@@ -20,6 +20,7 @@
         RedCards = 18
         Hooks = 5
         Blocks = 6
+        SubsUsed = 35
 
         'FreeTakenNotUsed = 0
         'Kickouts = 1

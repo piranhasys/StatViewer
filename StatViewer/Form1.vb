@@ -463,13 +463,18 @@ Public Class Form1
                                         RBTeamStats(incStat).AwayValue = Val(split(incStat))
                                     Next
                                 End If
-                                AssignRBStats()
                                 If dataArray.GetUpperBound(0) > 5 Then
                                     'contains scorers data
                                     thisMatch.HomeScorers = dataArray(5)
                                     thisMatch.AwayScorers = dataArray(6)
                                 End If
+                                If dataArray.GetUpperBound(0) > 7 Then
+                                    'subs used
+                                    RBTeamStats(35).HomeValue = Val(dataArray(7))
+                                    RBTeamStats(35).AwayValue = Val(dataArray(8))
+                                End If
 
+                                AssignRBStats()
                                 ShowRTETeamData()
                             End If
                         Case "MATCHFACTS"
@@ -598,8 +603,8 @@ Public Class Form1
         thisMatch.Stat(SVFStatIndex.Yellows).AwayNum = (RBTeamStats(RBTeamStatIndex.YellowCards).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.Reds).HomeNum = (RBTeamStats(RBTeamStatIndex.RedCards).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.Reds).AwayNum = (RBTeamStats(RBTeamStatIndex.RedCards).AwayValue).ToString
-        'thisMatch.Stat(SVFStatIndex.SubsMade).HomeNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).HomeValue).ToString
-        'thisMatch.Stat(SVFStatIndex.SubsMade).AwayNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.SubsMade).HomeNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.SubsMade).AwayNum = (RBTeamStats(RBTeamStatIndex.SubsUsed).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.TurnoversWon).HomeNum = (RBTeamStats(RBTeamStatIndex.TurnoversWon).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.TurnoversWon).AwayNum = (RBTeamStats(RBTeamStatIndex.TurnoversWon).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.HandPasses).HomeNum = (RBTeamStats(RBTeamStatIndex.HandPasses).HomeValue).ToString
