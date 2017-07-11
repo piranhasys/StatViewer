@@ -156,8 +156,19 @@ Partial Class Form1
         Me.lablHomeTeam = New System.Windows.Forms.Label()
         Me.lablAwayTeam2 = New System.Windows.Forms.Label()
         Me.lablHomeTeam2 = New System.Windows.Forms.Label()
+        Me.panelStar6 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lablStar6TeamHome = New System.Windows.Forms.Label()
+        Me.lablStar6TeamAway = New System.Windows.Forms.Label()
+        Me.lablStar6MatchClock = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
+        Me.panelStar6.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -1755,22 +1766,130 @@ Partial Class Form1
         Me.lablHomeTeam2.Text = "TEAM NAME"
         Me.lablHomeTeam2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'panelStar6
+        '
+        Me.panelStar6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panelStar6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.panelStar6.Controls.Add(Me.Label17)
+        Me.panelStar6.Controls.Add(Me.Label6)
+        Me.panelStar6.Controls.Add(Me.PictureBox2)
+        Me.panelStar6.Controls.Add(Me.lablStar6MatchClock)
+        Me.panelStar6.Controls.Add(Me.lablStar6TeamAway)
+        Me.panelStar6.Controls.Add(Me.lablStar6TeamHome)
+        Me.panelStar6.Controls.Add(Me.PictureBox1)
+        Me.panelStar6.Location = New System.Drawing.Point(0, 0)
+        Me.panelStar6.Name = "panelStar6"
+        Me.panelStar6.Size = New System.Drawing.Size(1920, 1080)
+        Me.panelStar6.TabIndex = 3
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(7, 140)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1536, 48)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
+        '
+        'lablStar6TeamHome
+        '
+        Me.lablStar6TeamHome.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lablStar6TeamHome.Font = New System.Drawing.Font("FS Joey", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStar6TeamHome.ForeColor = System.Drawing.Color.White
+        Me.lablStar6TeamHome.Location = New System.Drawing.Point(116, 132)
+        Me.lablStar6TeamHome.Name = "lablStar6TeamHome"
+        Me.lablStar6TeamHome.Size = New System.Drawing.Size(546, 52)
+        Me.lablStar6TeamHome.TabIndex = 7
+        Me.lablStar6TeamHome.Text = " "
+        Me.lablStar6TeamHome.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.lablStar6TeamHome.Visible = False
+        '
+        'lablStar6TeamAway
+        '
+        Me.lablStar6TeamAway.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lablStar6TeamAway.Font = New System.Drawing.Font("FS Joey", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStar6TeamAway.ForeColor = System.Drawing.Color.White
+        Me.lablStar6TeamAway.Location = New System.Drawing.Point(895, 133)
+        Me.lablStar6TeamAway.Name = "lablStar6TeamAway"
+        Me.lablStar6TeamAway.Size = New System.Drawing.Size(542, 52)
+        Me.lablStar6TeamAway.TabIndex = 8
+        Me.lablStar6TeamAway.Text = " "
+        Me.lablStar6TeamAway.Visible = False
+        '
+        'lablStar6MatchClock
+        '
+        Me.lablStar6MatchClock.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStar6MatchClock.Font = New System.Drawing.Font("FS Joey", 60.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStar6MatchClock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.lablStar6MatchClock.Location = New System.Drawing.Point(0, 0)
+        Me.lablStar6MatchClock.Name = "lablStar6MatchClock"
+        Me.lablStar6MatchClock.Size = New System.Drawing.Size(256, 96)
+        Me.lablStar6MatchClock.TabIndex = 9
+        Me.lablStar6MatchClock.Text = "00:00"
+        Me.lablStar6MatchClock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(22, 223)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(1536, 48)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 10
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label6.Font = New System.Drawing.Font("FS Joey", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(666, 136)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(32, 52)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = " "
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label6.Visible = False
+        '
+        'Label17
+        '
+        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label17.Font = New System.Drawing.Font("FS Joey", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
+        Me.Label17.Location = New System.Drawing.Point(852, 136)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(32, 52)
+        Me.Label17.TabIndex = 12
+        Me.Label17.Text = " "
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label17.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.panelStar6)
         Me.Controls.Add(Me.PanelRTE)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Piranha StatViewer"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.PanelRTE.ResumeLayout(False)
+        Me.panelStar6.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1907,5 +2026,13 @@ Partial Class Form1
     Friend WithEvents lablAwayPossessions As System.Windows.Forms.Label
     Friend WithEvents lablAwayPossessionsHeader As System.Windows.Forms.Label
     Friend WithEvents lablHomePossessions As System.Windows.Forms.Label
+    Friend WithEvents panelStar6 As System.Windows.Forms.Panel
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents lablStar6TeamAway As System.Windows.Forms.Label
+    Friend WithEvents lablStar6TeamHome As System.Windows.Forms.Label
+    Friend WithEvents lablStar6MatchClock As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
 
 End Class

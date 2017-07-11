@@ -58,11 +58,23 @@ Public Class Form1
     Sub SetupDisplay()
         Select Case displayStyle
             Case 1
+                panelStar6.Visible = False
+                PanelRTE.Visible = True
                 PanelRTE.BringToFront()
                 LoadRTEStaticData()
                 ShowRTEStaticData()
                 ShowRTETeamData()
+            Case 2
+                panelStar6.Visible = True
+                PanelRTE.Visible = False
+                panelStar6.BringToFront()
+                Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+                Me.StartPosition = FormStartPosition.Manual
+                Me.Location = New Point(0, 0)
+                Me.WindowState = FormWindowState.Maximized
             Case Else
+                panelStar6.Visible = False
+                PanelRTE.Visible = False
                 PanelRTE.SendToBack()
                 RepositionBrowser()
         End Select
@@ -110,6 +122,16 @@ Public Class Form1
             ' MessageBox.Show(ex.ToString, "Error reading stat names")
         End Try
 
+    End Sub
+    Delegate Sub ShowStar6StaticDataCallback()
+    Sub ShowStar6StaticData()
+        If lablHomeTeam.InvokeRequired Then
+            Dim d As New ShowStar6StaticDataCallback(AddressOf ShowStar6StaticData)
+            Me.Invoke(d, New Object() {})
+        Else
+            lablStar6TeamHome.Text = thisMatch.HomeTeamName
+            lablStar6TeamAway.Text = thisMatch.AwayTeamName
+        End If
     End Sub
     Delegate Sub ShowRTEStaticDataCallback()
     Sub ShowRTEStaticData()
@@ -479,8 +501,15 @@ Public Class Form1
                             End If
                         Case "MATCHFACTS"
                             'MATCHDATA|MATCHFACTS|DATA|KILDARE^LAOIS^10^POSSESSION^^^KICK PASSES^1^0^HAND PASSES^0^0^KICKOUTS WON^0^0^INSIDE 45^0^0^SCORES / SHOTS^1 / 0^0 / 0^WIDES^0^0^FREES CONCEDED^0^0^YELLOW CARDS^0^0^RED CARDS^0^0^TIME IN PLAY: 00:00 OUT OF 00:00^|DONNELLAN 2-1^O'GRADY 0-3^MURNAGHAN 0-1^|R. KEHOE 1-2^M. TIMMONS 0-4^S. ATTRIDE 1-0^|
-                            AssignRBSkyData(strMessage)
-                            ShowSkyTeamData()
+                            Select Case displayStyle
+                                Case 2
+                                    'Star6
+                                    AssignRBStar6Data(strMessage)
+                                    ShowStar6StaticData()
+                                Case Else
+                                    AssignRBSkyData(strMessage)
+                                    ShowSkyTeamData()
+                            End Select
                         Case "POSSESSION"
                             If dataArray.GetUpperBound(0) > 5 Then
                                 'old RB doesn't send
@@ -577,6 +606,20 @@ Public Class Form1
         End If
 
     End Sub
+    Sub AssignRBStar6Data(dataString As String)
+        'already ordered and labelled
+        'MATCHDATA|MATCHFACTS|DATA|KILDARE^LAOIS^10^POSSESSION^^^KICK PASSES^1^0^HAND PASSES^0^0^KICKOUTS WON^0^0^INSIDE 45^0^0^SCORES / SHOTS^1 / 0^0 / 0^WIDES^0^0^FREES CONCEDED^0^0^YELLOW CARDS^0^0^RED CARDS^0^0^TIME IN PLAY: 00:00 OUT OF 00:00^|DONNELLAN 2-1^O'GRADY 0-3^MURNAGHAN 0-1^|R. KEHOE 1-2^M. TIMMONS 0-4^S. ATTRIDE 1-0^|
+        If dataString.Contains("^") Then
+            Dim baseIndex As Integer = 0
+            Dim splitMain As String() = dataString.Split("|")
+            If splitMain(3).Contains("^") Then
+                Dim split As String() = splitMain(3).Split("^")
+                thisMatch.HomeTeamName = split(0).ToUpper
+                thisMatch.AwayTeamName = split(1).ToUpper
+            End If
+        End If
+
+    End Sub
     Sub AssignRBStats()
         'RBStats are in RB order
         thisMatch.Stat(SVFStatIndex.Wides).HomeNum = RBTeamStats(RBTeamStatIndex.Wides).HomeValue.ToString
@@ -621,6 +664,7 @@ Public Class Form1
             Me.Invoke(d, New Object() {})
         Else
             lablMatchClock.Text = thisMatch.MatchClock
+            lablStar6MatchClock.Text = thisMatch.MatchClock
             lablHomeTimeSinceScore.Text = thisMatch.HomeTimeSinceScore
             lablAwayTimeSinceScore.Text = thisMatch.AwayTimeSinceScore
         End If
@@ -838,5 +882,16 @@ Public Class Form1
 
     Private Sub lablTimeInPlay_Click(sender As Object, e As EventArgs) Handles lablTimeInPlayTotal.Click
 
+    End Sub
+
+    Private Sub panelStar6_Paint(sender As Object, e As PaintEventArgs) Handles panelStar6.Paint
+    End Sub
+
+    Private Sub panelStar6_Click(sender As Object, e As EventArgs) Handles panelStar6.Click
+        Me.Close()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Me.Close()
     End Sub
 End Class
