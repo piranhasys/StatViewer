@@ -21,6 +21,7 @@
         Hooks = 5
         Blocks = 6
         SubsUsed = 35
+        Marks = 36
 
         'FreeTakenNotUsed = 0
         'Kickouts = 1
@@ -102,6 +103,7 @@
         HandPasses = 15
         FootPasses = 16
         FortyFives = 17
+        Marks = 18
     End Enum
     Public RBTeamStats(50) As clsRBTeamStat 'spare
 End Module

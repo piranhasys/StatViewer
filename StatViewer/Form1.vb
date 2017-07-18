@@ -96,8 +96,8 @@ Public Class Form1
                 inputFile = System.IO.File.OpenText(strFilename)
                 thisMatch.HomeTeamName = inputFile.ReadLine.ToUpper
                 thisMatch.AwayTeamName = inputFile.ReadLine.ToUpper
-                thisMatch.HomeScoreline = inputFile.ReadLine
-                thisMatch.AwayScoreline = inputFile.ReadLine
+                Dim dummy1 As String = inputFile.ReadLine   'score. don't read, only take live
+                Dim dummy2 As String = inputFile.ReadLine   'score
                 thisMatch.HomeBackColour = Color.FromArgb(Val(inputFile.ReadLine))
                 thisMatch.HomeTextColour = Color.FromArgb(Val(inputFile.ReadLine))
                 thisMatch.AwayBackColour = Color.FromArgb(Val(inputFile.ReadLine))
@@ -495,6 +495,11 @@ Public Class Form1
                                     RBTeamStats(35).HomeValue = Val(dataArray(7))
                                     RBTeamStats(35).AwayValue = Val(dataArray(8))
                                 End If
+                                If dataArray.GetUpperBound(0) > 9 Then
+                                    'marks
+                                    RBTeamStats(36).HomeValue = Val(dataArray(9))
+                                    RBTeamStats(36).AwayValue = Val(dataArray(10))
+                                End If
 
                                 AssignRBStats()
                                 ShowRTETeamData()
@@ -656,6 +661,8 @@ Public Class Form1
         thisMatch.Stat(SVFStatIndex.FootPasses).AwayNum = (RBTeamStats(RBTeamStatIndex.FootPasses).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.FortyFives).HomeNum = (RBTeamStats(RBTeamStatIndex.FortyFive).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.FortyFives).AwayNum = (RBTeamStats(RBTeamStatIndex.FortyFive).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.Marks).HomeNum = (RBTeamStats(RBTeamStatIndex.Marks).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.Marks).AwayNum = (RBTeamStats(RBTeamStatIndex.Marks).AwayValue).ToString
     End Sub
     Delegate Sub ShowMatchTimeCallback()
     Sub ShowMatchTime()
