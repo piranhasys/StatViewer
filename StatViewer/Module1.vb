@@ -1,4 +1,7 @@
 ﻿Module Module1
+    Public Config As New clsConfig
+    Public RemoteData As New clsRemoteData
+
     Enum RBTeamStatIndex As Integer
         Kickouts = 1
         OwnKickoutsWon = 2

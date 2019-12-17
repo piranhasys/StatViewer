@@ -20,7 +20,7 @@ Public Class Form1
     Private Const OLECMDID_OPTICAL_ZOOM As Integer = 63
     Private Const OLECMDEXECOPT_DONTPROMPTUSER As Integer = 2
     Private fontSize As Integer = 0
-    Private displayStyle As Integer = 0 '0=web, 1=RTE GAA
+    Private displayStyle As Integer = 0 '0=web, 1=RTE GAA, 2=Star6, 3=SkySuperLeague
     Private left As Integer = 0
     Private top As Integer = 0
     Private lastPageName As String = ""
@@ -38,12 +38,23 @@ Public Class Form1
         For incStat As Integer = 0 To RBTeamStats.GetUpperBound(0)
             RBTeamStats(incStat) = New clsRBTeamStat
         Next
+        Config.ReadSetup()
+        If Config.FileExists Then
+            Select Case Config.UserName
+                Case "SKYSUPERLEAGUE"
+                    displayStyle = 3
+                    My.Settings.ServerPort = Config.ServerPort
+                    My.Settings.ServerIPAddress = Config.ServerAddress
+            End Select
+        Else
+            'default leagacy
+            displayStyle = My.Settings.DisplayType
+        End If
         dtLastPAData = Now.AddDays(-1)
         timerCheckConnections.Start()
         fontSize = My.Settings.FontSize
         left = My.Settings.Left
         top = My.Settings.Top
-        displayStyle = My.Settings.DisplayType
         Select Case displayStyle
             Case 0
             Case Else
@@ -51,7 +62,6 @@ Public Class Form1
                     thisMatch.Stat(incStat) = New clsSVStat
                 Next
         End Select
-        ' WebBrowser1.ScriptErrorsSuppressed = True
         SetupDisplay()
 
     End Sub
@@ -60,6 +70,7 @@ Public Class Form1
             Case 1
                 panelStar6.Visible = False
                 PanelRTE.Visible = True
+                PanelSL.Visible = False
                 PanelRTE.BringToFront()
                 LoadRTEStaticData()
                 ShowRTEStaticData()
@@ -67,14 +78,21 @@ Public Class Form1
             Case 2
                 panelStar6.Visible = True
                 PanelRTE.Visible = False
+                PanelSL.Visible = False
                 panelStar6.BringToFront()
                 Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
                 Me.StartPosition = FormStartPosition.Manual
                 Me.Location = New Point(0, 0)
                 Me.WindowState = FormWindowState.Maximized
+            Case 3
+                'Super League
+                PanelSL.Visible = True
+                PanelSL.bringtofront
+
             Case Else
                 panelStar6.Visible = False
                 PanelRTE.Visible = False
+                PanelSL.Visible = False
                 PanelRTE.SendToBack()
                 RepositionBrowser()
         End Select
@@ -374,6 +392,7 @@ Public Class Form1
                 Dim writer As New IO.StreamWriter(client.GetStream)
                 writer.Write(data & vbCr)
                 writer.Flush()
+                Console.WriteLine("Sent: " + data)
             Catch ex As Exception
             End Try
             'ShowAction(data)
@@ -403,7 +422,7 @@ Public Class Form1
             bConnectedToServer = False
         End Try
         If bConnectedToServer = True Then
-            SendData("CONNECT|" & My.Computer.Name & "-StatViewer" & "|Network|")
+            SendData("CONNECT|" & My.Computer.Name & "-StatViewer" & "|Network||StatViewer|")
         End If
     End Sub
 
@@ -419,6 +438,12 @@ Public Class Form1
             dataArray = strMessage.Split(Chr(124))
             Console.WriteLine(strMessage)
             Select Case dataArray(0)
+                Case "CONNECTED"
+                    Select Case displayStyle
+                        Case 3
+                            'SL
+                            SendData("STATVIEWER|REQUESTLIVEMATCHDATA|")
+                    End Select
                 Case "HEARTBEAT"
                     Select Case dataArray(1)
                         Case "FTP"
@@ -443,6 +468,16 @@ Public Class Form1
                         Case "REFRESH"
                             ReloadPage()
                     End Select
+                Case "SPORTCLOCK"
+                    'SPORTCLOCK|MATCHTIME|49233|1|38:01|01:59|RUNNING|
+                    Select Case Config.UserName
+                        Case "SKYSUPERLEAGUE"
+                            Dim iMatchID As Integer = Val(dataArray(2))
+                            RemoteData.CurrentMatchPeriod = Val(dataArray(3))
+                            RemoteData.MatchClockTime = dataArray(5)  'counting up
+                            RemoteData.MatchClockRunning = (dataArray(6) = "RUNNING")
+                            ShowSuperLeagueData()
+                    End Select
                 Case "MATCHDATA"
                     Select Case dataArray(1)
                         Case "LIVEMATCHDETAILS"
@@ -451,13 +486,24 @@ Public Class Form1
                             ShowRTEStaticData()
                         Case "SCOREUPDATE"
                             If dataArray.GetUpperBound(0) > 5 Then
-                                Dim scoreData As String = dataArray(6)
-                                If scoreData.Contains("^") Then
-                                    Dim split() As String = scoreData.Split("^")
-                                    thisMatch.HomeScoreline = split(0)
-                                    thisMatch.AwayScoreline = split(1)
-                                End If
-                                ShowRTEScoreData()
+                                Select Case Config.UserName
+                                    Case "SKYSUPERLEAGUE"
+                                        Dim scoreData As String = dataArray(6)
+                                        If scoreData.Contains("^") Then
+                                            Dim split() As String = scoreData.Split("^")
+                                            thisMatch.HomeScoreline = split(0)
+                                            thisMatch.AwayScoreline = split(1)
+                                            ShowSuperLeagueData()
+                                        End If
+                                    Case Else
+                                        Dim scoreData As String = dataArray(6)
+                                        If scoreData.Contains("^") Then
+                                            Dim split() As String = scoreData.Split("^")
+                                            thisMatch.HomeScoreline = split(0)
+                                            thisMatch.AwayScoreline = split(1)
+                                        End If
+                                        ShowRTEScoreData()
+                                End Select
                             End If
                         Case "LOCALMATCHTIME"
                             thisMatch.MatchClock = dataArray(4) '2 = MatchID, 3=period
@@ -511,10 +557,14 @@ Public Class Form1
                                     'Star6
                                     AssignRBStar6Data(strMessage)
                                     ShowStar6StaticData()
+                                Case 3  'SL
+                                    AssignRBSLData(strMessage)
+                                    ShowSuperLeagueData()
                                 Case Else
                                     AssignRBSkyData(strMessage)
                                     ShowSkyTeamData()
                             End Select
+
                         Case "POSSESSION"
                             If dataArray.GetUpperBound(0) > 5 Then
                                 'old RB doesn't send
@@ -590,7 +640,7 @@ Public Class Form1
             Dim splitMain As String() = dataString.Split("|")
             If splitMain(3).Contains("^") Then
                 Dim split As String() = splitMain(3).Split("^")
-                For incstat As Integer = 1 To 10
+                For incstat As Integer = 1 To 11    'WAS 10, added wides
                     baseIndex = (incstat * 3) + 3
                     thisMatch.Stat(incstat).Name = split(baseIndex)
                     thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
@@ -607,6 +657,49 @@ Public Class Form1
                 thisMatch.HomePossessions = splitMain(6)
                 thisMatch.AwayPossessions = splitMain(7)
             End If
+
+        End If
+
+    End Sub
+    Sub AssignRBSLData(dataString As String)
+        'already ordered and labelled
+        'MATCHDATA|MATCHFACTS|DATA|DRAGONS^TIGERS^1^0|POSSESSION^^^PENALTIES^0^0^GL DROPOUTS^0^0^TACKLES^0^0^MISSED TACKLES^5^2^BREAKS^0^0^HANDLING ERRORS^0^1^OFFLOADS^5^2^RUNS FROM DUMMY HALF^1^0^CARRIES^0^0^COMPLETED SETS^0^0^COMPLETION RATE^0%^0%^TOTAL METRES^0^0^AVERAGE METRES^0^0^MINS IN OPP HALF^0^0^|ESCARE  8^DUPORT  8^OLDFIELD  4^POMEROY  2^  ^  ^  ^  ^  ^  ^|Webster  4^Lynch  4^Cook  1^  ^  ^  ^  ^  ^  ^  ^|
+
+        If dataString.Contains("^") Then
+            Dim baseIndex As Integer = 0
+            Dim splitMain As String() = dataString.Split("|")
+            If splitMain(3).Contains("^") Then
+                Dim split As String() = splitMain(3).Split("^")
+                thisMatch.HomeTeamName = split(0)
+                thisMatch.AwayTeamName = split(1)
+                thisMatch.HomeScoreline = split(2)
+                thisMatch.AwayScoreline = split(3)
+                'For incstat As Integer = 1 To 11    'WAS 10, added wides
+                '    baseIndex = (incstat * 3) + 3
+                '    thisMatch.Stat(incstat).Name = split(baseIndex)
+                '    thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
+                '    thisMatch.Stat(incstat).AwayNum = split(baseIndex + 2)
+                'Next
+            End If
+            If splitMain(4).Contains("^") Then
+                Dim split As String() = splitMain(4).Split("^")
+                For incstat As Integer = 1 To 17
+                    baseIndex = (incstat * 3) - 3
+                    thisMatch.Stat(incstat).Name = split(baseIndex)
+                    thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
+                    thisMatch.Stat(incstat).AwayNum = split(baseIndex + 2)
+                Next
+            End If
+            If splitMain.GetUpperBound(0) > 4 Then
+                'contains scorers data
+                thisMatch.HomeScorers = splitMain(5)
+                thisMatch.AwayScorers = splitMain(6)
+            End If
+            'If splitMain.GetUpperBound(0) > 6 Then
+            '    'contains scorers data
+            '    thisMatch.HomePossessions = splitMain(6)
+            '    thisMatch.AwayPossessions = splitMain(7)
+            'End If
 
         End If
 
@@ -676,6 +769,109 @@ Public Class Form1
             lablAwayTimeSinceScore.Text = thisMatch.AwayTimeSinceScore
         End If
     End Sub
+    Delegate Sub ShowSuperLeagueDataCallback()
+    Sub ShowSuperLeagueData()
+        If lablMatchClockSL.InvokeRequired Then
+            Dim d As New ShowSuperLeagueDataCallback(AddressOf ShowSuperLeagueData)
+            Me.Invoke(d, New Object() {})
+        Else
+            lablRemoteHomePossessionSL.Text = RemoteData.HomePossession
+            lablRemoteAwayPossessionSL.Text = RemoteData.AwayPossession
+            Select Case RemoteData.CurrentPossessionTeam
+                Case 1
+                    lablRemoteHomePossessionSL.BackColor = Color.LightGreen
+                    lablRemoteAwayPossessionSL.BackColor = Color.White
+                Case 2
+                    lablRemoteHomePossessionSL.BackColor = Color.White
+                    lablRemoteAwayPossessionSL.BackColor = Color.LightGreen
+                Case Else
+                    lablRemoteHomePossessionSL.BackColor = Color.White
+                    lablRemoteAwayPossessionSL.BackColor = Color.White
+            End Select
+            lablMatchClockSL.Text = RemoteData.MatchClockTime
+            lablMatchClockSL.BackColor = If(RemoteData.MatchClockRunning, Color.LightGreen, Color.LightPink)
+            Select Case RemoteData.CurrentMatchPeriod
+                Case 1
+                    lablPeriodSL.Text = "1st HALF"
+                Case 2
+                    lablPeriodSL.Text = "2nd HALF"
+                Case 3
+                    lablPeriodSL.Text = "ET 1st HALF"
+                Case 4
+                    lablPeriodSL.Text = "ET 2nd HALF"
+                Case Else
+                    lablPeriodSL.Text = "Pre Match"
+            End Select
+
+            'MATCHFACTS data:
+            lablHomeNameSL.Text = thisMatch.HomeTeamName
+            lablAwayNameSL.Text = thisMatch.AwayTeamName
+            lablHomeNameSL2.Text = thisMatch.HomeTeamName
+            lablAwayNameSL2.Text = thisMatch.AwayTeamName
+
+            lablHomeScoreSL.Text = thisMatch.HomeScoreline
+            lablAwayScoreSL.Text = thisMatch.AwayScoreline
+
+            lablStatNameSL01.Text = thisMatch.Stat(1).Name
+            lablStatNameSL02.Text = thisMatch.Stat(2).Name
+            lablStatNameSL03.Text = thisMatch.Stat(3).Name
+            lablStatNameSL04.Text = thisMatch.Stat(4).Name
+            lablStatNameSL05.Text = thisMatch.Stat(5).Name
+            lablStatNameSL06.Text = thisMatch.Stat(6).Name
+            lablStatNameSL07.Text = thisMatch.Stat(7).Name
+            lablStatNameSL08.Text = thisMatch.Stat(8).Name
+            lablStatNameSL09.Text = thisMatch.Stat(9).Name
+            lablStatNameSL10.Text = thisMatch.Stat(10).Name
+            lablStatNameSL11.Text = thisMatch.Stat(11).Name
+            lablStatNameSL12.Text = thisMatch.Stat(12).Name
+            lablStatNameSL13.Text = thisMatch.Stat(13).Name
+            lablStatNameSL14.Text = thisMatch.Stat(14).Name
+            lablStatNameSL15.Text = thisMatch.Stat(15).Name
+            lablStatNameSL16.Text = thisMatch.Stat(16).Name
+            lablStatNameSL17.Text = thisMatch.Stat(17).Name
+
+            lablStatHomeSL01.Text = thisMatch.Stat(1).HomeNum
+            lablStatHomeSL02.Text = thisMatch.Stat(2).HomeNum
+            lablStatHomeSL03.Text = thisMatch.Stat(3).HomeNum
+            lablStatHomeSL04.Text = thisMatch.Stat(4).HomeNum
+            lablStatHomeSL05.Text = thisMatch.Stat(5).HomeNum
+            lablStatHomeSL06.Text = thisMatch.Stat(6).HomeNum
+            lablStatHomeSL07.Text = thisMatch.Stat(7).HomeNum
+            lablStatHomeSL08.Text = thisMatch.Stat(8).HomeNum
+            lablStatHomeSL09.Text = thisMatch.Stat(9).HomeNum
+            lablStatHomeSL10.Text = thisMatch.Stat(10).HomeNum
+            lablStatHomeSL11.Text = thisMatch.Stat(11).HomeNum
+            lablStatHomeSL12.Text = thisMatch.Stat(12).HomeNum
+            lablStatHomeSL13.Text = thisMatch.Stat(13).HomeNum
+            lablStatHomeSL14.Text = thisMatch.Stat(14).HomeNum
+            lablStatHomeSL15.Text = thisMatch.Stat(15).HomeNum
+            lablStatHomeSL16.Text = thisMatch.Stat(16).HomeNum
+            lablStatHomeSL17.Text = thisMatch.Stat(17).HomeNum
+
+            lablStatAwaySL01.Text = thisMatch.Stat(1).AwayNum
+            lablStatAwaySL02.Text = thisMatch.Stat(2).AwayNum
+            lablStatAwaySL03.Text = thisMatch.Stat(3).AwayNum
+            lablStatAwaySL04.Text = thisMatch.Stat(4).AwayNum
+            lablStatAwaySL05.Text = thisMatch.Stat(5).AwayNum
+            lablStatAwaySL06.Text = thisMatch.Stat(6).AwayNum
+            lablStatAwaySL07.Text = thisMatch.Stat(7).AwayNum
+            lablStatAwaySL08.Text = thisMatch.Stat(8).AwayNum
+            lablStatAwaySL09.Text = thisMatch.Stat(9).AwayNum
+            lablStatAwaySL10.Text = thisMatch.Stat(10).AwayNum
+            lablStatAwaySL11.Text = thisMatch.Stat(11).AwayNum
+            lablStatAwaySL12.Text = thisMatch.Stat(12).AwayNum
+            lablStatAwaySL13.Text = thisMatch.Stat(13).AwayNum
+            lablStatAwaySL14.Text = thisMatch.Stat(14).AwayNum
+            lablStatAwaySL15.Text = thisMatch.Stat(15).AwayNum
+            lablStatAwaySL16.Text = thisMatch.Stat(16).AwayNum
+            lablStatAwaySL17.Text = thisMatch.Stat(17).AwayNum
+
+            lablHomeScorersSL.Text = thisMatch.HomeScorers.Replace("^", vbLf)
+            lablAwayScorersSL.Text = thisMatch.AwayScorers.Replace("^", vbLf)
+
+        End If
+    End Sub
+
     Delegate Sub ShowPossessionCallback()
     Sub ShowPossession()
         If lablMatchClock.InvokeRequired Then
@@ -698,7 +894,7 @@ Public Class Form1
 
             lablTimeInPlay1.Text = thisMatch.TimeInPlayText1
             lablTimeInPlay2.Text = thisMatch.TimeInPlayText2
-            lablTimeInPlayTotal.Text = thisMatch.TimeInplaytextTotal
+            lablTimeInPlayTotal.Text = thisMatch.TimeInPlayTextTotal
 
             lablTimesLevel.Text = thisMatch.TimesLevel
         End If
@@ -900,5 +1096,9 @@ Public Class Form1
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Close()
+    End Sub
+
+    Private Sub panelSL_Paint(sender As Object, e As PaintEventArgs) Handles panelSL.Paint
+
     End Sub
 End Class

@@ -164,11 +164,81 @@ Partial Class Form1
         Me.lablStar6TeamAway = New System.Windows.Forms.Label()
         Me.lablStar6TeamHome = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.panelSL = New System.Windows.Forms.Panel()
+        Me.lablAwayScoreSL = New System.Windows.Forms.Label()
+        Me.lablHomeScoreSL = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.lablPeriodSL = New System.Windows.Forms.Label()
+        Me.lablMatchClockSL = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.lablRemoteAwayPossessionSL = New System.Windows.Forms.Label()
+        Me.lablRemoteHomePossessionSL = New System.Windows.Forms.Label()
+        Me.lablAwayNameSL = New System.Windows.Forms.Label()
+        Me.lablHomeNameSL = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.lablStatAwaySL01 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL01 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL01 = New System.Windows.Forms.Label()
+        Me.lablHomeNameSL2 = New System.Windows.Forms.Label()
+        Me.lablAwayNameSL2 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL02 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL02 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL02 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL03 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL03 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL03 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL04 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL04 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL04 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL05 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL05 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL05 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL09 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL09 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL09 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL08 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL08 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL08 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL07 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL07 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL07 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL06 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL06 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL06 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL13 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL13 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL13 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL12 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL12 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL12 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL11 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL11 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL11 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL10 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL10 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL10 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL16 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL16 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL16 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL15 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL15 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL15 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL14 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL14 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL14 = New System.Windows.Forms.Label()
+        Me.lablStatAwaySL17 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL17 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL17 = New System.Windows.Forms.Label()
+        Me.lablHomeScorersSL = New System.Windows.Forms.Label()
+        Me.lablAwayScorersSL = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.panelStar6.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelSL.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -1784,7 +1854,7 @@ Partial Class Form1
         'Label17
         '
         Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label17.Font = New System.Drawing.Font("FS Joey", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.White
         Me.Label17.Location = New System.Drawing.Point(852, 136)
         Me.Label17.Name = "Label17"
@@ -1797,7 +1867,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Font = New System.Drawing.Font("FS Joey", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(666, 136)
         Me.Label6.Name = "Label6"
@@ -1821,7 +1891,7 @@ Partial Class Form1
         'lablStar6MatchClock
         '
         Me.lablStar6MatchClock.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.lablStar6MatchClock.Font = New System.Drawing.Font("FS Joey", 60.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStar6MatchClock.Font = New System.Drawing.Font("Microsoft Sans Serif", 60.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStar6MatchClock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.lablStar6MatchClock.Location = New System.Drawing.Point(0, 0)
         Me.lablStar6MatchClock.Name = "lablStar6MatchClock"
@@ -1833,7 +1903,7 @@ Partial Class Form1
         'lablStar6TeamAway
         '
         Me.lablStar6TeamAway.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lablStar6TeamAway.Font = New System.Drawing.Font("FS Joey", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStar6TeamAway.Font = New System.Drawing.Font("Microsoft Sans Serif", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStar6TeamAway.ForeColor = System.Drawing.Color.White
         Me.lablStar6TeamAway.Location = New System.Drawing.Point(895, 133)
         Me.lablStar6TeamAway.Name = "lablStar6TeamAway"
@@ -1845,7 +1915,7 @@ Partial Class Form1
         'lablStar6TeamHome
         '
         Me.lablStar6TeamHome.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lablStar6TeamHome.Font = New System.Drawing.Font("FS Joey", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStar6TeamHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 42.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStar6TeamHome.ForeColor = System.Drawing.Color.White
         Me.lablStar6TeamHome.Location = New System.Drawing.Point(116, 132)
         Me.lablStar6TeamHome.Name = "lablStar6TeamHome"
@@ -1866,16 +1936,887 @@ Partial Class Form1
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
         '
+        'panelSL
+        '
+        Me.panelSL.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panelSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.panelSL.Controls.Add(Me.lablAwayScorersSL)
+        Me.panelSL.Controls.Add(Me.lablHomeScorersSL)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL17)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL17)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL17)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL16)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL16)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL16)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL15)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL15)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL15)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL14)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL14)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL14)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL13)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL13)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL13)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL12)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL12)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL12)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL11)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL11)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL11)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL10)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL10)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL10)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL09)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL09)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL09)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL08)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL08)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL08)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL07)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL07)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL07)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL06)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL06)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL06)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL05)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL05)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL05)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL04)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL04)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL04)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL03)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL03)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL03)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL02)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL02)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL02)
+        Me.panelSL.Controls.Add(Me.lablAwayNameSL2)
+        Me.panelSL.Controls.Add(Me.lablHomeNameSL2)
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL01)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL01)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL01)
+        Me.panelSL.Controls.Add(Me.lablAwayScoreSL)
+        Me.panelSL.Controls.Add(Me.lablHomeScoreSL)
+        Me.panelSL.Controls.Add(Me.PictureBox5)
+        Me.panelSL.Controls.Add(Me.lablPeriodSL)
+        Me.panelSL.Controls.Add(Me.lablMatchClockSL)
+        Me.panelSL.Controls.Add(Me.Label19)
+        Me.panelSL.Controls.Add(Me.lablRemoteAwayPossessionSL)
+        Me.panelSL.Controls.Add(Me.lablRemoteHomePossessionSL)
+        Me.panelSL.Controls.Add(Me.lablAwayNameSL)
+        Me.panelSL.Controls.Add(Me.lablHomeNameSL)
+        Me.panelSL.Controls.Add(Me.PictureBox3)
+        Me.panelSL.Location = New System.Drawing.Point(0, 0)
+        Me.panelSL.Name = "panelSL"
+        Me.panelSL.Size = New System.Drawing.Size(1904, 1042)
+        Me.panelSL.TabIndex = 4
+        '
+        'lablAwayScoreSL
+        '
+        Me.lablAwayScoreSL.BackColor = System.Drawing.Color.White
+        Me.lablAwayScoreSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablAwayScoreSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayScoreSL.ForeColor = System.Drawing.Color.Black
+        Me.lablAwayScoreSL.Location = New System.Drawing.Point(1405, 24)
+        Me.lablAwayScoreSL.Name = "lablAwayScoreSL"
+        Me.lablAwayScoreSL.Size = New System.Drawing.Size(70, 36)
+        Me.lablAwayScoreSL.TabIndex = 236
+        Me.lablAwayScoreSL.Text = " "
+        Me.lablAwayScoreSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lablHomeScoreSL
+        '
+        Me.lablHomeScoreSL.BackColor = System.Drawing.Color.White
+        Me.lablHomeScoreSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablHomeScoreSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeScoreSL.ForeColor = System.Drawing.Color.Black
+        Me.lablHomeScoreSL.Location = New System.Drawing.Point(1326, 24)
+        Me.lablHomeScoreSL.Name = "lablHomeScoreSL"
+        Me.lablHomeScoreSL.Size = New System.Drawing.Size(70, 36)
+        Me.lablHomeScoreSL.TabIndex = 235
+        Me.lablHomeScoreSL.Text = " "
+        Me.lablHomeScoreSL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(1071, 646)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(288, 180)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox5.TabIndex = 233
+        Me.PictureBox5.TabStop = False
+        '
+        'lablPeriodSL
+        '
+        Me.lablPeriodSL.BackColor = System.Drawing.Color.White
+        Me.lablPeriodSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablPeriodSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablPeriodSL.ForeColor = System.Drawing.Color.Black
+        Me.lablPeriodSL.Location = New System.Drawing.Point(1326, 67)
+        Me.lablPeriodSL.Name = "lablPeriodSL"
+        Me.lablPeriodSL.Size = New System.Drawing.Size(150, 24)
+        Me.lablPeriodSL.TabIndex = 232
+        Me.lablPeriodSL.Text = " "
+        Me.lablPeriodSL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablMatchClockSL
+        '
+        Me.lablMatchClockSL.BackColor = System.Drawing.Color.White
+        Me.lablMatchClockSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablMatchClockSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablMatchClockSL.ForeColor = System.Drawing.Color.Black
+        Me.lablMatchClockSL.Location = New System.Drawing.Point(1326, 93)
+        Me.lablMatchClockSL.Name = "lablMatchClockSL"
+        Me.lablMatchClockSL.Size = New System.Drawing.Size(150, 44)
+        Me.lablMatchClockSL.TabIndex = 231
+        Me.lablMatchClockSL.Text = "00:00"
+        Me.lablMatchClockSL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label19
+        '
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.White
+        Me.Label19.Location = New System.Drawing.Point(1536, 718)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(304, 20)
+        Me.Label19.TabIndex = 230
+        Me.Label19.Text = "MatchLog Possession"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablRemoteAwayPossessionSL
+        '
+        Me.lablRemoteAwayPossessionSL.BackColor = System.Drawing.Color.White
+        Me.lablRemoteAwayPossessionSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablRemoteAwayPossessionSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablRemoteAwayPossessionSL.ForeColor = System.Drawing.Color.Black
+        Me.lablRemoteAwayPossessionSL.Location = New System.Drawing.Point(1691, 748)
+        Me.lablRemoteAwayPossessionSL.Name = "lablRemoteAwayPossessionSL"
+        Me.lablRemoteAwayPossessionSL.Size = New System.Drawing.Size(150, 36)
+        Me.lablRemoteAwayPossessionSL.TabIndex = 229
+        Me.lablRemoteAwayPossessionSL.Text = "100%"
+        Me.lablRemoteAwayPossessionSL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablRemoteHomePossessionSL
+        '
+        Me.lablRemoteHomePossessionSL.BackColor = System.Drawing.Color.White
+        Me.lablRemoteHomePossessionSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablRemoteHomePossessionSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablRemoteHomePossessionSL.ForeColor = System.Drawing.Color.Black
+        Me.lablRemoteHomePossessionSL.Location = New System.Drawing.Point(1536, 748)
+        Me.lablRemoteHomePossessionSL.Name = "lablRemoteHomePossessionSL"
+        Me.lablRemoteHomePossessionSL.Size = New System.Drawing.Size(150, 36)
+        Me.lablRemoteHomePossessionSL.TabIndex = 228
+        Me.lablRemoteHomePossessionSL.Text = "100%"
+        Me.lablRemoteHomePossessionSL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablAwayNameSL
+        '
+        Me.lablAwayNameSL.BackColor = System.Drawing.Color.White
+        Me.lablAwayNameSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablAwayNameSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayNameSL.ForeColor = System.Drawing.Color.Black
+        Me.lablAwayNameSL.Location = New System.Drawing.Point(1482, 24)
+        Me.lablAwayNameSL.Name = "lablAwayNameSL"
+        Me.lablAwayNameSL.Size = New System.Drawing.Size(340, 36)
+        Me.lablAwayNameSL.TabIndex = 227
+        Me.lablAwayNameSL.Text = " "
+        Me.lablAwayNameSL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lablHomeNameSL
+        '
+        Me.lablHomeNameSL.BackColor = System.Drawing.Color.White
+        Me.lablHomeNameSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablHomeNameSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeNameSL.ForeColor = System.Drawing.Color.Black
+        Me.lablHomeNameSL.Location = New System.Drawing.Point(980, 24)
+        Me.lablHomeNameSL.Name = "lablHomeNameSL"
+        Me.lablHomeNameSL.Size = New System.Drawing.Size(340, 36)
+        Me.lablHomeNameSL.TabIndex = 226
+        Me.lablHomeNameSL.Text = " "
+        Me.lablHomeNameSL.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(100, 50)
+        Me.PictureBox3.TabIndex = 0
+        Me.PictureBox3.TabStop = False
+        '
+        'lablStatAwaySL01
+        '
+        Me.lablStatAwaySL01.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL01.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL01.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL01.Location = New System.Drawing.Point(716, 46)
+        Me.lablStatAwaySL01.Name = "lablStatAwaySL01"
+        Me.lablStatAwaySL01.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL01.TabIndex = 239
+        Me.lablStatAwaySL01.Text = " "
+        Me.lablStatAwaySL01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL01
+        '
+        Me.lablStatHomeSL01.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL01.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL01.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL01.Location = New System.Drawing.Point(49, 46)
+        Me.lablStatHomeSL01.Name = "lablStatHomeSL01"
+        Me.lablStatHomeSL01.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL01.TabIndex = 238
+        Me.lablStatHomeSL01.Text = " "
+        Me.lablStatHomeSL01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL01
+        '
+        Me.lablStatNameSL01.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL01.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL01.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL01.Location = New System.Drawing.Point(185, 46)
+        Me.lablStatNameSL01.Name = "lablStatNameSL01"
+        Me.lablStatNameSL01.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL01.TabIndex = 237
+        Me.lablStatNameSL01.Text = " "
+        Me.lablStatNameSL01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomeNameSL2
+        '
+        Me.lablHomeNameSL2.BackColor = System.Drawing.Color.White
+        Me.lablHomeNameSL2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeNameSL2.ForeColor = System.Drawing.Color.Black
+        Me.lablHomeNameSL2.Location = New System.Drawing.Point(49, 21)
+        Me.lablHomeNameSL2.Name = "lablHomeNameSL2"
+        Me.lablHomeNameSL2.Size = New System.Drawing.Size(130, 24)
+        Me.lablHomeNameSL2.TabIndex = 240
+        Me.lablHomeNameSL2.Text = " "
+        Me.lablHomeNameSL2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablAwayNameSL2
+        '
+        Me.lablAwayNameSL2.BackColor = System.Drawing.Color.White
+        Me.lablAwayNameSL2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayNameSL2.ForeColor = System.Drawing.Color.Black
+        Me.lablAwayNameSL2.Location = New System.Drawing.Point(716, 21)
+        Me.lablAwayNameSL2.Name = "lablAwayNameSL2"
+        Me.lablAwayNameSL2.Size = New System.Drawing.Size(130, 24)
+        Me.lablAwayNameSL2.TabIndex = 241
+        Me.lablAwayNameSL2.Text = " "
+        Me.lablAwayNameSL2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL02
+        '
+        Me.lablStatAwaySL02.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL02.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL02.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL02.Location = New System.Drawing.Point(716, 94)
+        Me.lablStatAwaySL02.Name = "lablStatAwaySL02"
+        Me.lablStatAwaySL02.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL02.TabIndex = 244
+        Me.lablStatAwaySL02.Text = " "
+        Me.lablStatAwaySL02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL02
+        '
+        Me.lablStatHomeSL02.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL02.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL02.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL02.Location = New System.Drawing.Point(49, 94)
+        Me.lablStatHomeSL02.Name = "lablStatHomeSL02"
+        Me.lablStatHomeSL02.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL02.TabIndex = 243
+        Me.lablStatHomeSL02.Text = " "
+        Me.lablStatHomeSL02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL02
+        '
+        Me.lablStatNameSL02.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL02.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL02.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL02.Location = New System.Drawing.Point(185, 94)
+        Me.lablStatNameSL02.Name = "lablStatNameSL02"
+        Me.lablStatNameSL02.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL02.TabIndex = 242
+        Me.lablStatNameSL02.Text = " "
+        Me.lablStatNameSL02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL03
+        '
+        Me.lablStatAwaySL03.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL03.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL03.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL03.Location = New System.Drawing.Point(716, 142)
+        Me.lablStatAwaySL03.Name = "lablStatAwaySL03"
+        Me.lablStatAwaySL03.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL03.TabIndex = 247
+        Me.lablStatAwaySL03.Text = " "
+        Me.lablStatAwaySL03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL03
+        '
+        Me.lablStatHomeSL03.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL03.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL03.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL03.Location = New System.Drawing.Point(49, 142)
+        Me.lablStatHomeSL03.Name = "lablStatHomeSL03"
+        Me.lablStatHomeSL03.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL03.TabIndex = 246
+        Me.lablStatHomeSL03.Text = " "
+        Me.lablStatHomeSL03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL03
+        '
+        Me.lablStatNameSL03.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL03.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL03.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL03.Location = New System.Drawing.Point(185, 142)
+        Me.lablStatNameSL03.Name = "lablStatNameSL03"
+        Me.lablStatNameSL03.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL03.TabIndex = 245
+        Me.lablStatNameSL03.Text = " "
+        Me.lablStatNameSL03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL04
+        '
+        Me.lablStatAwaySL04.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL04.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL04.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL04.Location = New System.Drawing.Point(716, 190)
+        Me.lablStatAwaySL04.Name = "lablStatAwaySL04"
+        Me.lablStatAwaySL04.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL04.TabIndex = 250
+        Me.lablStatAwaySL04.Text = " "
+        Me.lablStatAwaySL04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL04
+        '
+        Me.lablStatHomeSL04.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL04.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL04.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL04.Location = New System.Drawing.Point(49, 190)
+        Me.lablStatHomeSL04.Name = "lablStatHomeSL04"
+        Me.lablStatHomeSL04.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL04.TabIndex = 249
+        Me.lablStatHomeSL04.Text = " "
+        Me.lablStatHomeSL04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL04
+        '
+        Me.lablStatNameSL04.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL04.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL04.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL04.Location = New System.Drawing.Point(185, 190)
+        Me.lablStatNameSL04.Name = "lablStatNameSL04"
+        Me.lablStatNameSL04.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL04.TabIndex = 248
+        Me.lablStatNameSL04.Text = " "
+        Me.lablStatNameSL04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL05
+        '
+        Me.lablStatAwaySL05.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL05.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL05.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL05.Location = New System.Drawing.Point(716, 238)
+        Me.lablStatAwaySL05.Name = "lablStatAwaySL05"
+        Me.lablStatAwaySL05.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL05.TabIndex = 253
+        Me.lablStatAwaySL05.Text = " "
+        Me.lablStatAwaySL05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL05
+        '
+        Me.lablStatHomeSL05.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL05.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL05.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL05.Location = New System.Drawing.Point(49, 238)
+        Me.lablStatHomeSL05.Name = "lablStatHomeSL05"
+        Me.lablStatHomeSL05.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL05.TabIndex = 252
+        Me.lablStatHomeSL05.Text = " "
+        Me.lablStatHomeSL05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL05
+        '
+        Me.lablStatNameSL05.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL05.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL05.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL05.Location = New System.Drawing.Point(185, 238)
+        Me.lablStatNameSL05.Name = "lablStatNameSL05"
+        Me.lablStatNameSL05.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL05.TabIndex = 251
+        Me.lablStatNameSL05.Text = " "
+        Me.lablStatNameSL05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL09
+        '
+        Me.lablStatAwaySL09.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL09.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL09.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL09.Location = New System.Drawing.Point(716, 430)
+        Me.lablStatAwaySL09.Name = "lablStatAwaySL09"
+        Me.lablStatAwaySL09.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL09.TabIndex = 265
+        Me.lablStatAwaySL09.Text = " "
+        Me.lablStatAwaySL09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL09
+        '
+        Me.lablStatHomeSL09.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL09.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL09.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL09.Location = New System.Drawing.Point(49, 430)
+        Me.lablStatHomeSL09.Name = "lablStatHomeSL09"
+        Me.lablStatHomeSL09.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL09.TabIndex = 264
+        Me.lablStatHomeSL09.Text = " "
+        Me.lablStatHomeSL09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL09
+        '
+        Me.lablStatNameSL09.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL09.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL09.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL09.Location = New System.Drawing.Point(185, 430)
+        Me.lablStatNameSL09.Name = "lablStatNameSL09"
+        Me.lablStatNameSL09.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL09.TabIndex = 263
+        Me.lablStatNameSL09.Text = " "
+        Me.lablStatNameSL09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL08
+        '
+        Me.lablStatAwaySL08.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL08.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL08.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL08.Location = New System.Drawing.Point(716, 382)
+        Me.lablStatAwaySL08.Name = "lablStatAwaySL08"
+        Me.lablStatAwaySL08.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL08.TabIndex = 262
+        Me.lablStatAwaySL08.Text = " "
+        Me.lablStatAwaySL08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL08
+        '
+        Me.lablStatHomeSL08.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL08.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL08.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL08.Location = New System.Drawing.Point(49, 382)
+        Me.lablStatHomeSL08.Name = "lablStatHomeSL08"
+        Me.lablStatHomeSL08.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL08.TabIndex = 261
+        Me.lablStatHomeSL08.Text = " "
+        Me.lablStatHomeSL08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL08
+        '
+        Me.lablStatNameSL08.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL08.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL08.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL08.Location = New System.Drawing.Point(185, 382)
+        Me.lablStatNameSL08.Name = "lablStatNameSL08"
+        Me.lablStatNameSL08.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL08.TabIndex = 260
+        Me.lablStatNameSL08.Text = " "
+        Me.lablStatNameSL08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL07
+        '
+        Me.lablStatAwaySL07.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL07.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL07.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL07.Location = New System.Drawing.Point(716, 334)
+        Me.lablStatAwaySL07.Name = "lablStatAwaySL07"
+        Me.lablStatAwaySL07.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL07.TabIndex = 259
+        Me.lablStatAwaySL07.Text = " "
+        Me.lablStatAwaySL07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL07
+        '
+        Me.lablStatHomeSL07.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL07.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL07.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL07.Location = New System.Drawing.Point(49, 334)
+        Me.lablStatHomeSL07.Name = "lablStatHomeSL07"
+        Me.lablStatHomeSL07.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL07.TabIndex = 258
+        Me.lablStatHomeSL07.Text = " "
+        Me.lablStatHomeSL07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL07
+        '
+        Me.lablStatNameSL07.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL07.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL07.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL07.Location = New System.Drawing.Point(185, 334)
+        Me.lablStatNameSL07.Name = "lablStatNameSL07"
+        Me.lablStatNameSL07.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL07.TabIndex = 257
+        Me.lablStatNameSL07.Text = " "
+        Me.lablStatNameSL07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL06
+        '
+        Me.lablStatAwaySL06.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL06.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL06.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL06.Location = New System.Drawing.Point(716, 286)
+        Me.lablStatAwaySL06.Name = "lablStatAwaySL06"
+        Me.lablStatAwaySL06.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL06.TabIndex = 256
+        Me.lablStatAwaySL06.Text = " "
+        Me.lablStatAwaySL06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL06
+        '
+        Me.lablStatHomeSL06.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL06.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL06.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL06.Location = New System.Drawing.Point(49, 286)
+        Me.lablStatHomeSL06.Name = "lablStatHomeSL06"
+        Me.lablStatHomeSL06.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL06.TabIndex = 255
+        Me.lablStatHomeSL06.Text = " "
+        Me.lablStatHomeSL06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL06
+        '
+        Me.lablStatNameSL06.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL06.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL06.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL06.Location = New System.Drawing.Point(185, 286)
+        Me.lablStatNameSL06.Name = "lablStatNameSL06"
+        Me.lablStatNameSL06.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL06.TabIndex = 254
+        Me.lablStatNameSL06.Text = " "
+        Me.lablStatNameSL06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL13
+        '
+        Me.lablStatAwaySL13.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL13.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL13.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL13.Location = New System.Drawing.Point(716, 622)
+        Me.lablStatAwaySL13.Name = "lablStatAwaySL13"
+        Me.lablStatAwaySL13.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL13.TabIndex = 277
+        Me.lablStatAwaySL13.Text = " "
+        Me.lablStatAwaySL13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL13
+        '
+        Me.lablStatHomeSL13.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL13.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL13.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL13.Location = New System.Drawing.Point(49, 622)
+        Me.lablStatHomeSL13.Name = "lablStatHomeSL13"
+        Me.lablStatHomeSL13.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL13.TabIndex = 276
+        Me.lablStatHomeSL13.Text = " "
+        Me.lablStatHomeSL13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL13
+        '
+        Me.lablStatNameSL13.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL13.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL13.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL13.Location = New System.Drawing.Point(185, 622)
+        Me.lablStatNameSL13.Name = "lablStatNameSL13"
+        Me.lablStatNameSL13.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL13.TabIndex = 275
+        Me.lablStatNameSL13.Text = " "
+        Me.lablStatNameSL13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL12
+        '
+        Me.lablStatAwaySL12.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL12.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL12.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL12.Location = New System.Drawing.Point(716, 574)
+        Me.lablStatAwaySL12.Name = "lablStatAwaySL12"
+        Me.lablStatAwaySL12.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL12.TabIndex = 274
+        Me.lablStatAwaySL12.Text = " "
+        Me.lablStatAwaySL12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL12
+        '
+        Me.lablStatHomeSL12.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL12.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL12.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL12.Location = New System.Drawing.Point(49, 574)
+        Me.lablStatHomeSL12.Name = "lablStatHomeSL12"
+        Me.lablStatHomeSL12.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL12.TabIndex = 273
+        Me.lablStatHomeSL12.Text = " "
+        Me.lablStatHomeSL12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL12
+        '
+        Me.lablStatNameSL12.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL12.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL12.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL12.Location = New System.Drawing.Point(185, 574)
+        Me.lablStatNameSL12.Name = "lablStatNameSL12"
+        Me.lablStatNameSL12.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL12.TabIndex = 272
+        Me.lablStatNameSL12.Text = " "
+        Me.lablStatNameSL12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL11
+        '
+        Me.lablStatAwaySL11.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL11.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL11.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL11.Location = New System.Drawing.Point(716, 526)
+        Me.lablStatAwaySL11.Name = "lablStatAwaySL11"
+        Me.lablStatAwaySL11.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL11.TabIndex = 271
+        Me.lablStatAwaySL11.Text = " "
+        Me.lablStatAwaySL11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL11
+        '
+        Me.lablStatHomeSL11.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL11.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL11.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL11.Location = New System.Drawing.Point(49, 526)
+        Me.lablStatHomeSL11.Name = "lablStatHomeSL11"
+        Me.lablStatHomeSL11.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL11.TabIndex = 270
+        Me.lablStatHomeSL11.Text = " "
+        Me.lablStatHomeSL11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL11
+        '
+        Me.lablStatNameSL11.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL11.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL11.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL11.Location = New System.Drawing.Point(185, 526)
+        Me.lablStatNameSL11.Name = "lablStatNameSL11"
+        Me.lablStatNameSL11.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL11.TabIndex = 269
+        Me.lablStatNameSL11.Text = " "
+        Me.lablStatNameSL11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL10
+        '
+        Me.lablStatAwaySL10.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL10.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL10.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL10.Location = New System.Drawing.Point(716, 478)
+        Me.lablStatAwaySL10.Name = "lablStatAwaySL10"
+        Me.lablStatAwaySL10.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL10.TabIndex = 268
+        Me.lablStatAwaySL10.Text = " "
+        Me.lablStatAwaySL10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL10
+        '
+        Me.lablStatHomeSL10.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL10.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL10.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL10.Location = New System.Drawing.Point(49, 478)
+        Me.lablStatHomeSL10.Name = "lablStatHomeSL10"
+        Me.lablStatHomeSL10.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL10.TabIndex = 267
+        Me.lablStatHomeSL10.Text = " "
+        Me.lablStatHomeSL10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL10
+        '
+        Me.lablStatNameSL10.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL10.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL10.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL10.Location = New System.Drawing.Point(185, 478)
+        Me.lablStatNameSL10.Name = "lablStatNameSL10"
+        Me.lablStatNameSL10.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL10.TabIndex = 266
+        Me.lablStatNameSL10.Text = " "
+        Me.lablStatNameSL10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL16
+        '
+        Me.lablStatAwaySL16.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL16.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL16.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL16.Location = New System.Drawing.Point(716, 766)
+        Me.lablStatAwaySL16.Name = "lablStatAwaySL16"
+        Me.lablStatAwaySL16.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL16.TabIndex = 286
+        Me.lablStatAwaySL16.Text = " "
+        Me.lablStatAwaySL16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL16
+        '
+        Me.lablStatHomeSL16.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL16.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL16.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL16.Location = New System.Drawing.Point(49, 766)
+        Me.lablStatHomeSL16.Name = "lablStatHomeSL16"
+        Me.lablStatHomeSL16.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL16.TabIndex = 285
+        Me.lablStatHomeSL16.Text = " "
+        Me.lablStatHomeSL16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL16
+        '
+        Me.lablStatNameSL16.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL16.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL16.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL16.Location = New System.Drawing.Point(185, 766)
+        Me.lablStatNameSL16.Name = "lablStatNameSL16"
+        Me.lablStatNameSL16.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL16.TabIndex = 284
+        Me.lablStatNameSL16.Text = " "
+        Me.lablStatNameSL16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL15
+        '
+        Me.lablStatAwaySL15.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL15.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL15.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL15.Location = New System.Drawing.Point(716, 718)
+        Me.lablStatAwaySL15.Name = "lablStatAwaySL15"
+        Me.lablStatAwaySL15.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL15.TabIndex = 283
+        Me.lablStatAwaySL15.Text = " "
+        Me.lablStatAwaySL15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL15
+        '
+        Me.lablStatHomeSL15.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL15.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL15.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL15.Location = New System.Drawing.Point(49, 718)
+        Me.lablStatHomeSL15.Name = "lablStatHomeSL15"
+        Me.lablStatHomeSL15.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL15.TabIndex = 282
+        Me.lablStatHomeSL15.Text = " "
+        Me.lablStatHomeSL15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL15
+        '
+        Me.lablStatNameSL15.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL15.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL15.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL15.Location = New System.Drawing.Point(185, 718)
+        Me.lablStatNameSL15.Name = "lablStatNameSL15"
+        Me.lablStatNameSL15.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL15.TabIndex = 281
+        Me.lablStatNameSL15.Text = " "
+        Me.lablStatNameSL15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL14
+        '
+        Me.lablStatAwaySL14.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL14.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL14.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL14.Location = New System.Drawing.Point(716, 670)
+        Me.lablStatAwaySL14.Name = "lablStatAwaySL14"
+        Me.lablStatAwaySL14.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL14.TabIndex = 280
+        Me.lablStatAwaySL14.Text = " "
+        Me.lablStatAwaySL14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL14
+        '
+        Me.lablStatHomeSL14.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL14.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL14.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL14.Location = New System.Drawing.Point(49, 670)
+        Me.lablStatHomeSL14.Name = "lablStatHomeSL14"
+        Me.lablStatHomeSL14.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL14.TabIndex = 279
+        Me.lablStatHomeSL14.Text = " "
+        Me.lablStatHomeSL14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL14
+        '
+        Me.lablStatNameSL14.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL14.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL14.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL14.Location = New System.Drawing.Point(185, 670)
+        Me.lablStatNameSL14.Name = "lablStatNameSL14"
+        Me.lablStatNameSL14.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL14.TabIndex = 278
+        Me.lablStatNameSL14.Text = " "
+        Me.lablStatNameSL14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatAwaySL17
+        '
+        Me.lablStatAwaySL17.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL17.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL17.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL17.Location = New System.Drawing.Point(716, 814)
+        Me.lablStatAwaySL17.Name = "lablStatAwaySL17"
+        Me.lablStatAwaySL17.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL17.TabIndex = 289
+        Me.lablStatAwaySL17.Text = " "
+        Me.lablStatAwaySL17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL17
+        '
+        Me.lablStatHomeSL17.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL17.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL17.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL17.Location = New System.Drawing.Point(49, 814)
+        Me.lablStatHomeSL17.Name = "lablStatHomeSL17"
+        Me.lablStatHomeSL17.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL17.TabIndex = 288
+        Me.lablStatHomeSL17.Text = " "
+        Me.lablStatHomeSL17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL17
+        '
+        Me.lablStatNameSL17.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lablStatNameSL17.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL17.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL17.Location = New System.Drawing.Point(185, 814)
+        Me.lablStatNameSL17.Name = "lablStatNameSL17"
+        Me.lablStatNameSL17.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL17.TabIndex = 287
+        Me.lablStatNameSL17.Text = " "
+        Me.lablStatNameSL17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomeScorersSL
+        '
+        Me.lablHomeScorersSL.BackColor = System.Drawing.Color.Black
+        Me.lablHomeScorersSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeScorersSL.ForeColor = System.Drawing.Color.White
+        Me.lablHomeScorersSL.Location = New System.Drawing.Point(980, 67)
+        Me.lablHomeScorersSL.Name = "lablHomeScorersSL"
+        Me.lablHomeScorersSL.Size = New System.Drawing.Size(340, 304)
+        Me.lablHomeScorersSL.TabIndex = 290
+        Me.lablHomeScorersSL.Text = " "
+        Me.lablHomeScorersSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lablAwayScorersSL
+        '
+        Me.lablAwayScorersSL.BackColor = System.Drawing.Color.Black
+        Me.lablAwayScorersSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayScorersSL.ForeColor = System.Drawing.Color.White
+        Me.lablAwayScorersSL.Location = New System.Drawing.Point(1482, 67)
+        Me.lablAwayScorersSL.Name = "lablAwayScorersSL"
+        Me.lablAwayScorersSL.Size = New System.Drawing.Size(340, 304)
+        Me.lablAwayScorersSL.TabIndex = 291
+        Me.lablAwayScorersSL.Text = " "
+        Me.lablAwayScorersSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.PanelRTE)
+        Me.Controls.Add(Me.panelSL)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.WebBrowser1)
+        Me.Controls.Add(Me.PanelRTE)
         Me.Controls.Add(Me.panelStar6)
+        Me.Controls.Add(Me.WebBrowser1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
@@ -1887,6 +2828,9 @@ Partial Class Form1
         Me.panelStar6.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelSL.ResumeLayout(False)
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2031,5 +2975,71 @@ Partial Class Form1
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-
+    Friend WithEvents panelSL As Panel
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents lablAwayScoreSL As Label
+    Friend WithEvents lablHomeScoreSL As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents lablPeriodSL As Label
+    Friend WithEvents lablMatchClockSL As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents lablRemoteAwayPossessionSL As Label
+    Friend WithEvents lablRemoteHomePossessionSL As Label
+    Friend WithEvents lablAwayNameSL As Label
+    Friend WithEvents lablHomeNameSL As Label
+    Friend WithEvents lablAwayNameSL2 As Label
+    Friend WithEvents lablHomeNameSL2 As Label
+    Friend WithEvents lablStatAwaySL01 As Label
+    Friend WithEvents lablStatHomeSL01 As Label
+    Friend WithEvents lablStatNameSL01 As Label
+    Friend WithEvents lablStatAwaySL16 As Label
+    Friend WithEvents lablStatHomeSL16 As Label
+    Friend WithEvents lablStatNameSL16 As Label
+    Friend WithEvents lablStatAwaySL15 As Label
+    Friend WithEvents lablStatHomeSL15 As Label
+    Friend WithEvents lablStatNameSL15 As Label
+    Friend WithEvents lablStatAwaySL14 As Label
+    Friend WithEvents lablStatHomeSL14 As Label
+    Friend WithEvents lablStatNameSL14 As Label
+    Friend WithEvents lablStatAwaySL13 As Label
+    Friend WithEvents lablStatHomeSL13 As Label
+    Friend WithEvents lablStatNameSL13 As Label
+    Friend WithEvents lablStatAwaySL12 As Label
+    Friend WithEvents lablStatHomeSL12 As Label
+    Friend WithEvents lablStatNameSL12 As Label
+    Friend WithEvents lablStatAwaySL11 As Label
+    Friend WithEvents lablStatHomeSL11 As Label
+    Friend WithEvents lablStatNameSL11 As Label
+    Friend WithEvents lablStatAwaySL10 As Label
+    Friend WithEvents lablStatHomeSL10 As Label
+    Friend WithEvents lablStatNameSL10 As Label
+    Friend WithEvents lablStatAwaySL09 As Label
+    Friend WithEvents lablStatHomeSL09 As Label
+    Friend WithEvents lablStatNameSL09 As Label
+    Friend WithEvents lablStatAwaySL08 As Label
+    Friend WithEvents lablStatHomeSL08 As Label
+    Friend WithEvents lablStatNameSL08 As Label
+    Friend WithEvents lablStatAwaySL07 As Label
+    Friend WithEvents lablStatHomeSL07 As Label
+    Friend WithEvents lablStatNameSL07 As Label
+    Friend WithEvents lablStatAwaySL06 As Label
+    Friend WithEvents lablStatHomeSL06 As Label
+    Friend WithEvents lablStatNameSL06 As Label
+    Friend WithEvents lablStatAwaySL05 As Label
+    Friend WithEvents lablStatHomeSL05 As Label
+    Friend WithEvents lablStatNameSL05 As Label
+    Friend WithEvents lablStatAwaySL04 As Label
+    Friend WithEvents lablStatHomeSL04 As Label
+    Friend WithEvents lablStatNameSL04 As Label
+    Friend WithEvents lablStatAwaySL03 As Label
+    Friend WithEvents lablStatHomeSL03 As Label
+    Friend WithEvents lablStatNameSL03 As Label
+    Friend WithEvents lablStatAwaySL02 As Label
+    Friend WithEvents lablStatHomeSL02 As Label
+    Friend WithEvents lablStatNameSL02 As Label
+    Friend WithEvents lablStatAwaySL17 As Label
+    Friend WithEvents lablStatHomeSL17 As Label
+    Friend WithEvents lablStatNameSL17 As Label
+    Friend WithEvents lablAwayScorersSL As Label
+    Friend WithEvents lablHomeScorersSL As Label
 End Class
