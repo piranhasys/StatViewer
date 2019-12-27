@@ -39,6 +39,13 @@
     Private strAwayScorers As String = ""
     Private strHomePossessions As String = ""
     Private strAwayPossessions As String = ""
+
+    Public Property HomeCarries As String = ""
+    Public Property HomeMetresMade As String = ""
+    Public Property HomeTackles As String = ""
+    Public Property AwayCarries As String = ""
+    Public Property AwayMetresMade As String = ""
+    Public Property AwayTackles As String = ""
     Public Property AwayPossessions() As String
         Get
             Return strAwayPossessions

@@ -674,12 +674,6 @@ Public Class Form1
                 thisMatch.AwayTeamName = split(1)
                 thisMatch.HomeScoreline = split(2)
                 thisMatch.AwayScoreline = split(3)
-                'For incstat As Integer = 1 To 11    'WAS 10, added wides
-                '    baseIndex = (incstat * 3) + 3
-                '    thisMatch.Stat(incstat).Name = split(baseIndex)
-                '    thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
-                '    thisMatch.Stat(incstat).AwayNum = split(baseIndex + 2)
-                'Next
             End If
             If splitMain(4).Contains("^") Then
                 Dim split As String() = splitMain(4).Split("^")
@@ -695,11 +689,15 @@ Public Class Form1
                 thisMatch.HomeScorers = splitMain(5)
                 thisMatch.AwayScorers = splitMain(6)
             End If
-            'If splitMain.GetUpperBound(0) > 6 Then
-            '    'contains scorers data
-            '    thisMatch.HomePossessions = splitMain(6)
-            '    thisMatch.AwayPossessions = splitMain(7)
-            'End If
+            If splitMain.GetUpperBound(0) > 11 Then
+                'contains Carries,Metres,Tackles data
+                thisMatch.HomeCarries = splitMain(7)
+                thisMatch.AwayCarries = splitMain(8)
+                thisMatch.HomeMetresMade = splitMain(9)
+                thisMatch.AwayMetresMade = splitMain(10)
+                thisMatch.HomeTackles = splitMain(11)
+                thisMatch.AwayTackles = splitMain(12)
+            End If
 
         End If
 
@@ -868,6 +866,12 @@ Public Class Form1
 
             lablHomeScorersSL.Text = thisMatch.HomeScorers.Replace("^", vbLf)
             lablAwayScorersSL.Text = thisMatch.AwayScorers.Replace("^", vbLf)
+            lablHomeCarriesSL.Text = thisMatch.HomeCarries.Replace("^", vbLf)
+            lablAwayCarriesSL.Text = thisMatch.AwayCarries.Replace("^", vbLf)
+            lablHomeMetresSL.Text = thisMatch.HomeMetresMade.Replace("^", vbLf)
+            lablAwayMetresSL.Text = thisMatch.AwayMetresMade.Replace("^", vbLf)
+            lablHomeTacklesSL.Text = thisMatch.HomeTackles.Replace("^", vbLf)
+            lablAwayTacklesSL.Text = thisMatch.AwayTackles.Replace("^", vbLf)
 
         End If
     End Sub
