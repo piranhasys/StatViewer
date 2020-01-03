@@ -7,6 +7,7 @@ Imports System.Net.DnsPermissionAttribute
 Imports System.Security.Permissions
 Imports System.Runtime.InteropServices
 Imports System.Collections.Generic
+Imports System.Web.Script.Serialization
 
 Public Class Form1
     Public bConnectedToServer As Boolean = False
@@ -21,8 +22,8 @@ Public Class Form1
     Private Const OLECMDEXECOPT_DONTPROMPTUSER As Integer = 2
     Private fontSize As Integer = 0
     Private displayStyle As Integer = 0 '0=web, 1=RTE GAA, 2=Star6, 3=SkySuperLeague
-    Private left As Integer = 0
-    Private top As Integer = 0
+    'Private locationLeft As Integer = 0
+    'Private locationTop As Integer = 0
     Private lastPageName As String = ""
     Private thisMatch As New clsMatch
 
@@ -32,9 +33,17 @@ Public Class Form1
     Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
 
     End Sub
+    Private Sub ParseCommandLineArgs()
+        Dim inputArgument As String = "/input="
+        Dim inputName As String = ""
+
+        For Each s As String In My.Application.CommandLineArgs
+            Config.ConfigFilename = s
+        Next
+    End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'initial HP commit
+        ParseCommandLineArgs()
         For incStat As Integer = 0 To RBTeamStats.GetUpperBound(0)
             RBTeamStats(incStat) = New clsRBTeamStat
         Next
@@ -42,7 +51,11 @@ Public Class Form1
         If Config.FileExists Then
             Select Case Config.UserName
                 Case "SKYSUPERLEAGUE"
-                    displayStyle = 3
+                    displayStyle = DisplayType.SkySuperLeague
+                    My.Settings.ServerPort = Config.ServerPort
+                    My.Settings.ServerIPAddress = Config.ServerAddress
+                Case "RACING"
+                    displayStyle = DisplayType.Racing
                     My.Settings.ServerPort = Config.ServerPort
                     My.Settings.ServerIPAddress = Config.ServerAddress
             End Select
@@ -53,10 +66,12 @@ Public Class Form1
         dtLastPAData = Now.AddDays(-1)
         timerCheckConnections.Start()
         fontSize = My.Settings.FontSize
-        left = My.Settings.Left
-        top = My.Settings.Top
+        Me.Left = My.Settings.Left
+        Me.Top = My.Settings.Top
+        Me.Text = "PIRANHA StatViewer v" + ProductVersion + "   Use F1 for Full Screen, F2 for Status Bar"
         Select Case displayStyle
-            Case 0
+            Case DisplayType.Web
+            Case DisplayType.Racing
             Case Else
                 For incStat As Integer = 0 To thisMatch.Stat.GetUpperBound(0)
                     thisMatch.Stat(incStat) = New clsSVStat
@@ -67,32 +82,39 @@ Public Class Form1
     End Sub
     Sub SetupDisplay()
         Select Case displayStyle
-            Case 1
+            Case DisplayType.RTE_GAA
                 panelStar6.Visible = False
                 PanelRTE.Visible = True
                 PanelSL.Visible = False
+                panelRacing.Visible = False
                 PanelRTE.BringToFront()
                 LoadRTEStaticData()
                 ShowRTEStaticData()
                 ShowRTETeamData()
-            Case 2
+            Case DisplayType.Star6
                 panelStar6.Visible = True
                 PanelRTE.Visible = False
                 PanelSL.Visible = False
+                panelRacing.Visible = False
                 panelStar6.BringToFront()
                 Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
                 Me.StartPosition = FormStartPosition.Manual
                 Me.Location = New Point(0, 0)
                 Me.WindowState = FormWindowState.Maximized
-            Case 3
-                'Super League
-                PanelSL.Visible = True
-                PanelSL.bringtofront
-
+            Case DisplayType.SkySuperLeague
+                panelRacing.Visible = False
+                panelSL.Visible = True
+                panelSL.BringToFront
+            Case DisplayType.Racing
+                panelStar6.Visible = False
+                PanelRTE.Visible = False
+                panelSL.Visible = False
+                panelRacing.Visible = True
             Case Else
                 panelStar6.Visible = False
                 PanelRTE.Visible = False
                 PanelSL.Visible = False
+                panelRacing.Visible = False
                 PanelRTE.SendToBack()
                 RepositionBrowser()
         End Select
@@ -101,11 +123,10 @@ Public Class Form1
 
     End Sub
     Sub LoadRTEStaticData()
-        Dim inc As Integer
         Dim strTextLine As String = ""
         Dim strFilename As String = My.Settings.DataFilename
         Dim inputFile As System.IO.StreamReader
-        Dim TempArray() As String
+        'Dim TempArray() As String
         Try
            
             If Not System.IO.File.Exists(strFilename) Then
@@ -440,8 +461,7 @@ Public Class Form1
             Select Case dataArray(0)
                 Case "CONNECTED"
                     Select Case displayStyle
-                        Case 3
-                            'SL
+                        Case DisplayType.SkySuperLeague
                             SendData("STATVIEWER|REQUESTLIVEMATCHDATA|")
                     End Select
                 Case "HEARTBEAT"
@@ -464,7 +484,13 @@ Public Class Form1
                                 LoadPage(pageIndex)
                             End If
                         Case "DATA"
-
+                        Case "LOADBETTING"
+                            'JSON string
+                            Dim JSONString As String = dataArray(2)
+                            CurrentBettingBoard = New clsBettingBoard 'clear old data
+                            Dim json As New JavaScriptSerializer
+                            CurrentBettingBoard = json.Deserialize(Of clsBettingBoard)(JSONString)
+                            Console.WriteLine(CurrentBettingBoard.Heading)
                         Case "REFRESH"
                             ReloadPage()
                     End Select
@@ -553,11 +579,10 @@ Public Class Form1
                         Case "MATCHFACTS"
                             'MATCHDATA|MATCHFACTS|DATA|KILDARE^LAOIS^10^POSSESSION^^^KICK PASSES^1^0^HAND PASSES^0^0^KICKOUTS WON^0^0^INSIDE 45^0^0^SCORES / SHOTS^1 / 0^0 / 0^WIDES^0^0^FREES CONCEDED^0^0^YELLOW CARDS^0^0^RED CARDS^0^0^TIME IN PLAY: 00:00 OUT OF 00:00^|DONNELLAN 2-1^O'GRADY 0-3^MURNAGHAN 0-1^|R. KEHOE 1-2^M. TIMMONS 0-4^S. ATTRIDE 1-0^|
                             Select Case displayStyle
-                                Case 2
-                                    'Star6
+                                Case DisplayType.Star6
                                     AssignRBStar6Data(strMessage)
                                     ShowStar6StaticData()
-                                Case 3  'SL
+                                Case DisplayType.SkySuperLeague
                                     AssignRBSLData(strMessage)
                                     ShowSuperLeagueData()
                                 Case Else
@@ -1104,5 +1129,30 @@ Public Class Form1
 
     Private Sub panelSL_Paint(sender As Object, e As PaintEventArgs) Handles panelSL.Paint
 
+    End Sub
+    Sub TestLoadImage(ImageName As String)
+        PictureBoxTest.Load(Path.Combine(Config.ImagesPath, ImageName))
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        TestLoadImage("Emirates Skywards 175.png")
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TestLoadImage("164621674.jpg")
+    End Sub
+    Sub TestLoadPage(filename As String)
+        Try
+            WebBrowser2.Navigate(Path.Combine("file:///", Config.WebPagesPath, filename))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        TestLoadPage("betting.htm")
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        TestLoadPage("iisstart.htm")
     End Sub
 End Class

@@ -1,60 +1,19 @@
 ﻿Public Class clsConfig
-    Private strUserName As String = ""
-    Private strServerAddress As String = "LocalHost"
-    Private iServerPort As Integer = 10540
-    Private strLocalIPAddress As String = "Localhost"
-    Private strConfigFilename As String = "Config.ini"
+    Public Property UserName As String = ""
+    Public Property ServerAddress As String = "LocalHost"
+    Public Property ServerPort As Integer = 10540
+    Public Property ConfigFilename As String = "Config.ini"
+    Public Property ImagesPath As String = "C:\Statviewer\Images"
+    Public Property WebPagesPath As String = "C:\Statviewer\URL"
     Public Property FileExists As Boolean = False
 
-    Public Property ConfigFilename() As String
-        Get
-            Return strConfigFilename
-        End Get
-        Set(ByVal value As String)
-            strConfigFilename = value
-        End Set
-    End Property
-
-    Public Property LocalIPAddress() As String
-        Get
-            Return strLocalIPAddress
-        End Get
-        Set(ByVal value As String)
-            strLocalIPAddress = value
-        End Set
-    End Property
-
-    Property ServerPort() As Integer
-        Get
-            Return iServerPort
-        End Get
-        Set(ByVal Value As Integer)
-            iServerPort = Value
-        End Set
-    End Property
-    Property UserName() As String
-        Get
-            Return strUserName
-        End Get
-        Set(ByVal Value As String)
-            strUserName = Value
-        End Set
-    End Property
-    Property ServerAddress() As String
-        Get
-            Return strServerAddress
-        End Get
-        Set(ByVal Value As String)
-            strServerAddress = Value
-        End Set
-    End Property
 
     Sub ReadSetup()
         Dim strTextLine As String, strFilename As String
         Dim inputFile As System.IO.StreamReader
         Dim TempArray() As String
         Try
-            strFilename = strConfigFilename
+            strFilename = _ConfigFilename
             If Not System.IO.File.Exists(strFilename) Then
                 'MessageBox.Show("No Config File: " & strConfigFilename & vbLf & "MatchLog cannot continue")
                 Console.WriteLine("No Config.ini")
@@ -71,14 +30,16 @@
                     Else
                         TempArray = strTextLine.Split("|".ToCharArray)
                         Select Case TempArray(0).ToUpper
-                            Case "PCIPADDRESS"
-                                strLocalIPAddress = TempArray(1)
                             Case "USERNAME"
-                                strUserName = TempArray(1)
+                                _UserName = TempArray(1)
                             Case "SERVER"
-                                strServerAddress = TempArray(1)
+                                _ServerAddress = TempArray(1)
                             Case "SERVERPORT"
-                                iServerPort = Convert.ToInt16(TempArray(1))
+                                _ServerPort = Convert.ToInt16(TempArray(1))
+                            Case "IMAGESFOLDER", "IMAGEFOLDER", "IMAGESPATH", "IMAGEPATH"
+                                _ImagesPath = TempArray(1)
+                            Case "WEBPAGESFOLDER", "WEBPAGEFOLDER", "WEBPAGESPATH", "WEBPAGEPATH"
+                                _WebPagesPath = TempArray(1)
                         End Select
                     End If
                 Loop Until strTextLine Is Nothing

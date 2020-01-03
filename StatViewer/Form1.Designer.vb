@@ -165,6 +165,15 @@ Partial Class Form1
         Me.lablStar6TeamHome = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panelSL = New System.Windows.Forms.Panel()
+        Me.lablAwayTacklesSL = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.lablHomeTacklesSL = New System.Windows.Forms.Label()
+        Me.lablAwayMetresSL = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.lablHomeMetresSL = New System.Windows.Forms.Label()
+        Me.lablAwayCarriesSL = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.lablHomeCarriesSL = New System.Windows.Forms.Label()
         Me.lablAwayScorersSL = New System.Windows.Forms.Label()
         Me.lablHomeScorersSL = New System.Windows.Forms.Label()
         Me.lablStatAwaySL17 = New System.Windows.Forms.Label()
@@ -231,15 +240,13 @@ Partial Class Form1
         Me.lablAwayNameSL = New System.Windows.Forms.Label()
         Me.lablHomeNameSL = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.lablHomeCarriesSL = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.lablAwayCarriesSL = New System.Windows.Forms.Label()
-        Me.lablAwayMetresSL = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.lablHomeMetresSL = New System.Windows.Forms.Label()
-        Me.lablAwayTacklesSL = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.lablHomeTacklesSL = New System.Windows.Forms.Label()
+        Me.panelRacing = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PictureBoxTest = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.panelStar6.SuspendLayout()
@@ -248,6 +255,8 @@ Partial Class Form1
         Me.panelSL.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelRacing.SuspendLayout()
+        CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -549,6 +558,7 @@ Partial Class Form1
         Me.PanelRTE.Name = "PanelRTE"
         Me.PanelRTE.Size = New System.Drawing.Size(1904, 1041)
         Me.PanelRTE.TabIndex = 2
+        Me.PanelRTE.Visible = False
         '
         'lablAwayPossessions
         '
@@ -1859,6 +1869,7 @@ Partial Class Form1
         Me.panelStar6.Name = "panelStar6"
         Me.panelStar6.Size = New System.Drawing.Size(1920, 1080)
         Me.panelStar6.TabIndex = 3
+        Me.panelStar6.Visible = False
         '
         'Label17
         '
@@ -2030,6 +2041,118 @@ Partial Class Form1
         Me.panelSL.Name = "panelSL"
         Me.panelSL.Size = New System.Drawing.Size(1904, 1042)
         Me.panelSL.TabIndex = 4
+        Me.panelSL.Visible = False
+        '
+        'lablAwayTacklesSL
+        '
+        Me.lablAwayTacklesSL.BackColor = System.Drawing.Color.Black
+        Me.lablAwayTacklesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayTacklesSL.ForeColor = System.Drawing.Color.White
+        Me.lablAwayTacklesSL.Location = New System.Drawing.Point(1482, 616)
+        Me.lablAwayTacklesSL.Name = "lablAwayTacklesSL"
+        Me.lablAwayTacklesSL.Size = New System.Drawing.Size(340, 83)
+        Me.lablAwayTacklesSL.TabIndex = 300
+        Me.lablAwayTacklesSL.Text = " "
+        Me.lablAwayTacklesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label26
+        '
+        Me.Label26.BackColor = System.Drawing.Color.White
+        Me.Label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.Black
+        Me.Label26.Location = New System.Drawing.Point(1326, 616)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(150, 24)
+        Me.Label26.TabIndex = 299
+        Me.Label26.Text = "TACKLES"
+        Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomeTacklesSL
+        '
+        Me.lablHomeTacklesSL.BackColor = System.Drawing.Color.Black
+        Me.lablHomeTacklesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeTacklesSL.ForeColor = System.Drawing.Color.White
+        Me.lablHomeTacklesSL.Location = New System.Drawing.Point(980, 616)
+        Me.lablHomeTacklesSL.Name = "lablHomeTacklesSL"
+        Me.lablHomeTacklesSL.Size = New System.Drawing.Size(340, 83)
+        Me.lablHomeTacklesSL.TabIndex = 298
+        Me.lablHomeTacklesSL.Text = " "
+        Me.lablHomeTacklesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lablAwayMetresSL
+        '
+        Me.lablAwayMetresSL.BackColor = System.Drawing.Color.Black
+        Me.lablAwayMetresSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayMetresSL.ForeColor = System.Drawing.Color.White
+        Me.lablAwayMetresSL.Location = New System.Drawing.Point(1481, 508)
+        Me.lablAwayMetresSL.Name = "lablAwayMetresSL"
+        Me.lablAwayMetresSL.Size = New System.Drawing.Size(340, 83)
+        Me.lablAwayMetresSL.TabIndex = 297
+        Me.lablAwayMetresSL.Text = " "
+        Me.lablAwayMetresSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label23
+        '
+        Me.Label23.BackColor = System.Drawing.Color.White
+        Me.Label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.Black
+        Me.Label23.Location = New System.Drawing.Point(1325, 508)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(150, 24)
+        Me.Label23.TabIndex = 296
+        Me.Label23.Text = "METRES MADE"
+        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomeMetresSL
+        '
+        Me.lablHomeMetresSL.BackColor = System.Drawing.Color.Black
+        Me.lablHomeMetresSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeMetresSL.ForeColor = System.Drawing.Color.White
+        Me.lablHomeMetresSL.Location = New System.Drawing.Point(979, 508)
+        Me.lablHomeMetresSL.Name = "lablHomeMetresSL"
+        Me.lablHomeMetresSL.Size = New System.Drawing.Size(340, 83)
+        Me.lablHomeMetresSL.TabIndex = 295
+        Me.lablHomeMetresSL.Text = " "
+        Me.lablHomeMetresSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lablAwayCarriesSL
+        '
+        Me.lablAwayCarriesSL.BackColor = System.Drawing.Color.Black
+        Me.lablAwayCarriesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayCarriesSL.ForeColor = System.Drawing.Color.White
+        Me.lablAwayCarriesSL.Location = New System.Drawing.Point(1482, 400)
+        Me.lablAwayCarriesSL.Name = "lablAwayCarriesSL"
+        Me.lablAwayCarriesSL.Size = New System.Drawing.Size(340, 83)
+        Me.lablAwayCarriesSL.TabIndex = 294
+        Me.lablAwayCarriesSL.Text = " "
+        Me.lablAwayCarriesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label20
+        '
+        Me.Label20.BackColor = System.Drawing.Color.White
+        Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Black
+        Me.Label20.Location = New System.Drawing.Point(1326, 400)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(150, 24)
+        Me.Label20.TabIndex = 293
+        Me.Label20.Text = "CARRIES"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomeCarriesSL
+        '
+        Me.lablHomeCarriesSL.BackColor = System.Drawing.Color.Black
+        Me.lablHomeCarriesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeCarriesSL.ForeColor = System.Drawing.Color.White
+        Me.lablHomeCarriesSL.Location = New System.Drawing.Point(980, 400)
+        Me.lablHomeCarriesSL.Name = "lablHomeCarriesSL"
+        Me.lablHomeCarriesSL.Size = New System.Drawing.Size(340, 83)
+        Me.lablHomeCarriesSL.TabIndex = 292
+        Me.lablHomeCarriesSL.Text = " "
+        Me.lablHomeCarriesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lablAwayScorersSL
         '
@@ -2827,116 +2950,76 @@ Partial Class Form1
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
         '
-        'lablHomeCarriesSL
+        'panelRacing
         '
-        Me.lablHomeCarriesSL.BackColor = System.Drawing.Color.Black
-        Me.lablHomeCarriesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lablHomeCarriesSL.ForeColor = System.Drawing.Color.White
-        Me.lablHomeCarriesSL.Location = New System.Drawing.Point(980, 400)
-        Me.lablHomeCarriesSL.Name = "lablHomeCarriesSL"
-        Me.lablHomeCarriesSL.Size = New System.Drawing.Size(340, 83)
-        Me.lablHomeCarriesSL.TabIndex = 292
-        Me.lablHomeCarriesSL.Text = " "
-        Me.lablHomeCarriesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.panelRacing.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panelRacing.BackColor = System.Drawing.Color.Maroon
+        Me.panelRacing.Controls.Add(Me.Button3)
+        Me.panelRacing.Controls.Add(Me.Button4)
+        Me.panelRacing.Controls.Add(Me.WebBrowser2)
+        Me.panelRacing.Controls.Add(Me.Button2)
+        Me.panelRacing.Controls.Add(Me.PictureBoxTest)
+        Me.panelRacing.Controls.Add(Me.Button1)
+        Me.panelRacing.Location = New System.Drawing.Point(0, 0)
+        Me.panelRacing.Name = "panelRacing"
+        Me.panelRacing.Size = New System.Drawing.Size(1904, 1042)
+        Me.panelRacing.TabIndex = 13
+        Me.panelRacing.Visible = False
         '
-        'Label20
+        'Button2
         '
-        Me.Label20.BackColor = System.Drawing.Color.White
-        Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(1326, 400)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(150, 24)
-        Me.Label20.TabIndex = 293
-        Me.Label20.Text = "CARRIES"
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Button2.Location = New System.Drawing.Point(57, 55)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(126, 33)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Test Load Image 2"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'lablAwayCarriesSL
+        'PictureBoxTest
         '
-        Me.lablAwayCarriesSL.BackColor = System.Drawing.Color.Black
-        Me.lablAwayCarriesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lablAwayCarriesSL.ForeColor = System.Drawing.Color.White
-        Me.lablAwayCarriesSL.Location = New System.Drawing.Point(1482, 400)
-        Me.lablAwayCarriesSL.Name = "lablAwayCarriesSL"
-        Me.lablAwayCarriesSL.Size = New System.Drawing.Size(340, 83)
-        Me.lablAwayCarriesSL.TabIndex = 294
-        Me.lablAwayCarriesSL.Text = " "
-        Me.lablAwayCarriesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.PictureBoxTest.Image = CType(resources.GetObject("PictureBoxTest.Image"), System.Drawing.Image)
+        Me.PictureBoxTest.Location = New System.Drawing.Point(22, 160)
+        Me.PictureBoxTest.Name = "PictureBoxTest"
+        Me.PictureBoxTest.Size = New System.Drawing.Size(732, 464)
+        Me.PictureBoxTest.TabIndex = 1
+        Me.PictureBoxTest.TabStop = False
         '
-        'lablAwayMetresSL
+        'Button1
         '
-        Me.lablAwayMetresSL.BackColor = System.Drawing.Color.Black
-        Me.lablAwayMetresSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lablAwayMetresSL.ForeColor = System.Drawing.Color.White
-        Me.lablAwayMetresSL.Location = New System.Drawing.Point(1481, 508)
-        Me.lablAwayMetresSL.Name = "lablAwayMetresSL"
-        Me.lablAwayMetresSL.Size = New System.Drawing.Size(340, 83)
-        Me.lablAwayMetresSL.TabIndex = 297
-        Me.lablAwayMetresSL.Text = " "
-        Me.lablAwayMetresSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.Location = New System.Drawing.Point(57, 19)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(126, 33)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Test Load Image 1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label23
+        'WebBrowser2
         '
-        Me.Label23.BackColor = System.Drawing.Color.White
-        Me.Label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.Black
-        Me.Label23.Location = New System.Drawing.Point(1325, 508)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(150, 24)
-        Me.Label23.TabIndex = 296
-        Me.Label23.Text = "METRES MADE"
-        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.WebBrowser2.Location = New System.Drawing.Point(770, 390)
+        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser2.Name = "WebBrowser2"
+        Me.WebBrowser2.Size = New System.Drawing.Size(760, 454)
+        Me.WebBrowser2.TabIndex = 3
         '
-        'lablHomeMetresSL
+        'Button3
         '
-        Me.lablHomeMetresSL.BackColor = System.Drawing.Color.Black
-        Me.lablHomeMetresSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lablHomeMetresSL.ForeColor = System.Drawing.Color.White
-        Me.lablHomeMetresSL.Location = New System.Drawing.Point(979, 508)
-        Me.lablHomeMetresSL.Name = "lablHomeMetresSL"
-        Me.lablHomeMetresSL.Size = New System.Drawing.Size(340, 83)
-        Me.lablHomeMetresSL.TabIndex = 295
-        Me.lablHomeMetresSL.Text = " "
-        Me.lablHomeMetresSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button3.Location = New System.Drawing.Point(906, 351)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(126, 33)
+        Me.Button3.TabIndex = 5
+        Me.Button3.Text = "Test Load Page 2"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'lablAwayTacklesSL
+        'Button4
         '
-        Me.lablAwayTacklesSL.BackColor = System.Drawing.Color.Black
-        Me.lablAwayTacklesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lablAwayTacklesSL.ForeColor = System.Drawing.Color.White
-        Me.lablAwayTacklesSL.Location = New System.Drawing.Point(1482, 616)
-        Me.lablAwayTacklesSL.Name = "lablAwayTacklesSL"
-        Me.lablAwayTacklesSL.Size = New System.Drawing.Size(340, 83)
-        Me.lablAwayTacklesSL.TabIndex = 300
-        Me.lablAwayTacklesSL.Text = " "
-        Me.lablAwayTacklesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label26
-        '
-        Me.Label26.BackColor = System.Drawing.Color.White
-        Me.Label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.Color.Black
-        Me.Label26.Location = New System.Drawing.Point(1326, 616)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(150, 24)
-        Me.Label26.TabIndex = 299
-        Me.Label26.Text = "TACKLES"
-        Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lablHomeTacklesSL
-        '
-        Me.lablHomeTacklesSL.BackColor = System.Drawing.Color.Black
-        Me.lablHomeTacklesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lablHomeTacklesSL.ForeColor = System.Drawing.Color.White
-        Me.lablHomeTacklesSL.Location = New System.Drawing.Point(980, 616)
-        Me.lablHomeTacklesSL.Name = "lablHomeTacklesSL"
-        Me.lablHomeTacklesSL.Size = New System.Drawing.Size(340, 83)
-        Me.lablHomeTacklesSL.TabIndex = 298
-        Me.lablHomeTacklesSL.Text = " "
-        Me.lablHomeTacklesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button4.Location = New System.Drawing.Point(906, 315)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(126, 33)
+        Me.Button4.TabIndex = 4
+        Me.Button4.Text = "Test Load Page 1"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -2944,6 +3027,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.panelRacing)
         Me.Controls.Add(Me.panelSL)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.PanelRTE)
@@ -2963,6 +3047,8 @@ Partial Class Form1
         Me.panelSL.ResumeLayout(False)
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelRacing.ResumeLayout(False)
+        CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3183,4 +3269,11 @@ Partial Class Form1
     Friend WithEvents lablAwayCarriesSL As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents lablHomeCarriesSL As Label
+    Friend WithEvents panelRacing As Panel
+    Friend WithEvents PictureBoxTest As PictureBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents WebBrowser2 As WebBrowser
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class

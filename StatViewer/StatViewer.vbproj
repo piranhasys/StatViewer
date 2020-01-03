@@ -53,6 +53,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,6 +74,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsBettingBoard.vb" />
+    <Compile Include="clsBettingBoardRow.vb" />
     <Compile Include="clsConfig.vb" />
     <Compile Include="clsMatch.vb" />
     <Compile Include="clsRBTeamStat.vb" />

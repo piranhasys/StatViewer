@@ -1,7 +1,16 @@
 ﻿Module Module1
     Public Config As New clsConfig
     Public RemoteData As New clsRemoteData
+    Public CurrentBettingBoard As New clsBettingBoard
+    Enum DisplayType As Integer
+        '0=web, 1=RTE GAA, 2=Star6, 3=SkySuperLeague
+        Web = 0
+        RTE_GAA = 1
+        Star6 = 2
+        SkySuperLeague = 3
+        Racing = 4
 
+    End Enum
     Enum RBTeamStatIndex As Integer
         Kickouts = 1
         OwnKickoutsWon = 2
