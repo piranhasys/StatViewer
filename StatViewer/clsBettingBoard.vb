@@ -2,7 +2,8 @@
 
 Public Class clsBettingBoard
 
-    Public Property Heading As String = ""
+    Public Property CourseTime As String = ""
+    Public Property RaceName As String = ""
     Public Property Changes1Text As String = ""
     Public Property Changes2Text As String = "" 'NR
     Public Property Changes3Text As String = "" 'JC
@@ -12,7 +13,8 @@ Public Class clsBettingBoard
     Public Property BettingRowList As New List(Of clsBettingBoardRow)
 
     Public Sub New()
-        _Heading = ""
+        _CourseTime = ""
+        _RaceName = ""
         _Changes1Text = ""
         _Changes2Text = ""
         _Changes3Text = ""

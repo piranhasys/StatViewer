@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
@@ -241,12 +241,17 @@ Partial Class Form1
         Me.lablHomeNameSL = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.panelRacing = New System.Windows.Forms.Panel()
+        Me.panelRace1 = New System.Windows.Forms.Panel()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.picBoxCourse = New System.Windows.Forms.PictureBox()
+        Me.picBoxSponsor = New System.Windows.Forms.PictureBox()
+        Me.picBoxRaceBGD = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBoxTest = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.panelStar6.SuspendLayout()
@@ -256,6 +261,10 @@ Partial Class Form1
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelRacing.SuspendLayout()
+        Me.panelRace1.SuspendLayout()
+        CType(Me.picBoxCourse, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBoxSponsor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBoxRaceBGD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -2956,6 +2965,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelRacing.BackColor = System.Drawing.Color.Maroon
+        Me.panelRacing.Controls.Add(Me.panelRace1)
         Me.panelRacing.Controls.Add(Me.Button3)
         Me.panelRacing.Controls.Add(Me.Button4)
         Me.panelRacing.Controls.Add(Me.WebBrowser2)
@@ -2967,6 +2977,95 @@ Partial Class Form1
         Me.panelRacing.Size = New System.Drawing.Size(1904, 1042)
         Me.panelRacing.TabIndex = 13
         Me.panelRacing.Visible = False
+        '
+        'panelRace1
+        '
+        Me.panelRace1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panelRace1.BackColor = System.Drawing.Color.ForestGreen
+        Me.panelRace1.Controls.Add(Me.Label18)
+        Me.panelRace1.Controls.Add(Me.picBoxCourse)
+        Me.panelRace1.Controls.Add(Me.picBoxSponsor)
+        Me.panelRace1.Controls.Add(Me.picBoxRaceBGD)
+        Me.panelRace1.Location = New System.Drawing.Point(0, 0)
+        Me.panelRace1.Name = "panelRace1"
+        Me.panelRace1.Size = New System.Drawing.Size(1904, 1042)
+        Me.panelRace1.TabIndex = 6
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Eurostile", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.White
+        Me.Label18.Location = New System.Drawing.Point(368, 124)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(136, 36)
+        Me.Label18.TabIndex = 8
+        Me.Label18.Text = "Label18"
+        Me.Label18.Visible = False
+        '
+        'picBoxCourse
+        '
+        Me.picBoxCourse.BackColor = System.Drawing.Color.White
+        Me.picBoxCourse.Image = CType(resources.GetObject("picBoxCourse.Image"), System.Drawing.Image)
+        Me.picBoxCourse.Location = New System.Drawing.Point(16, 12)
+        Me.picBoxCourse.Name = "picBoxCourse"
+        Me.picBoxCourse.Size = New System.Drawing.Size(52, 21)
+        Me.picBoxCourse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picBoxCourse.TabIndex = 7
+        Me.picBoxCourse.TabStop = False
+        Me.picBoxCourse.Visible = False
+        '
+        'picBoxSponsor
+        '
+        Me.picBoxSponsor.BackColor = System.Drawing.Color.Transparent
+        Me.picBoxSponsor.Image = CType(resources.GetObject("picBoxSponsor.Image"), System.Drawing.Image)
+        Me.picBoxSponsor.Location = New System.Drawing.Point(1795, 971)
+        Me.picBoxSponsor.Name = "picBoxSponsor"
+        Me.picBoxSponsor.Size = New System.Drawing.Size(69, 42)
+        Me.picBoxSponsor.TabIndex = 6
+        Me.picBoxSponsor.TabStop = False
+        Me.picBoxSponsor.Visible = False
+        '
+        'picBoxRaceBGD
+        '
+        Me.picBoxRaceBGD.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picBoxRaceBGD.BackColor = System.Drawing.Color.White
+        Me.picBoxRaceBGD.Image = CType(resources.GetObject("picBoxRaceBGD.Image"), System.Drawing.Image)
+        Me.picBoxRaceBGD.Location = New System.Drawing.Point(0, 0)
+        Me.picBoxRaceBGD.Name = "picBoxRaceBGD"
+        Me.picBoxRaceBGD.Size = New System.Drawing.Size(1904, 1042)
+        Me.picBoxRaceBGD.TabIndex = 5
+        Me.picBoxRaceBGD.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(906, 351)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(126, 33)
+        Me.Button3.TabIndex = 5
+        Me.Button3.Text = "Test Load Page 2"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(906, 315)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(126, 33)
+        Me.Button4.TabIndex = 4
+        Me.Button4.Text = "Test Load Page 1"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'WebBrowser2
+        '
+        Me.WebBrowser2.Location = New System.Drawing.Point(770, 390)
+        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser2.Name = "WebBrowser2"
+        Me.WebBrowser2.Size = New System.Drawing.Size(760, 454)
+        Me.WebBrowser2.TabIndex = 3
         '
         'Button2
         '
@@ -2995,32 +3094,6 @@ Partial Class Form1
         Me.Button1.Text = "Test Load Image 1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'WebBrowser2
-        '
-        Me.WebBrowser2.Location = New System.Drawing.Point(770, 390)
-        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser2.Name = "WebBrowser2"
-        Me.WebBrowser2.Size = New System.Drawing.Size(760, 454)
-        Me.WebBrowser2.TabIndex = 3
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(906, 351)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(126, 33)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Test Load Page 2"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(906, 315)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(126, 33)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Test Load Page 1"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3048,6 +3121,11 @@ Partial Class Form1
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelRacing.ResumeLayout(False)
+        Me.panelRace1.ResumeLayout(False)
+        Me.panelRace1.PerformLayout()
+        CType(Me.picBoxCourse, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBoxSponsor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBoxRaceBGD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -3276,4 +3354,9 @@ Partial Class Form1
     Friend WithEvents WebBrowser2 As WebBrowser
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents panelRace1 As Panel
+    Friend WithEvents picBoxSponsor As PictureBox
+    Friend WithEvents picBoxRaceBGD As PictureBox
+    Friend WithEvents picBoxCourse As PictureBox
+    Friend WithEvents Label18 As Label
 End Class

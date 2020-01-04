@@ -8,6 +8,7 @@ Imports System.Security.Permissions
 Imports System.Runtime.InteropServices
 Imports System.Collections.Generic
 Imports System.Web.Script.Serialization
+Imports System.Drawing.Drawing2D
 
 Public Class Form1
     Public bConnectedToServer As Boolean = False
@@ -78,14 +79,17 @@ Public Class Form1
                 Next
         End Select
         SetupDisplay()
-
+        Select Case displayStyle
+            Case DisplayType.Racing
+                Connect()
+        End Select
     End Sub
     Sub SetupDisplay()
         Select Case displayStyle
             Case DisplayType.RTE_GAA
                 panelStar6.Visible = False
                 PanelRTE.Visible = True
-                PanelSL.Visible = False
+                panelSL.Visible = False
                 panelRacing.Visible = False
                 PanelRTE.BringToFront()
                 LoadRTEStaticData()
@@ -94,7 +98,7 @@ Public Class Form1
             Case DisplayType.Star6
                 panelStar6.Visible = True
                 PanelRTE.Visible = False
-                PanelSL.Visible = False
+                panelSL.Visible = False
                 panelRacing.Visible = False
                 panelStar6.BringToFront()
                 Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
@@ -104,7 +108,7 @@ Public Class Form1
             Case DisplayType.SkySuperLeague
                 panelRacing.Visible = False
                 panelSL.Visible = True
-                panelSL.BringToFront
+                panelSL.BringToFront()
             Case DisplayType.Racing
                 panelStar6.Visible = False
                 PanelRTE.Visible = False
@@ -113,7 +117,7 @@ Public Class Form1
             Case Else
                 panelStar6.Visible = False
                 PanelRTE.Visible = False
-                PanelSL.Visible = False
+                panelSL.Visible = False
                 panelRacing.Visible = False
                 PanelRTE.SendToBack()
                 RepositionBrowser()
@@ -128,7 +132,7 @@ Public Class Form1
         Dim inputFile As System.IO.StreamReader
         'Dim TempArray() As String
         Try
-           
+
             If Not System.IO.File.Exists(strFilename) Then
                 Exit Sub
             Else
@@ -490,7 +494,7 @@ Public Class Form1
                             CurrentBettingBoard = New clsBettingBoard 'clear old data
                             Dim json As New JavaScriptSerializer
                             CurrentBettingBoard = json.Deserialize(Of clsBettingBoard)(JSONString)
-                            Console.WriteLine(CurrentBettingBoard.Heading)
+                            ShowBettingBoard()
                         Case "REFRESH"
                             ReloadPage()
                     End Select
@@ -656,6 +660,20 @@ Public Class Form1
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         End Try
+    End Sub
+    Delegate Sub ShowBettingBoardCallback()
+    Sub ShowBettingBoard()
+        If picBoxRaceBGD.InvokeRequired Then
+            Dim d As New ShowBettingBoardCallback(AddressOf ShowBettingBoard)
+            Me.Invoke(d, New Object() {})
+        Else
+            DrawAllBettingBoard()
+            'lablRaceHeading1.Text = CurrentBettingBoard.Heading
+            'lablChanges1.Text = CurrentBettingBoard.Changes1Text
+            'lablChanges2.Text = CurrentBettingBoard.Changes2Text
+            'lablChanges3.Text = CurrentBettingBoard.Changes3Text
+            'lablChanges4.Text = CurrentBettingBoard.Changes4Text
+        End If
     End Sub
     Sub AssignRBSkyData(dataString As String)
         'already ordered and labelled
@@ -1054,32 +1072,32 @@ Public Class Form1
     End Sub
     Private Sub RepositionBrowser()
         Dim offset As Integer = 0
-        Me.WebBrowser1.Left = left
-        Me.WebBrowser1.Width = Me.Width - (offset + (left * 2))
-        Me.WebBrowser1.Top = top
+        Me.WebBrowser1.Left = Left
+        Me.WebBrowser1.Width = Me.Width - (offset + (Left * 2))
+        Me.WebBrowser1.Top = Top
         Me.WebBrowser1.Height = 4000
-        My.Settings.Left = left
-        My.Settings.Top = top
+        My.Settings.Left = Left
+        My.Settings.Top = Top
         My.Settings.Save()
     End Sub
 
     Private Sub UpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpToolStripMenuItem.Click
-        top -= 2
+        Top -= 2
         RepositionBrowser()
     End Sub
 
     Private Sub DownToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DownToolStripMenuItem.Click
-        top += 2
+        Top += 2
         RepositionBrowser()
     End Sub
 
     Private Sub LeftToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LeftToolStripMenuItem.Click
-        left -= 2
+        Left -= 2
         RepositionBrowser()
     End Sub
 
     Private Sub RightToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RightToolStripMenuItem.Click
-        left += 2
+        Left += 2
         RepositionBrowser()
     End Sub
 
@@ -1155,4 +1173,144 @@ Public Class Form1
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         TestLoadPage("iisstart.htm")
     End Sub
+
+    'Private Sub picBoxRaceBGD_Paint(sender As Object, e As PaintEventArgs) Handles picBoxRaceBGD.Paint
+    '    Dim myFont As Font = New Font("Arial", 22)
+    '    e.Graphics.DrawString(CurrentBettingBoard.Heading, myFont, Brushes.White, New Point(2, 25))
+    'End Sub
+
+    Public Sub DrawAllBettingBoard()
+        ' Create a Graphics object for the Control.
+        Try
+            Dim g As Graphics = Me.picBoxRaceBGD.CreateGraphics()
+            picBoxRaceBGD.Refresh()
+            g.SmoothingMode = SmoothingMode.AntiAlias
+            RedrawData(g)
+            ' Clean up the Graphics object.
+            g.Dispose()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Sub RedrawData(ByVal g As Graphics)
+        Try
+            'Dim thisRect As New RectangleF((thisPlot.CoordX * scaleX) - 12, (thisPlot.CoordY * scaleY) - 12, 24, 24)
+            'Dim thisBrush As New SolidBrush(Color.White)
+            'g.FillEllipse(thisBrush, thisRect)
+
+            Dim fontName As Font = New Font("Eurostile", 26, FontStyle.Bold)
+            Dim fontTime As Font = New Font("Eurostile", 32, FontStyle.Bold)
+            Dim fontChanges As Font = New Font("Eurostile", 30, FontStyle.Bold)
+            Dim fontBetting As Font = New Font("Eurostile", 22, FontStyle.Bold)
+
+            Dim StringFormatTime As StringFormat = New StringFormat()
+            StringFormatTime.Alignment = StringAlignment.Center
+            StringFormatTime.LineAlignment = StringAlignment.Near
+            Dim StringFormatName As StringFormat = New StringFormat()
+            StringFormatName.Alignment = StringAlignment.Center
+            StringFormatName.LineAlignment = StringAlignment.Far
+
+            Dim StringFormatCloth As StringFormat = New StringFormat()
+            StringFormatCloth.Alignment = StringAlignment.Far
+            StringFormatCloth.LineAlignment = StringAlignment.Center
+            Dim StringFormatRunnerName As StringFormat = New StringFormat()
+            StringFormatRunnerName.Alignment = StringAlignment.Near
+            StringFormatRunnerName.LineAlignment = StringAlignment.Center
+            Dim StringFormatOdds As StringFormat = New StringFormat()
+            StringFormatOdds.Alignment = StringAlignment.Center
+            StringFormatOdds.LineAlignment = StringAlignment.Center
+
+            Dim rectHeading As Rectangle = New Rectangle(0, 80, 1920, 100)
+            Dim rectBetting As Rectangle = New Rectangle(100, 300, 1500, 500)
+            Dim courseLogo As String = Path.Combine(Config.ImagesPath, CurrentBettingBoard.CourseLogo)
+            Dim sponsorLogo As String = Path.Combine(Config.ImagesPath, CurrentBettingBoard.SponsorLogo)
+
+            Dim courseImage As Image = Image.FromFile(courseLogo)
+            'g.DrawImage(courseImage, 100, 100, 300, 100)
+            g.DrawImageUnscaled(courseImage, 80, 40)
+
+            Dim sponsorImage As Image = Image.FromFile(sponsorLogo)
+            'g.DrawImage(sponsorImage, 1700, 750, 200, 150)
+            g.DrawImageUnscaled(sponsorImage, 1430, 840)
+
+            'headings:
+            g.DrawString(CurrentBettingBoard.CourseTime, fontTime, Brushes.White, rectHeading, StringFormatTime)
+            g.DrawString(CurrentBettingBoard.RaceName, fontName, Brushes.White, rectHeading, StringFormatName)
+            'betting:
+            'g.DrawRectangle(Pens.Yellow, rectBetting)
+            Dim baseline As Integer = 300
+            Dim columnCloth As Integer = 120
+            Dim columnName As Integer = 220
+            Dim column1 As Integer = 550
+            Dim column2 As Integer = 700
+            Dim column3 As Integer = 950
+            Dim column4 As Integer = 1100
+            Dim column5 As Integer = 1250
+            Dim columnTote As Integer = 1520
+            Dim ClothWidth As Integer = 80
+            Dim RunnerNameWidth As Integer = 300
+            Dim bettingOddsWidth As Integer = 150
+            Dim rowheight As Integer = 40
+
+            'For incRow As Integer = 1 To 7
+            '    g.DrawString("99", fontBetting, Brushes.White, New Rectangle(columnCloth, baseline, ClothWidth, rowheight), StringFormatCloth)
+            '    g.DrawString("Test Name", fontBetting, Brushes.White, New Rectangle(columnName, baseline, RunnerNameWidth, rowheight), StringFormatRunnerName)
+            '    g.DrawString("100", fontBetting, Brushes.White, New Rectangle(column1, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+            '    g.DrawString("85/40", fontBetting, Brushes.White, New Rectangle(column2, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+            '    g.DrawString("7/2", fontBetting, Brushes.White, New Rectangle(column3, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+            '    g.DrawString("500", fontBetting, Brushes.White, New Rectangle(column4, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+            '    g.DrawString("85/40", fontBetting, Brushes.LightGreen, New Rectangle(column5, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+            '    g.DrawString("166.40", fontBetting, Brushes.White, New Rectangle(columnTote, baseline, bettingOddsWidth, rowheight), StringFormatCloth)
+            '    baseline += rowheight
+            'Next
+            For Each thisRow As clsBettingBoardRow In CurrentBettingBoard.BettingRowList
+                g.DrawString(thisRow.Cloth, fontBetting, Brushes.White, New Rectangle(columnCloth, baseline, ClothWidth, rowheight), StringFormatCloth)
+                g.DrawString(thisRow.Name, fontBetting, Brushes.White, New Rectangle(columnName, baseline, RunnerNameWidth, rowheight), StringFormatRunnerName)
+                g.DrawString(thisRow.Odds1, fontBetting, Brushes.White, New Rectangle(column1, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                g.DrawString(thisRow.Odds2, fontBetting, Brushes.White, New Rectangle(column2, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                g.DrawString(thisRow.Odds3, fontBetting, Brushes.White, New Rectangle(column3, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                g.DrawString(thisRow.Odds4, fontBetting, Brushes.White, New Rectangle(column4, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                g.DrawString(thisRow.Odds, fontBetting, Brushes.LightGreen, New Rectangle(column5, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                g.DrawString(thisRow.ToteWin, fontBetting, Brushes.White, New Rectangle(columnTote, baseline, bettingOddsWidth, rowheight), StringFormatCloth)
+                baseline += rowheight
+            Next
+
+            'g.DrawString(CurrentBettingBoard.Heading, fontHeading, Brushes.White, 2, 25)
+            g.DrawString(CurrentBettingBoard.Changes1Text, fontChanges, Brushes.White, 200, 830)
+            g.DrawString(CurrentBettingBoard.Changes2Text, fontChanges, Brushes.White, 200, 870)
+            g.DrawString(CurrentBettingBoard.Changes3Text, fontChanges, Brushes.White, 200, 910)
+            g.DrawString(CurrentBettingBoard.Changes4Text, fontChanges, Brushes.White, 200, 950)
+
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    'Sub DrawEventPlot(ByVal g As Graphics, ByVal thisPlot As clsOptaEvent)
+    '    Try
+    '        Dim thisRect As New RectangleF((thisPlot.CoordX * scaleX) - 12, (thisPlot.CoordY * scaleY) - 12, 24, 24)
+    '        Dim thisBrush As New SolidBrush(Color.Red)
+    '        g.FillEllipse(thisBrush, thisRect)
+    '    Catch ex As Exception
+
+    '    End Try
+    'End Sub
+    'Sub DrawFormationPlot(ByVal g As Graphics, ByVal thisPlot As clsOptaPlayerData)
+    '    Try
+    '        Dim thisRect As New RectangleF((thisPlot.CoordX * scaleX) - 12, (thisPlot.CoordY * scaleY) - 12, 24, 24)
+    '        Dim thisBrush As New SolidBrush(Color.Blue)
+    '        If thisPlot.TeamIndex = 2 Then
+    '            'away
+    '            thisBrush.Color = Color.Red
+    '        End If
+    '        g.FillEllipse(thisBrush, thisRect)
+
+    '        'g.DrawString(thisPlot.ShirtNumber + " (" + thisPlot.CoordX.ToString + ", " + thisPlot.CoordY.ToString + ")", Me.Font, Brushes.White, thisRect.Left + 4, thisRect.Bottom - 16)
+    '        g.DrawString(thisPlot.ShirtNumber, Me.Font, Brushes.White, thisRect.Left + 4, thisRect.Bottom - 16)
+    '    Catch ex As Exception
+
+    '    End Try
+    'End Sub
+
 End Class
