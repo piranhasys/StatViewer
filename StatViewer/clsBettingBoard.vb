@@ -2,6 +2,7 @@
 
 Public Class clsBettingBoard
 
+    Public Property RaceCode As String = ""
     Public Property CourseTime As String = ""
     Public Property RaceName As String = ""
     Public Property Changes1Text As String = ""
@@ -13,6 +14,7 @@ Public Class clsBettingBoard
     Public Property BettingRowList As New List(Of clsBettingBoardRow)
 
     Public Sub New()
+        _RaceCode = ""
         _CourseTime = ""
         _RaceName = ""
         _Changes1Text = ""
@@ -23,5 +25,14 @@ Public Class clsBettingBoard
         _SponsorLogo = ""
         _BettingRowList = New List(Of clsBettingBoardRow)
     End Sub
-
+    Public ReadOnly Property ChangesCount As Integer
+        Get
+            Dim returnValue As Integer = 0
+            If _Changes1Text.Trim <> "" Then returnValue += 1
+            If _Changes2Text.Trim <> "" Then returnValue += 1
+            If _Changes3Text.Trim <> "" Then returnValue += 1
+            If _Changes4Text.Trim <> "" Then returnValue += 1
+            Return returnValue
+        End Get
+    End Property
 End Class

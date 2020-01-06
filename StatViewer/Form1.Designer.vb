@@ -252,6 +252,7 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBoxTest = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.panelStar6.SuspendLayout()
@@ -266,6 +267,7 @@ Partial Class Form1
         CType(Me.picBoxSponsor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBoxRaceBGD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -1970,7 +1972,7 @@ Partial Class Form1
         Me.panelSL.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panelSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.panelSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.panelSL.Controls.Add(Me.lablAwayTacklesSL)
         Me.panelSL.Controls.Add(Me.Label26)
         Me.panelSL.Controls.Add(Me.lablHomeTacklesSL)
@@ -2165,7 +2167,7 @@ Partial Class Form1
         '
         'lablAwayScorersSL
         '
-        Me.lablAwayScorersSL.BackColor = System.Drawing.Color.Black
+        Me.lablAwayScorersSL.BackColor = System.Drawing.Color.Transparent
         Me.lablAwayScorersSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayScorersSL.ForeColor = System.Drawing.Color.White
         Me.lablAwayScorersSL.Location = New System.Drawing.Point(1482, 67)
@@ -2177,7 +2179,7 @@ Partial Class Form1
         '
         'lablHomeScorersSL
         '
-        Me.lablHomeScorersSL.BackColor = System.Drawing.Color.Black
+        Me.lablHomeScorersSL.BackColor = System.Drawing.Color.Transparent
         Me.lablHomeScorersSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomeScorersSL.ForeColor = System.Drawing.Color.White
         Me.lablHomeScorersSL.Location = New System.Drawing.Point(980, 67)
@@ -2984,6 +2986,7 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelRace1.BackColor = System.Drawing.Color.ForestGreen
+        Me.panelRace1.Controls.Add(Me.PictureBox4)
         Me.panelRace1.Controls.Add(Me.Label18)
         Me.panelRace1.Controls.Add(Me.picBoxCourse)
         Me.panelRace1.Controls.Add(Me.picBoxSponsor)
@@ -3011,7 +3014,7 @@ Partial Class Form1
         Me.picBoxCourse.Image = CType(resources.GetObject("picBoxCourse.Image"), System.Drawing.Image)
         Me.picBoxCourse.Location = New System.Drawing.Point(16, 12)
         Me.picBoxCourse.Name = "picBoxCourse"
-        Me.picBoxCourse.Size = New System.Drawing.Size(52, 21)
+        Me.picBoxCourse.Size = New System.Drawing.Size(97, 84)
         Me.picBoxCourse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picBoxCourse.TabIndex = 7
         Me.picBoxCourse.TabStop = False
@@ -3094,6 +3097,18 @@ Partial Class Form1
         Me.Button1.Text = "Test Load Image 1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.White
+        Me.PictureBox4.Image = Global.StatViewer.My.Resources.Resources.Tote_Win
+        Me.PictureBox4.Location = New System.Drawing.Point(159, 28)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(97, 84)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 9
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3127,6 +3142,7 @@ Partial Class Form1
         CType(Me.picBoxSponsor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picBoxRaceBGD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3359,4 +3375,5 @@ Partial Class Form1
     Friend WithEvents picBoxRaceBGD As PictureBox
     Friend WithEvents picBoxCourse As PictureBox
     Friend WithEvents Label18 As Label
+    Friend WithEvents PictureBox4 As PictureBox
 End Class

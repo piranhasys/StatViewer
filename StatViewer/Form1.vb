@@ -29,6 +29,13 @@ Public Class Form1
     Private thisMatch As New clsMatch
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        Select Case displayStyle
+            Case DisplayType.Racing
+                Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+                Me.WindowState = FormWindowState.Maximized
+                Me.MenuStrip1.Visible = False
+        End Select
+
     End Sub
 
     Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
@@ -55,7 +62,7 @@ Public Class Form1
                     displayStyle = DisplayType.SkySuperLeague
                     My.Settings.ServerPort = Config.ServerPort
                     My.Settings.ServerIPAddress = Config.ServerAddress
-                Case "RACING"
+                Case "RACING", "IRIS"
                     displayStyle = DisplayType.Racing
                     My.Settings.ServerPort = Config.ServerPort
                     My.Settings.ServerIPAddress = Config.ServerAddress
@@ -69,7 +76,7 @@ Public Class Form1
         fontSize = My.Settings.FontSize
         Me.Left = My.Settings.Left
         Me.Top = My.Settings.Top
-        Me.Text = "PIRANHA StatViewer v" + ProductVersion + "   Use F1 for Full Screen, F2 for Status Bar"
+        Me.Text = "PIRANHA StatViewer v" + ProductVersion + "   Use F1 for Full Screen, F2 for Status Bar, Ctrl+Q to quit"
         Select Case displayStyle
             Case DisplayType.Web
             Case DisplayType.Racing
@@ -82,6 +89,7 @@ Public Class Form1
         Select Case displayStyle
             Case DisplayType.Racing
                 Connect()
+                '                MaximiseToolStripMenuItem.PerformClick()
         End Select
     End Sub
     Sub SetupDisplay()
@@ -489,6 +497,13 @@ Public Class Form1
                             End If
                         Case "DATA"
                         Case "LOADBETTING"
+                            'JSON string
+                            Dim JSONString As String = dataArray(2)
+                            CurrentBettingBoard = New clsBettingBoard 'clear old data
+                            Dim json As New JavaScriptSerializer
+                            CurrentBettingBoard = json.Deserialize(Of clsBettingBoard)(JSONString)
+                            ShowBettingBoard()
+                        Case "UPDATEBETTING"
                             'JSON string
                             Dim JSONString As String = dataArray(2)
                             CurrentBettingBoard = New clsBettingBoard 'clear old data
@@ -1149,7 +1164,7 @@ Public Class Form1
 
     End Sub
     Sub TestLoadImage(ImageName As String)
-        PictureBoxTest.Load(Path.Combine(Config.ImagesPath, ImageName))
+        PictureBoxTest.Load(Path.Combine(Config.AdImagesPath, ImageName))
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TestLoadImage("Emirates Skywards 175.png")
@@ -1200,15 +1215,17 @@ Public Class Form1
 
             Dim fontName As Font = New Font("Eurostile", 26, FontStyle.Bold)
             Dim fontTime As Font = New Font("Eurostile", 32, FontStyle.Bold)
-            Dim fontChanges As Font = New Font("Eurostile", 30, FontStyle.Bold)
+            Dim fontChanges As Font = New Font("Eurostile", 28, FontStyle.Bold)
             Dim fontBetting As Font = New Font("Eurostile", 22, FontStyle.Bold)
+
+            Dim PenBettingLine As Pen = New Pen(Brushes.DarkGreen, 4)
 
             Dim StringFormatTime As StringFormat = New StringFormat()
             StringFormatTime.Alignment = StringAlignment.Center
             StringFormatTime.LineAlignment = StringAlignment.Near
             Dim StringFormatName As StringFormat = New StringFormat()
             StringFormatName.Alignment = StringAlignment.Center
-            StringFormatName.LineAlignment = StringAlignment.Far
+            StringFormatName.LineAlignment = StringAlignment.Near
 
             Dim StringFormatCloth As StringFormat = New StringFormat()
             StringFormatCloth.Alignment = StringAlignment.Far
@@ -1220,72 +1237,207 @@ Public Class Form1
             StringFormatOdds.Alignment = StringAlignment.Center
             StringFormatOdds.LineAlignment = StringAlignment.Center
 
-            Dim rectHeading As Rectangle = New Rectangle(0, 80, 1920, 100)
+            Dim rectCourseTime As Rectangle = New Rectangle(400, 60, 1120, 100)
+            Dim rectRaceName As Rectangle = New Rectangle(400, 120, 1120, 200)
             Dim rectBetting As Rectangle = New Rectangle(100, 300, 1500, 500)
-            Dim courseLogo As String = Path.Combine(Config.ImagesPath, CurrentBettingBoard.CourseLogo)
-            Dim sponsorLogo As String = Path.Combine(Config.ImagesPath, CurrentBettingBoard.SponsorLogo)
+            Dim courseLogo As String = Path.Combine(Config.CourseImagesPath, CurrentBettingBoard.CourseLogo)
+            Dim sponsorLogo As String = Path.Combine(Config.SponsorImagesPath, CurrentBettingBoard.SponsorLogo)
 
-            Dim courseImage As Image = Image.FromFile(courseLogo)
-            'g.DrawImage(courseImage, 100, 100, 300, 100)
-            g.DrawImageUnscaled(courseImage, 80, 40)
+            If File.Exists(courseLogo) Then
+                Try
+                    Dim courseImage As Image = Image.FromFile(courseLogo)
+                    'g.DrawImage(courseImage, 100, 100, 300, 100)
+                    g.DrawImageUnscaled(courseImage, 80, 40)
+                Catch ex As Exception
 
-            Dim sponsorImage As Image = Image.FromFile(sponsorLogo)
-            'g.DrawImage(sponsorImage, 1700, 750, 200, 150)
-            g.DrawImageUnscaled(sponsorImage, 1430, 840)
+                End Try
+            End If
 
             'headings:
-            g.DrawString(CurrentBettingBoard.CourseTime, fontTime, Brushes.White, rectHeading, StringFormatTime)
-            g.DrawString(CurrentBettingBoard.RaceName, fontName, Brushes.White, rectHeading, StringFormatName)
+            g.DrawString(CurrentBettingBoard.CourseTime.ToUpper, fontTime, Brushes.White, rectCourseTime, StringFormatTime)
+            g.DrawString(CurrentBettingBoard.RaceName, fontName, Brushes.White, rectRaceName, StringFormatName)
+
+
+            'bottom bar:
+            Dim rectChanges As Rectangle = New Rectangle(240, 822, 1440, 180)
+            Dim Penchanges As Pen = New Pen(Brushes.Silver, 4)
+            Penchanges.LineJoin = System.Drawing.Drawing2D.LineJoin.Bevel
+
+            Dim colorChangesBox As Color = Color.FromArgb(80, Color.Black)
+            Dim brushChanges = New SolidBrush(colorChangesBox)
+
+            g.FillRectangle(brushChanges, rectChanges)
+            g.DrawRectangle(Penchanges, rectChanges)
+
+            If File.Exists(sponsorLogo) Then
+                Try
+                    Dim sponsorImage As Image = Image.FromFile(sponsorLogo)
+                    g.DrawImage(sponsorImage, 1424, 862, 200, 100)
+                    'Dim imageHeight As Integer = sponsorImage.Height
+                    'Dim Y As Integer = 900 - (imageHeight / 2)
+                    'Console.WriteLine(Y.ToString)
+                    'g.DrawImageUnscaled(sponsorImage, 1380, Y)
+                Catch ex As Exception
+
+                End Try
+            End If
+            'CurrentBettingBoard.Changes1Text = "Line One"
+            'CurrentBettingBoard.Changes2Text = " "
+            'CurrentBettingBoard.Changes3Text = "Line Three"
+            'CurrentBettingBoard.Changes4Text = "Line Four which is quite long considering the weather what happens..."
+
+            Dim changesBaseline As Integer = 830
+            Dim changesBaselineIncrement As Integer = 40
+            Select Case CurrentBettingBoard.ChangesCount
+                Case 1
+                    changesBaseline = 880
+                Case 2
+                    changesBaseline = 860
+                    changesBaselineIncrement = 50
+                Case 3
+                    changesBaseline = 840
+                    changesBaselineIncrement = 50
+                Case Else
+                    changesBaseline = 830
+            End Select
+            If CurrentBettingBoard.Changes1Text.Trim <> "" Then
+                g.DrawString(CurrentBettingBoard.Changes1Text, fontChanges, Brushes.White, 280, changesBaseline)
+                changesBaseline += changesBaselineIncrement
+            End If
+            If CurrentBettingBoard.Changes2Text.Trim <> "" Then
+                g.DrawString(CurrentBettingBoard.Changes2Text, fontChanges, Brushes.White, 280, changesBaseline)
+                changesBaseline += changesBaselineIncrement
+            End If
+            If CurrentBettingBoard.Changes3Text.Trim <> "" Then
+                g.DrawString(CurrentBettingBoard.Changes3Text, fontChanges, Brushes.White, 280, changesBaseline)
+                changesBaseline += changesBaselineIncrement
+            End If
+            If CurrentBettingBoard.Changes4Text.Trim <> "" Then
+                g.DrawString(CurrentBettingBoard.Changes4Text, fontChanges, Brushes.White, 280, changesBaseline)
+                changesBaseline += changesBaselineIncrement
+            End If
+
+
             'betting:
-            'g.DrawRectangle(Pens.Yellow, rectBetting)
-            Dim baseline As Integer = 300
-            Dim columnCloth As Integer = 120
-            Dim columnName As Integer = 220
-            Dim column1 As Integer = 550
-            Dim column2 As Integer = 700
-            Dim column3 As Integer = 950
-            Dim column4 As Integer = 1100
-            Dim column5 As Integer = 1250
-            Dim columnTote As Integer = 1520
+            Dim baseline As Integer = 250
+            Dim columnCloth As Integer = 220
+            Dim columnName As Integer = 320
+            Dim column1 As Integer = 750
+            Dim column2 As Integer = 900
+            Dim column3 As Integer = 1050
+            Dim column4 As Integer = 1200
+            Dim column5 As Integer = 1350
+            Dim columnTote As Integer = 1500
+
+            Dim columnClothA As Integer = 100
+            Dim columnNameA As Integer = 200
+            Dim column5A As Integer = 560
+            Dim columnToteA As Integer = 700
+            Dim lineAStart As Integer = 140
+            Dim lineAEnd As Integer = 844
+
+            Dim columnClothB As Integer = 1000
+            Dim columnNameB As Integer = 1100
+            Dim column5B As Integer = 1460
+            Dim columnToteB As Integer = 1600
+            Dim lineBStart As Integer = 1040
+            Dim lineBEnd As Integer = 1744
+
             Dim ClothWidth As Integer = 80
-            Dim RunnerNameWidth As Integer = 300
+            Dim RunnerNameWidth As Integer = 440
             Dim bettingOddsWidth As Integer = 150
+            Dim lineStart As Integer = 260
+            Dim lineEnd As Integer = 1650
             Dim rowheight As Integer = 40
+            Dim twinColumn As Boolean = False
+            Dim rowSplit As Integer = 0
+            Select Case CurrentBettingBoard.BettingRowList.Count
+                Case < 10
+                    'spacing
+                    rowheight = 50
+                    baseline = 300
+                Case 11 To 13
+                    'default
+                Case 14 To 16
+                    rowheight = 34
+                    fontBetting = New Font("Eurostile", 20, FontStyle.Bold)
+                Case 17 To 18
+                    baseline = 240
+                    rowheight = 32
+                    fontBetting = New Font("Eurostile", 18, FontStyle.Bold)
+                'Case 19 To 20
+                '    rowheight = 30
+                '    fontBetting = New Font("Eurostile", 18, FontStyle.Bold)
+                Case > 18
+                    '2 columns
+                    fontBetting = New Font("Eurostile", 20, FontStyle.Bold)
+                    twinColumn = True
+                    rowSplit = (CurrentBettingBoard.BettingRowList.Count / 2) + 1
+                Case Else
+                    'OK for default
+            End Select
 
-            'For incRow As Integer = 1 To 7
-            '    g.DrawString("99", fontBetting, Brushes.White, New Rectangle(columnCloth, baseline, ClothWidth, rowheight), StringFormatCloth)
-            '    g.DrawString("Test Name", fontBetting, Brushes.White, New Rectangle(columnName, baseline, RunnerNameWidth, rowheight), StringFormatRunnerName)
-            '    g.DrawString("100", fontBetting, Brushes.White, New Rectangle(column1, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-            '    g.DrawString("85/40", fontBetting, Brushes.White, New Rectangle(column2, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-            '    g.DrawString("7/2", fontBetting, Brushes.White, New Rectangle(column3, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-            '    g.DrawString("500", fontBetting, Brushes.White, New Rectangle(column4, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-            '    g.DrawString("85/40", fontBetting, Brushes.LightGreen, New Rectangle(column5, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-            '    g.DrawString("166.40", fontBetting, Brushes.White, New Rectangle(columnTote, baseline, bettingOddsWidth, rowheight), StringFormatCloth)
-            '    baseline += rowheight
-            'Next
-            For Each thisRow As clsBettingBoardRow In CurrentBettingBoard.BettingRowList
-                g.DrawString(thisRow.Cloth, fontBetting, Brushes.White, New Rectangle(columnCloth, baseline, ClothWidth, rowheight), StringFormatCloth)
-                g.DrawString(thisRow.Name, fontBetting, Brushes.White, New Rectangle(columnName, baseline, RunnerNameWidth, rowheight), StringFormatRunnerName)
-                g.DrawString(thisRow.Odds1, fontBetting, Brushes.White, New Rectangle(column1, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-                g.DrawString(thisRow.Odds2, fontBetting, Brushes.White, New Rectangle(column2, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-                g.DrawString(thisRow.Odds3, fontBetting, Brushes.White, New Rectangle(column3, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-                g.DrawString(thisRow.Odds4, fontBetting, Brushes.White, New Rectangle(column4, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-                g.DrawString(thisRow.Odds, fontBetting, Brushes.LightGreen, New Rectangle(column5, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
-                g.DrawString(thisRow.ToteWin, fontBetting, Brushes.White, New Rectangle(columnTote, baseline, bettingOddsWidth, rowheight), StringFormatCloth)
-                baseline += rowheight
-            Next
+            If twinColumn Then
+                Dim rowCount As Integer = 0
+                Dim baselineOrigional As Integer = baseline
+                g.DrawImage(My.Resources.Tote_Win, columnToteA + 50, baseline - 46, 100, 50)
+                g.DrawImage(My.Resources.Tote_Win, columnToteB + 50, baseline - 46, 100, 50)
+                For Each thisRow As clsBettingBoardRow In CurrentBettingBoard.BettingRowList
+                    rowCount += 1
+                    If rowCount = rowSplit Then
+                        baseline = baselineOrigional  'down column B
+                    End If
+                    If rowCount < rowSplit Then
+                        'first column
+                        g.DrawString(thisRow.Cloth, fontBetting, Brushes.White, New Rectangle(columnClothA, baseline, ClothWidth, rowheight), StringFormatCloth)
+                        g.DrawString(thisRow.Name.ToUpper, fontBetting, Brushes.White, New Rectangle(columnNameA, baseline, RunnerNameWidth, rowheight), StringFormatRunnerName)
+                        g.DrawString(thisRow.Odds, fontBetting, Brushes.LightGreen, New Rectangle(column5A, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                        g.DrawString(thisRow.ToteWin, fontBetting, Brushes.White, New Rectangle(columnToteA, baseline, bettingOddsWidth, rowheight), StringFormatCloth)
+                        baseline += rowheight
+                        g.DrawLine(PenBettingLine, lineAStart, baseline - 2, lineAEnd, baseline - 2)    'under row
+                    Else
+                        'second column
+                        g.DrawString(thisRow.Cloth, fontBetting, Brushes.White, New Rectangle(columnClothB, baseline, ClothWidth, rowheight), StringFormatCloth)
+                        g.DrawString(thisRow.Name.ToUpper, fontBetting, Brushes.White, New Rectangle(columnNameB, baseline, RunnerNameWidth, rowheight), StringFormatRunnerName)
+                        g.DrawString(thisRow.Odds, fontBetting, Brushes.LightGreen, New Rectangle(column5B, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                        g.DrawString(thisRow.ToteWin, fontBetting, Brushes.White, New Rectangle(columnToteB, baseline, bettingOddsWidth, rowheight), StringFormatCloth)
+                        baseline += rowheight
+                        g.DrawLine(PenBettingLine, lineBStart, baseline - 2, lineBEnd, baseline - 2)    'under row
+                    End If
+                Next
+            Else
+                g.DrawImage(My.Resources.Tote_Win, columnTote + 40, baseline - 60, 120, 60)
+                For Each thisRow As clsBettingBoardRow In CurrentBettingBoard.BettingRowList
+                    g.DrawString(thisRow.Cloth, fontBetting, Brushes.White, New Rectangle(columnCloth, baseline, ClothWidth, rowheight), StringFormatCloth)
+                    g.DrawString(thisRow.Name.ToUpper, fontBetting, Brushes.White, New Rectangle(columnName, baseline, RunnerNameWidth, rowheight), StringFormatRunnerName)
+                    g.DrawString(thisRow.Odds1, fontBetting, Brushes.White, New Rectangle(column1, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                    g.DrawString(thisRow.Odds2, fontBetting, Brushes.White, New Rectangle(column2, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                    g.DrawString(thisRow.Odds3, fontBetting, Brushes.White, New Rectangle(column3, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                    g.DrawString(thisRow.Odds4, fontBetting, Brushes.White, New Rectangle(column4, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                    g.DrawString(thisRow.Odds, fontBetting, Brushes.LightGreen, New Rectangle(column5, baseline, bettingOddsWidth, rowheight), StringFormatOdds)
+                    g.DrawString(thisRow.ToteWin, fontBetting, Brushes.White, New Rectangle(columnTote, baseline, bettingOddsWidth, rowheight), StringFormatCloth)
+                    baseline += rowheight
+                    g.DrawLine(PenBettingLine, lineStart, baseline - 2, lineEnd, baseline - 2)    'under row
+                Next
+            End If
 
-            'g.DrawString(CurrentBettingBoard.Heading, fontHeading, Brushes.White, 2, 25)
-            g.DrawString(CurrentBettingBoard.Changes1Text, fontChanges, Brushes.White, 200, 830)
-            g.DrawString(CurrentBettingBoard.Changes2Text, fontChanges, Brushes.White, 200, 870)
-            g.DrawString(CurrentBettingBoard.Changes3Text, fontChanges, Brushes.White, 200, 910)
-            g.DrawString(CurrentBettingBoard.Changes4Text, fontChanges, Brushes.White, 200, 950)
 
 
+            'tidy:
+            fontBetting.Dispose()
+            fontChanges.Dispose()
+            fontName.Dispose()
+            fontTime.Dispose()
 
+            Penchanges.Dispose()
+            PenBettingLine.Dispose()
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
     End Sub
     'Sub DrawEventPlot(ByVal g As Graphics, ByVal thisPlot As clsOptaEvent)
     '    Try
