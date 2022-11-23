@@ -165,12 +165,18 @@ Partial Class Form1
         Me.lablStar6TeamHome = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panelSL = New System.Windows.Forms.Panel()
+        Me.lablStatAwaySL18 = New System.Windows.Forms.Label()
+        Me.lablStatHomeSL18 = New System.Windows.Forms.Label()
+        Me.lablStatNameSL18 = New System.Windows.Forms.Label()
+        Me.lablAwayBreaksSL = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.lablHomeBreaksSL = New System.Windows.Forms.Label()
         Me.lablAwayTacklesSL = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.lablHomeTacklesSL = New System.Windows.Forms.Label()
-        Me.lablAwayMetresSL = New System.Windows.Forms.Label()
+        Me.lablAwayOffloadsSL = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.lablHomeMetresSL = New System.Windows.Forms.Label()
+        Me.lablHomeOffloadsSL = New System.Windows.Forms.Label()
         Me.lablAwayCarriesSL = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.lablHomeCarriesSL = New System.Windows.Forms.Label()
@@ -244,13 +250,13 @@ Partial Class Form1
         Me.panelRace1 = New System.Windows.Forms.Panel()
         Me.picBoxRaceBGD = New System.Windows.Forms.PictureBox()
         Me.picBoxFFAd = New System.Windows.Forms.PictureBox()
+        Me.picBoxRaceBGD2 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBoxTest = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.picBoxRaceBGD2 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelRTE.SuspendLayout()
         Me.panelStar6.SuspendLayout()
@@ -263,8 +269,8 @@ Partial Class Form1
         Me.panelRace1.SuspendLayout()
         CType(Me.picBoxRaceBGD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBoxFFAd, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBoxRaceBGD2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -1970,12 +1976,18 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.panelSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.panelSL.Controls.Add(Me.lablStatAwaySL18)
+        Me.panelSL.Controls.Add(Me.lablStatHomeSL18)
+        Me.panelSL.Controls.Add(Me.lablStatNameSL18)
+        Me.panelSL.Controls.Add(Me.lablAwayBreaksSL)
+        Me.panelSL.Controls.Add(Me.Label21)
+        Me.panelSL.Controls.Add(Me.lablHomeBreaksSL)
         Me.panelSL.Controls.Add(Me.lablAwayTacklesSL)
         Me.panelSL.Controls.Add(Me.Label26)
         Me.panelSL.Controls.Add(Me.lablHomeTacklesSL)
-        Me.panelSL.Controls.Add(Me.lablAwayMetresSL)
+        Me.panelSL.Controls.Add(Me.lablAwayOffloadsSL)
         Me.panelSL.Controls.Add(Me.Label23)
-        Me.panelSL.Controls.Add(Me.lablHomeMetresSL)
+        Me.panelSL.Controls.Add(Me.lablHomeOffloadsSL)
         Me.panelSL.Controls.Add(Me.lablAwayCarriesSL)
         Me.panelSL.Controls.Add(Me.Label20)
         Me.panelSL.Controls.Add(Me.lablHomeCarriesSL)
@@ -2051,15 +2063,90 @@ Partial Class Form1
         Me.panelSL.TabIndex = 4
         Me.panelSL.Visible = False
         '
+        'lablStatAwaySL18
+        '
+        Me.lablStatAwaySL18.BackColor = System.Drawing.Color.White
+        Me.lablStatAwaySL18.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatAwaySL18.ForeColor = System.Drawing.Color.Black
+        Me.lablStatAwaySL18.Location = New System.Drawing.Point(716, 576)
+        Me.lablStatAwaySL18.Name = "lablStatAwaySL18"
+        Me.lablStatAwaySL18.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatAwaySL18.TabIndex = 306
+        Me.lablStatAwaySL18.Text = " "
+        Me.lablStatAwaySL18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatHomeSL18
+        '
+        Me.lablStatHomeSL18.BackColor = System.Drawing.Color.White
+        Me.lablStatHomeSL18.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatHomeSL18.ForeColor = System.Drawing.Color.Black
+        Me.lablStatHomeSL18.Location = New System.Drawing.Point(49, 576)
+        Me.lablStatHomeSL18.Name = "lablStatHomeSL18"
+        Me.lablStatHomeSL18.Size = New System.Drawing.Size(130, 42)
+        Me.lablStatHomeSL18.TabIndex = 305
+        Me.lablStatHomeSL18.Text = " "
+        Me.lablStatHomeSL18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablStatNameSL18
+        '
+        Me.lablStatNameSL18.BackColor = System.Drawing.Color.Gainsboro
+        Me.lablStatNameSL18.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablStatNameSL18.ForeColor = System.Drawing.Color.Black
+        Me.lablStatNameSL18.Location = New System.Drawing.Point(185, 576)
+        Me.lablStatNameSL18.Name = "lablStatNameSL18"
+        Me.lablStatNameSL18.Size = New System.Drawing.Size(525, 42)
+        Me.lablStatNameSL18.TabIndex = 304
+        Me.lablStatNameSL18.Text = " "
+        Me.lablStatNameSL18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablAwayBreaksSL
+        '
+        Me.lablAwayBreaksSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.lablAwayBreaksSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablAwayBreaksSL.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayBreaksSL.ForeColor = System.Drawing.Color.White
+        Me.lablAwayBreaksSL.Location = New System.Drawing.Point(1481, 603)
+        Me.lablAwayBreaksSL.Name = "lablAwayBreaksSL"
+        Me.lablAwayBreaksSL.Size = New System.Drawing.Size(340, 112)
+        Me.lablAwayBreaksSL.TabIndex = 303
+        Me.lablAwayBreaksSL.Text = " "
+        Me.lablAwayBreaksSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label21
+        '
+        Me.Label21.BackColor = System.Drawing.Color.White
+        Me.Label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.Black
+        Me.Label21.Location = New System.Drawing.Point(1325, 603)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(150, 24)
+        Me.Label21.TabIndex = 302
+        Me.Label21.Text = "METRES MADE"
+        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lablHomeBreaksSL
+        '
+        Me.lablHomeBreaksSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.lablHomeBreaksSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablHomeBreaksSL.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeBreaksSL.ForeColor = System.Drawing.Color.White
+        Me.lablHomeBreaksSL.Location = New System.Drawing.Point(979, 603)
+        Me.lablHomeBreaksSL.Name = "lablHomeBreaksSL"
+        Me.lablHomeBreaksSL.Size = New System.Drawing.Size(340, 112)
+        Me.lablHomeBreaksSL.TabIndex = 301
+        Me.lablHomeBreaksSL.Text = " "
+        Me.lablHomeBreaksSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'lablAwayTacklesSL
         '
         Me.lablAwayTacklesSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lablAwayTacklesSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lablAwayTacklesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayTacklesSL.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayTacklesSL.ForeColor = System.Drawing.Color.White
-        Me.lablAwayTacklesSL.Location = New System.Drawing.Point(1482, 838)
+        Me.lablAwayTacklesSL.Location = New System.Drawing.Point(1482, 477)
         Me.lablAwayTacklesSL.Name = "lablAwayTacklesSL"
-        Me.lablAwayTacklesSL.Size = New System.Drawing.Size(340, 190)
+        Me.lablAwayTacklesSL.Size = New System.Drawing.Size(340, 112)
         Me.lablAwayTacklesSL.TabIndex = 300
         Me.lablAwayTacklesSL.Text = " "
         Me.lablAwayTacklesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -2070,7 +2157,7 @@ Partial Class Form1
         Me.Label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.Black
-        Me.Label26.Location = New System.Drawing.Point(1326, 838)
+        Me.Label26.Location = New System.Drawing.Point(1326, 477)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(150, 24)
         Me.Label26.TabIndex = 299
@@ -2081,27 +2168,27 @@ Partial Class Form1
         '
         Me.lablHomeTacklesSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lablHomeTacklesSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lablHomeTacklesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeTacklesSL.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomeTacklesSL.ForeColor = System.Drawing.Color.White
-        Me.lablHomeTacklesSL.Location = New System.Drawing.Point(980, 838)
+        Me.lablHomeTacklesSL.Location = New System.Drawing.Point(980, 477)
         Me.lablHomeTacklesSL.Name = "lablHomeTacklesSL"
-        Me.lablHomeTacklesSL.Size = New System.Drawing.Size(340, 190)
+        Me.lablHomeTacklesSL.Size = New System.Drawing.Size(340, 112)
         Me.lablHomeTacklesSL.TabIndex = 298
-        Me.lablHomeTacklesSL.Text = " SMITH 66" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "JONES 54" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ASHLEY-SMITH 8" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FOURTH MAN 6" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FIVE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SIX" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SEVEN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EIGHT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "NINE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TEN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lablHomeTacklesSL.Text = " "
         Me.lablHomeTacklesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'lablAwayMetresSL
+        'lablAwayOffloadsSL
         '
-        Me.lablAwayMetresSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.lablAwayMetresSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lablAwayMetresSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lablAwayMetresSL.ForeColor = System.Drawing.Color.White
-        Me.lablAwayMetresSL.Location = New System.Drawing.Point(1481, 636)
-        Me.lablAwayMetresSL.Name = "lablAwayMetresSL"
-        Me.lablAwayMetresSL.Size = New System.Drawing.Size(340, 190)
-        Me.lablAwayMetresSL.TabIndex = 297
-        Me.lablAwayMetresSL.Text = " "
-        Me.lablAwayMetresSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lablAwayOffloadsSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.lablAwayOffloadsSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablAwayOffloadsSL.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayOffloadsSL.ForeColor = System.Drawing.Color.White
+        Me.lablAwayOffloadsSL.Location = New System.Drawing.Point(1481, 729)
+        Me.lablAwayOffloadsSL.Name = "lablAwayOffloadsSL"
+        Me.lablAwayOffloadsSL.Size = New System.Drawing.Size(340, 112)
+        Me.lablAwayOffloadsSL.TabIndex = 297
+        Me.lablAwayOffloadsSL.Text = " "
+        Me.lablAwayOffloadsSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label23
         '
@@ -2109,35 +2196,35 @@ Partial Class Form1
         Me.Label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.Black
-        Me.Label23.Location = New System.Drawing.Point(1325, 636)
+        Me.Label23.Location = New System.Drawing.Point(1325, 729)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(150, 24)
         Me.Label23.TabIndex = 296
-        Me.Label23.Text = "METRES MADE"
+        Me.Label23.Text = "OFFLOADS"
         Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lablHomeMetresSL
+        'lablHomeOffloadsSL
         '
-        Me.lablHomeMetresSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.lablHomeMetresSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lablHomeMetresSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lablHomeMetresSL.ForeColor = System.Drawing.Color.White
-        Me.lablHomeMetresSL.Location = New System.Drawing.Point(979, 636)
-        Me.lablHomeMetresSL.Name = "lablHomeMetresSL"
-        Me.lablHomeMetresSL.Size = New System.Drawing.Size(340, 190)
-        Me.lablHomeMetresSL.TabIndex = 295
-        Me.lablHomeMetresSL.Text = " SMITH 66" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "JONES 54" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ASHLEY-SMITH 8" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FOURTH MAN 6" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FIVE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SIX" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SEVEN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EIGHT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "NINE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TEN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.lablHomeMetresSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lablHomeOffloadsSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.lablHomeOffloadsSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lablHomeOffloadsSL.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeOffloadsSL.ForeColor = System.Drawing.Color.White
+        Me.lablHomeOffloadsSL.Location = New System.Drawing.Point(979, 729)
+        Me.lablHomeOffloadsSL.Name = "lablHomeOffloadsSL"
+        Me.lablHomeOffloadsSL.Size = New System.Drawing.Size(340, 112)
+        Me.lablHomeOffloadsSL.TabIndex = 295
+        Me.lablHomeOffloadsSL.Text = " "
+        Me.lablHomeOffloadsSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lablAwayCarriesSL
         '
         Me.lablAwayCarriesSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lablAwayCarriesSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lablAwayCarriesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablAwayCarriesSL.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayCarriesSL.ForeColor = System.Drawing.Color.White
-        Me.lablAwayCarriesSL.Location = New System.Drawing.Point(1482, 434)
+        Me.lablAwayCarriesSL.Location = New System.Drawing.Point(1481, 855)
         Me.lablAwayCarriesSL.Name = "lablAwayCarriesSL"
-        Me.lablAwayCarriesSL.Size = New System.Drawing.Size(340, 190)
+        Me.lablAwayCarriesSL.Size = New System.Drawing.Size(340, 112)
         Me.lablAwayCarriesSL.TabIndex = 294
         Me.lablAwayCarriesSL.Text = " "
         Me.lablAwayCarriesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -2148,7 +2235,7 @@ Partial Class Form1
         Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(1326, 434)
+        Me.Label20.Location = New System.Drawing.Point(1325, 855)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(150, 24)
         Me.Label20.TabIndex = 293
@@ -2159,13 +2246,13 @@ Partial Class Form1
         '
         Me.lablHomeCarriesSL.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lablHomeCarriesSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lablHomeCarriesSL.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lablHomeCarriesSL.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomeCarriesSL.ForeColor = System.Drawing.Color.White
-        Me.lablHomeCarriesSL.Location = New System.Drawing.Point(980, 434)
+        Me.lablHomeCarriesSL.Location = New System.Drawing.Point(979, 855)
         Me.lablHomeCarriesSL.Name = "lablHomeCarriesSL"
-        Me.lablHomeCarriesSL.Size = New System.Drawing.Size(340, 190)
+        Me.lablHomeCarriesSL.Size = New System.Drawing.Size(340, 112)
         Me.lablHomeCarriesSL.TabIndex = 292
-        Me.lablHomeCarriesSL.Text = " SMITH 66" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "JONES 54" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ASHLEY-SMITH 8" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FOURTH MAN 6" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FIVE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SIX" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SEVEN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EIGHT" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "NINE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "TEN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lablHomeCarriesSL.Text = " "
         Me.lablHomeCarriesSL.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lablAwayScorersSL
@@ -2197,7 +2284,7 @@ Partial Class Form1
         Me.lablStatAwaySL17.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL17.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL17.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL17.Location = New System.Drawing.Point(716, 857)
+        Me.lablStatAwaySL17.Location = New System.Drawing.Point(716, 956)
         Me.lablStatAwaySL17.Name = "lablStatAwaySL17"
         Me.lablStatAwaySL17.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL17.TabIndex = 289
@@ -2209,7 +2296,7 @@ Partial Class Form1
         Me.lablStatHomeSL17.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL17.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL17.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL17.Location = New System.Drawing.Point(49, 857)
+        Me.lablStatHomeSL17.Location = New System.Drawing.Point(49, 956)
         Me.lablStatHomeSL17.Name = "lablStatHomeSL17"
         Me.lablStatHomeSL17.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL17.TabIndex = 288
@@ -2221,7 +2308,7 @@ Partial Class Form1
         Me.lablStatNameSL17.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL17.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL17.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL17.Location = New System.Drawing.Point(185, 857)
+        Me.lablStatNameSL17.Location = New System.Drawing.Point(185, 956)
         Me.lablStatNameSL17.Name = "lablStatNameSL17"
         Me.lablStatNameSL17.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL17.TabIndex = 287
@@ -2233,7 +2320,7 @@ Partial Class Form1
         Me.lablStatAwaySL16.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL16.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL16.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL16.Location = New System.Drawing.Point(716, 809)
+        Me.lablStatAwaySL16.Location = New System.Drawing.Point(716, 908)
         Me.lablStatAwaySL16.Name = "lablStatAwaySL16"
         Me.lablStatAwaySL16.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL16.TabIndex = 286
@@ -2245,7 +2332,7 @@ Partial Class Form1
         Me.lablStatHomeSL16.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL16.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL16.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL16.Location = New System.Drawing.Point(49, 809)
+        Me.lablStatHomeSL16.Location = New System.Drawing.Point(49, 908)
         Me.lablStatHomeSL16.Name = "lablStatHomeSL16"
         Me.lablStatHomeSL16.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL16.TabIndex = 285
@@ -2257,7 +2344,7 @@ Partial Class Form1
         Me.lablStatNameSL16.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL16.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL16.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL16.Location = New System.Drawing.Point(185, 809)
+        Me.lablStatNameSL16.Location = New System.Drawing.Point(185, 908)
         Me.lablStatNameSL16.Name = "lablStatNameSL16"
         Me.lablStatNameSL16.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL16.TabIndex = 284
@@ -2269,7 +2356,7 @@ Partial Class Form1
         Me.lablStatAwaySL15.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL15.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL15.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL15.Location = New System.Drawing.Point(716, 761)
+        Me.lablStatAwaySL15.Location = New System.Drawing.Point(716, 860)
         Me.lablStatAwaySL15.Name = "lablStatAwaySL15"
         Me.lablStatAwaySL15.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL15.TabIndex = 283
@@ -2281,7 +2368,7 @@ Partial Class Form1
         Me.lablStatHomeSL15.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL15.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL15.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL15.Location = New System.Drawing.Point(49, 761)
+        Me.lablStatHomeSL15.Location = New System.Drawing.Point(49, 860)
         Me.lablStatHomeSL15.Name = "lablStatHomeSL15"
         Me.lablStatHomeSL15.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL15.TabIndex = 282
@@ -2293,7 +2380,7 @@ Partial Class Form1
         Me.lablStatNameSL15.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL15.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL15.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL15.Location = New System.Drawing.Point(185, 761)
+        Me.lablStatNameSL15.Location = New System.Drawing.Point(185, 860)
         Me.lablStatNameSL15.Name = "lablStatNameSL15"
         Me.lablStatNameSL15.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL15.TabIndex = 281
@@ -2305,7 +2392,7 @@ Partial Class Form1
         Me.lablStatAwaySL14.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL14.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL14.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL14.Location = New System.Drawing.Point(716, 713)
+        Me.lablStatAwaySL14.Location = New System.Drawing.Point(716, 790)
         Me.lablStatAwaySL14.Name = "lablStatAwaySL14"
         Me.lablStatAwaySL14.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL14.TabIndex = 280
@@ -2317,7 +2404,7 @@ Partial Class Form1
         Me.lablStatHomeSL14.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL14.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL14.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL14.Location = New System.Drawing.Point(49, 713)
+        Me.lablStatHomeSL14.Location = New System.Drawing.Point(49, 790)
         Me.lablStatHomeSL14.Name = "lablStatHomeSL14"
         Me.lablStatHomeSL14.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL14.TabIndex = 279
@@ -2329,7 +2416,7 @@ Partial Class Form1
         Me.lablStatNameSL14.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL14.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL14.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL14.Location = New System.Drawing.Point(185, 713)
+        Me.lablStatNameSL14.Location = New System.Drawing.Point(185, 790)
         Me.lablStatNameSL14.Name = "lablStatNameSL14"
         Me.lablStatNameSL14.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL14.TabIndex = 278
@@ -2341,7 +2428,7 @@ Partial Class Form1
         Me.lablStatAwaySL13.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL13.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL13.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL13.Location = New System.Drawing.Point(716, 665)
+        Me.lablStatAwaySL13.Location = New System.Drawing.Point(716, 742)
         Me.lablStatAwaySL13.Name = "lablStatAwaySL13"
         Me.lablStatAwaySL13.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL13.TabIndex = 277
@@ -2353,7 +2440,7 @@ Partial Class Form1
         Me.lablStatHomeSL13.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL13.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL13.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL13.Location = New System.Drawing.Point(49, 665)
+        Me.lablStatHomeSL13.Location = New System.Drawing.Point(49, 742)
         Me.lablStatHomeSL13.Name = "lablStatHomeSL13"
         Me.lablStatHomeSL13.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL13.TabIndex = 276
@@ -2365,7 +2452,7 @@ Partial Class Form1
         Me.lablStatNameSL13.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL13.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL13.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL13.Location = New System.Drawing.Point(185, 665)
+        Me.lablStatNameSL13.Location = New System.Drawing.Point(185, 742)
         Me.lablStatNameSL13.Name = "lablStatNameSL13"
         Me.lablStatNameSL13.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL13.TabIndex = 275
@@ -2377,7 +2464,7 @@ Partial Class Form1
         Me.lablStatAwaySL12.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL12.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL12.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL12.Location = New System.Drawing.Point(716, 617)
+        Me.lablStatAwaySL12.Location = New System.Drawing.Point(716, 694)
         Me.lablStatAwaySL12.Name = "lablStatAwaySL12"
         Me.lablStatAwaySL12.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL12.TabIndex = 274
@@ -2389,7 +2476,7 @@ Partial Class Form1
         Me.lablStatHomeSL12.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL12.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL12.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL12.Location = New System.Drawing.Point(49, 617)
+        Me.lablStatHomeSL12.Location = New System.Drawing.Point(49, 694)
         Me.lablStatHomeSL12.Name = "lablStatHomeSL12"
         Me.lablStatHomeSL12.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL12.TabIndex = 273
@@ -2401,7 +2488,7 @@ Partial Class Form1
         Me.lablStatNameSL12.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL12.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL12.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL12.Location = New System.Drawing.Point(185, 617)
+        Me.lablStatNameSL12.Location = New System.Drawing.Point(185, 694)
         Me.lablStatNameSL12.Name = "lablStatNameSL12"
         Me.lablStatNameSL12.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL12.TabIndex = 272
@@ -2413,7 +2500,7 @@ Partial Class Form1
         Me.lablStatAwaySL11.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL11.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL11.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL11.Location = New System.Drawing.Point(716, 569)
+        Me.lablStatAwaySL11.Location = New System.Drawing.Point(716, 646)
         Me.lablStatAwaySL11.Name = "lablStatAwaySL11"
         Me.lablStatAwaySL11.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL11.TabIndex = 271
@@ -2425,7 +2512,7 @@ Partial Class Form1
         Me.lablStatHomeSL11.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL11.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL11.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL11.Location = New System.Drawing.Point(49, 569)
+        Me.lablStatHomeSL11.Location = New System.Drawing.Point(49, 646)
         Me.lablStatHomeSL11.Name = "lablStatHomeSL11"
         Me.lablStatHomeSL11.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL11.TabIndex = 270
@@ -2437,7 +2524,7 @@ Partial Class Form1
         Me.lablStatNameSL11.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL11.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL11.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL11.Location = New System.Drawing.Point(185, 569)
+        Me.lablStatNameSL11.Location = New System.Drawing.Point(185, 646)
         Me.lablStatNameSL11.Name = "lablStatNameSL11"
         Me.lablStatNameSL11.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL11.TabIndex = 269
@@ -2449,7 +2536,7 @@ Partial Class Form1
         Me.lablStatAwaySL10.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL10.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL10.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL10.Location = New System.Drawing.Point(716, 521)
+        Me.lablStatAwaySL10.Location = New System.Drawing.Point(716, 528)
         Me.lablStatAwaySL10.Name = "lablStatAwaySL10"
         Me.lablStatAwaySL10.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL10.TabIndex = 268
@@ -2461,7 +2548,7 @@ Partial Class Form1
         Me.lablStatHomeSL10.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL10.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL10.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL10.Location = New System.Drawing.Point(49, 521)
+        Me.lablStatHomeSL10.Location = New System.Drawing.Point(49, 528)
         Me.lablStatHomeSL10.Name = "lablStatHomeSL10"
         Me.lablStatHomeSL10.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL10.TabIndex = 267
@@ -2473,7 +2560,7 @@ Partial Class Form1
         Me.lablStatNameSL10.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL10.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL10.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL10.Location = New System.Drawing.Point(185, 521)
+        Me.lablStatNameSL10.Location = New System.Drawing.Point(185, 528)
         Me.lablStatNameSL10.Name = "lablStatNameSL10"
         Me.lablStatNameSL10.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL10.TabIndex = 266
@@ -2485,7 +2572,7 @@ Partial Class Form1
         Me.lablStatAwaySL09.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL09.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL09.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL09.Location = New System.Drawing.Point(716, 473)
+        Me.lablStatAwaySL09.Location = New System.Drawing.Point(716, 480)
         Me.lablStatAwaySL09.Name = "lablStatAwaySL09"
         Me.lablStatAwaySL09.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL09.TabIndex = 265
@@ -2497,7 +2584,7 @@ Partial Class Form1
         Me.lablStatHomeSL09.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL09.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL09.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL09.Location = New System.Drawing.Point(49, 473)
+        Me.lablStatHomeSL09.Location = New System.Drawing.Point(49, 480)
         Me.lablStatHomeSL09.Name = "lablStatHomeSL09"
         Me.lablStatHomeSL09.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL09.TabIndex = 264
@@ -2509,7 +2596,7 @@ Partial Class Form1
         Me.lablStatNameSL09.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL09.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL09.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL09.Location = New System.Drawing.Point(185, 473)
+        Me.lablStatNameSL09.Location = New System.Drawing.Point(185, 480)
         Me.lablStatNameSL09.Name = "lablStatNameSL09"
         Me.lablStatNameSL09.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL09.TabIndex = 263
@@ -2521,7 +2608,7 @@ Partial Class Form1
         Me.lablStatAwaySL08.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL08.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL08.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL08.Location = New System.Drawing.Point(716, 425)
+        Me.lablStatAwaySL08.Location = New System.Drawing.Point(716, 432)
         Me.lablStatAwaySL08.Name = "lablStatAwaySL08"
         Me.lablStatAwaySL08.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL08.TabIndex = 262
@@ -2533,7 +2620,7 @@ Partial Class Form1
         Me.lablStatHomeSL08.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL08.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL08.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL08.Location = New System.Drawing.Point(49, 425)
+        Me.lablStatHomeSL08.Location = New System.Drawing.Point(49, 432)
         Me.lablStatHomeSL08.Name = "lablStatHomeSL08"
         Me.lablStatHomeSL08.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL08.TabIndex = 261
@@ -2545,7 +2632,7 @@ Partial Class Form1
         Me.lablStatNameSL08.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL08.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL08.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL08.Location = New System.Drawing.Point(185, 425)
+        Me.lablStatNameSL08.Location = New System.Drawing.Point(185, 432)
         Me.lablStatNameSL08.Name = "lablStatNameSL08"
         Me.lablStatNameSL08.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL08.TabIndex = 260
@@ -2557,7 +2644,7 @@ Partial Class Form1
         Me.lablStatAwaySL07.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL07.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL07.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL07.Location = New System.Drawing.Point(716, 377)
+        Me.lablStatAwaySL07.Location = New System.Drawing.Point(716, 384)
         Me.lablStatAwaySL07.Name = "lablStatAwaySL07"
         Me.lablStatAwaySL07.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL07.TabIndex = 259
@@ -2569,7 +2656,7 @@ Partial Class Form1
         Me.lablStatHomeSL07.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL07.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL07.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL07.Location = New System.Drawing.Point(49, 377)
+        Me.lablStatHomeSL07.Location = New System.Drawing.Point(49, 384)
         Me.lablStatHomeSL07.Name = "lablStatHomeSL07"
         Me.lablStatHomeSL07.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL07.TabIndex = 258
@@ -2581,7 +2668,7 @@ Partial Class Form1
         Me.lablStatNameSL07.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL07.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL07.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL07.Location = New System.Drawing.Point(185, 377)
+        Me.lablStatNameSL07.Location = New System.Drawing.Point(185, 384)
         Me.lablStatNameSL07.Name = "lablStatNameSL07"
         Me.lablStatNameSL07.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL07.TabIndex = 257
@@ -2593,7 +2680,7 @@ Partial Class Form1
         Me.lablStatAwaySL06.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL06.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL06.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL06.Location = New System.Drawing.Point(716, 329)
+        Me.lablStatAwaySL06.Location = New System.Drawing.Point(716, 336)
         Me.lablStatAwaySL06.Name = "lablStatAwaySL06"
         Me.lablStatAwaySL06.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL06.TabIndex = 256
@@ -2605,7 +2692,7 @@ Partial Class Form1
         Me.lablStatHomeSL06.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL06.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL06.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL06.Location = New System.Drawing.Point(49, 329)
+        Me.lablStatHomeSL06.Location = New System.Drawing.Point(49, 336)
         Me.lablStatHomeSL06.Name = "lablStatHomeSL06"
         Me.lablStatHomeSL06.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL06.TabIndex = 255
@@ -2617,7 +2704,7 @@ Partial Class Form1
         Me.lablStatNameSL06.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL06.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL06.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL06.Location = New System.Drawing.Point(185, 329)
+        Me.lablStatNameSL06.Location = New System.Drawing.Point(185, 336)
         Me.lablStatNameSL06.Name = "lablStatNameSL06"
         Me.lablStatNameSL06.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL06.TabIndex = 254
@@ -2629,7 +2716,7 @@ Partial Class Form1
         Me.lablStatAwaySL05.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL05.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL05.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL05.Location = New System.Drawing.Point(716, 281)
+        Me.lablStatAwaySL05.Location = New System.Drawing.Point(716, 288)
         Me.lablStatAwaySL05.Name = "lablStatAwaySL05"
         Me.lablStatAwaySL05.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL05.TabIndex = 253
@@ -2641,7 +2728,7 @@ Partial Class Form1
         Me.lablStatHomeSL05.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL05.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL05.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL05.Location = New System.Drawing.Point(49, 281)
+        Me.lablStatHomeSL05.Location = New System.Drawing.Point(49, 288)
         Me.lablStatHomeSL05.Name = "lablStatHomeSL05"
         Me.lablStatHomeSL05.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL05.TabIndex = 252
@@ -2653,7 +2740,7 @@ Partial Class Form1
         Me.lablStatNameSL05.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL05.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL05.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL05.Location = New System.Drawing.Point(185, 281)
+        Me.lablStatNameSL05.Location = New System.Drawing.Point(185, 288)
         Me.lablStatNameSL05.Name = "lablStatNameSL05"
         Me.lablStatNameSL05.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL05.TabIndex = 251
@@ -2665,7 +2752,7 @@ Partial Class Form1
         Me.lablStatAwaySL04.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL04.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL04.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL04.Location = New System.Drawing.Point(716, 233)
+        Me.lablStatAwaySL04.Location = New System.Drawing.Point(716, 240)
         Me.lablStatAwaySL04.Name = "lablStatAwaySL04"
         Me.lablStatAwaySL04.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL04.TabIndex = 250
@@ -2677,7 +2764,7 @@ Partial Class Form1
         Me.lablStatHomeSL04.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL04.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL04.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL04.Location = New System.Drawing.Point(49, 233)
+        Me.lablStatHomeSL04.Location = New System.Drawing.Point(49, 240)
         Me.lablStatHomeSL04.Name = "lablStatHomeSL04"
         Me.lablStatHomeSL04.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL04.TabIndex = 249
@@ -2689,7 +2776,7 @@ Partial Class Form1
         Me.lablStatNameSL04.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL04.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL04.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL04.Location = New System.Drawing.Point(185, 233)
+        Me.lablStatNameSL04.Location = New System.Drawing.Point(185, 240)
         Me.lablStatNameSL04.Name = "lablStatNameSL04"
         Me.lablStatNameSL04.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL04.TabIndex = 248
@@ -2701,7 +2788,7 @@ Partial Class Form1
         Me.lablStatAwaySL03.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL03.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL03.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL03.Location = New System.Drawing.Point(716, 185)
+        Me.lablStatAwaySL03.Location = New System.Drawing.Point(716, 192)
         Me.lablStatAwaySL03.Name = "lablStatAwaySL03"
         Me.lablStatAwaySL03.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL03.TabIndex = 247
@@ -2713,7 +2800,7 @@ Partial Class Form1
         Me.lablStatHomeSL03.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL03.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL03.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL03.Location = New System.Drawing.Point(49, 185)
+        Me.lablStatHomeSL03.Location = New System.Drawing.Point(49, 192)
         Me.lablStatHomeSL03.Name = "lablStatHomeSL03"
         Me.lablStatHomeSL03.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL03.TabIndex = 246
@@ -2725,7 +2812,7 @@ Partial Class Form1
         Me.lablStatNameSL03.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL03.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL03.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL03.Location = New System.Drawing.Point(185, 185)
+        Me.lablStatNameSL03.Location = New System.Drawing.Point(185, 192)
         Me.lablStatNameSL03.Name = "lablStatNameSL03"
         Me.lablStatNameSL03.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL03.TabIndex = 245
@@ -2737,7 +2824,7 @@ Partial Class Form1
         Me.lablStatAwaySL02.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL02.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL02.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL02.Location = New System.Drawing.Point(716, 137)
+        Me.lablStatAwaySL02.Location = New System.Drawing.Point(716, 144)
         Me.lablStatAwaySL02.Name = "lablStatAwaySL02"
         Me.lablStatAwaySL02.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL02.TabIndex = 244
@@ -2749,7 +2836,7 @@ Partial Class Form1
         Me.lablStatHomeSL02.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL02.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL02.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL02.Location = New System.Drawing.Point(49, 137)
+        Me.lablStatHomeSL02.Location = New System.Drawing.Point(49, 144)
         Me.lablStatHomeSL02.Name = "lablStatHomeSL02"
         Me.lablStatHomeSL02.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL02.TabIndex = 243
@@ -2761,7 +2848,7 @@ Partial Class Form1
         Me.lablStatNameSL02.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL02.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL02.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL02.Location = New System.Drawing.Point(185, 137)
+        Me.lablStatNameSL02.Location = New System.Drawing.Point(185, 144)
         Me.lablStatNameSL02.Name = "lablStatNameSL02"
         Me.lablStatNameSL02.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL02.TabIndex = 242
@@ -2773,7 +2860,7 @@ Partial Class Form1
         Me.lablAwayNameSL2.BackColor = System.Drawing.Color.White
         Me.lablAwayNameSL2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablAwayNameSL2.ForeColor = System.Drawing.Color.Black
-        Me.lablAwayNameSL2.Location = New System.Drawing.Point(716, 62)
+        Me.lablAwayNameSL2.Location = New System.Drawing.Point(716, 47)
         Me.lablAwayNameSL2.Name = "lablAwayNameSL2"
         Me.lablAwayNameSL2.Size = New System.Drawing.Size(130, 24)
         Me.lablAwayNameSL2.TabIndex = 241
@@ -2785,7 +2872,7 @@ Partial Class Form1
         Me.lablHomeNameSL2.BackColor = System.Drawing.Color.White
         Me.lablHomeNameSL2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablHomeNameSL2.ForeColor = System.Drawing.Color.Black
-        Me.lablHomeNameSL2.Location = New System.Drawing.Point(49, 62)
+        Me.lablHomeNameSL2.Location = New System.Drawing.Point(49, 47)
         Me.lablHomeNameSL2.Name = "lablHomeNameSL2"
         Me.lablHomeNameSL2.Size = New System.Drawing.Size(130, 24)
         Me.lablHomeNameSL2.TabIndex = 240
@@ -2797,7 +2884,7 @@ Partial Class Form1
         Me.lablStatAwaySL01.BackColor = System.Drawing.Color.White
         Me.lablStatAwaySL01.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatAwaySL01.ForeColor = System.Drawing.Color.Black
-        Me.lablStatAwaySL01.Location = New System.Drawing.Point(716, 89)
+        Me.lablStatAwaySL01.Location = New System.Drawing.Point(716, 74)
         Me.lablStatAwaySL01.Name = "lablStatAwaySL01"
         Me.lablStatAwaySL01.Size = New System.Drawing.Size(130, 42)
         Me.lablStatAwaySL01.TabIndex = 239
@@ -2809,7 +2896,7 @@ Partial Class Form1
         Me.lablStatHomeSL01.BackColor = System.Drawing.Color.White
         Me.lablStatHomeSL01.Font = New System.Drawing.Font("Arial", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatHomeSL01.ForeColor = System.Drawing.Color.Black
-        Me.lablStatHomeSL01.Location = New System.Drawing.Point(49, 89)
+        Me.lablStatHomeSL01.Location = New System.Drawing.Point(49, 74)
         Me.lablStatHomeSL01.Name = "lablStatHomeSL01"
         Me.lablStatHomeSL01.Size = New System.Drawing.Size(130, 42)
         Me.lablStatHomeSL01.TabIndex = 238
@@ -2821,7 +2908,7 @@ Partial Class Form1
         Me.lablStatNameSL01.BackColor = System.Drawing.Color.Gainsboro
         Me.lablStatNameSL01.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablStatNameSL01.ForeColor = System.Drawing.Color.Black
-        Me.lablStatNameSL01.Location = New System.Drawing.Point(185, 89)
+        Me.lablStatNameSL01.Location = New System.Drawing.Point(185, 74)
         Me.lablStatNameSL01.Name = "lablStatNameSL01"
         Me.lablStatNameSL01.Size = New System.Drawing.Size(525, 42)
         Me.lablStatNameSL01.TabIndex = 237
@@ -2894,7 +2981,7 @@ Partial Class Form1
         '
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(532, 937)
+        Me.Label19.Location = New System.Drawing.Point(532, 971)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(304, 20)
         Me.Label19.TabIndex = 230
@@ -2908,7 +2995,7 @@ Partial Class Form1
         Me.lablRemoteAwayPossessionSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lablRemoteAwayPossessionSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablRemoteAwayPossessionSL.ForeColor = System.Drawing.Color.Black
-        Me.lablRemoteAwayPossessionSL.Location = New System.Drawing.Point(687, 967)
+        Me.lablRemoteAwayPossessionSL.Location = New System.Drawing.Point(687, 999)
         Me.lablRemoteAwayPossessionSL.Name = "lablRemoteAwayPossessionSL"
         Me.lablRemoteAwayPossessionSL.Size = New System.Drawing.Size(150, 36)
         Me.lablRemoteAwayPossessionSL.TabIndex = 229
@@ -2922,7 +3009,7 @@ Partial Class Form1
         Me.lablRemoteHomePossessionSL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lablRemoteHomePossessionSL.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lablRemoteHomePossessionSL.ForeColor = System.Drawing.Color.Black
-        Me.lablRemoteHomePossessionSL.Location = New System.Drawing.Point(532, 967)
+        Me.lablRemoteHomePossessionSL.Location = New System.Drawing.Point(532, 999)
         Me.lablRemoteHomePossessionSL.Name = "lablRemoteHomePossessionSL"
         Me.lablRemoteHomePossessionSL.Size = New System.Drawing.Size(150, 36)
         Me.lablRemoteHomePossessionSL.TabIndex = 228
@@ -3026,6 +3113,21 @@ Partial Class Form1
         Me.picBoxFFAd.TabStop = False
         Me.picBoxFFAd.Visible = False
         '
+        'picBoxRaceBGD2
+        '
+        Me.picBoxRaceBGD2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picBoxRaceBGD2.BackColor = System.Drawing.Color.White
+        Me.picBoxRaceBGD2.Image = CType(resources.GetObject("picBoxRaceBGD2.Image"), System.Drawing.Image)
+        Me.picBoxRaceBGD2.Location = New System.Drawing.Point(90, 12)
+        Me.picBoxRaceBGD2.Name = "picBoxRaceBGD2"
+        Me.picBoxRaceBGD2.Size = New System.Drawing.Size(1904, 1042)
+        Me.picBoxRaceBGD2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picBoxRaceBGD2.TabIndex = 7
+        Me.picBoxRaceBGD2.TabStop = False
+        Me.picBoxRaceBGD2.Visible = False
+        '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(906, 351)
@@ -3079,29 +3181,14 @@ Partial Class Form1
         Me.Button1.Text = "Test Load Image 1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'picBoxRaceBGD2
-        '
-        Me.picBoxRaceBGD2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picBoxRaceBGD2.BackColor = System.Drawing.Color.White
-        Me.picBoxRaceBGD2.Image = CType(resources.GetObject("picBoxRaceBGD2.Image"), System.Drawing.Image)
-        Me.picBoxRaceBGD2.Location = New System.Drawing.Point(90, 12)
-        Me.picBoxRaceBGD2.Name = "picBoxRaceBGD2"
-        Me.picBoxRaceBGD2.Size = New System.Drawing.Size(1904, 1042)
-        Me.picBoxRaceBGD2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picBoxRaceBGD2.TabIndex = 7
-        Me.picBoxRaceBGD2.TabStop = False
-        Me.picBoxRaceBGD2.Visible = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.panelRacing)
         Me.Controls.Add(Me.panelSL)
+        Me.Controls.Add(Me.panelRacing)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.PanelRTE)
         Me.Controls.Add(Me.panelStar6)
@@ -3124,8 +3211,8 @@ Partial Class Form1
         Me.panelRace1.ResumeLayout(False)
         CType(Me.picBoxRaceBGD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picBoxFFAd, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picBoxRaceBGD2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxTest, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3340,9 +3427,9 @@ Partial Class Form1
     Friend WithEvents lablAwayTacklesSL As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents lablHomeTacklesSL As Label
-    Friend WithEvents lablAwayMetresSL As Label
+    Friend WithEvents lablAwayOffloadsSL As Label
     Friend WithEvents Label23 As Label
-    Friend WithEvents lablHomeMetresSL As Label
+    Friend WithEvents lablHomeOffloadsSL As Label
     Friend WithEvents lablAwayCarriesSL As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents lablHomeCarriesSL As Label
@@ -3357,4 +3444,10 @@ Partial Class Form1
     Friend WithEvents picBoxRaceBGD As PictureBox
     Friend WithEvents picBoxFFAd As PictureBox
     Friend WithEvents picBoxRaceBGD2 As PictureBox
+    Friend WithEvents lablAwayBreaksSL As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents lablHomeBreaksSL As Label
+    Friend WithEvents lablStatAwaySL18 As Label
+    Friend WithEvents lablStatHomeSL18 As Label
+    Friend WithEvents lablStatNameSL18 As Label
 End Class

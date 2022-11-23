@@ -99,7 +99,7 @@
 
     Enum SVFStatIndex As Integer
         Wides = 1
-        ScoringChanges = 2
+        ScoringChances = 2
         FreesConverted = 3
         ScoresFromPlay = 4
         OwnKickoutsWon = 5

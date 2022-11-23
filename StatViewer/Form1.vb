@@ -69,6 +69,8 @@ Public Class Form1
                     displayStyle = DisplayType.Racing
                     My.Settings.ServerPort = Config.ServerPort
                     My.Settings.ServerIPAddress = Config.ServerAddress
+                Case Else
+                    displayStyle = My.Settings.DisplayType
             End Select
         Else
             'default leagacy
@@ -573,6 +575,8 @@ Public Class Form1
                                             thisMatch.AwayScoreline = split(1)
                                         End If
                                         ShowRTEScoreData()
+                                        AssignRBStats() 'calc
+                                        ShowRTETeamData() 'used in Scores from Play stat
                                 End Select
                             End If
                         Case "LOCALMATCHTIME"
@@ -764,6 +768,7 @@ Public Class Form1
     Sub AssignRBSLData(dataString As String)
         'already ordered and labelled
         'MATCHDATA|MATCHFACTS|DATA|DRAGONS^TIGERS^1^0|POSSESSION^^^PENALTIES^0^0^GL DROPOUTS^0^0^TACKLES^0^0^MISSED TACKLES^5^2^BREAKS^0^0^HANDLING ERRORS^0^1^OFFLOADS^5^2^RUNS FROM DUMMY HALF^1^0^CARRIES^0^0^COMPLETED SETS^0^0^COMPLETION RATE^0%^0%^TOTAL METRES^0^0^AVERAGE METRES^0^0^MINS IN OPP HALF^0^0^|ESCARE  8^DUPORT  8^OLDFIELD  4^POMEROY  2^  ^  ^  ^  ^  ^  ^|Webster  4^Lynch  4^Cook  1^  ^  ^  ^  ^  ^  ^  ^|
+        'MATCHDATA|MATCHFACTS|DATA|DRAGONS^TIGERS^1^0|POSSESSION^^^PENALTIES^0^0^GL DROPOUTS^0^0^TACKLES^0^0^MISSED TACKLES^5^2^BREAKS^0^0^HANDLING ERRORS^0^1^OFFLOADS^5^2^RUNS FROM DUMMY HALF^1^0^CARRIES^0^0^COMPLETED SETS^0^0^COMPLETION RATE^0%^0%^TOTAL METRES^0^0^AVERAGE METRES^0^0^MINS IN OPP HALF^0^0^6 AGAIN^0^0^|ESCARE  8^DUPORT  8^OLDFIELD  4^POMEROY  2^  ^  ^  ^  ^  ^  ^|Webster  4^Lynch  4^Cook  1^  ^  ^  ^  ^  ^  ^  ^|    2021
 
         If dataString.Contains("^") Then
             Dim baseIndex As Integer = 0
@@ -777,26 +782,39 @@ Public Class Form1
             End If
             If splitMain(4).Contains("^") Then
                 Dim split As String() = splitMain(4).Split("^")
-                For incstat As Integer = 1 To 17
-                    baseIndex = (incstat * 3) - 3
-                    thisMatch.Stat(incstat).Name = split(baseIndex)
-                    thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
-                    thisMatch.Stat(incstat).AwayNum = split(baseIndex + 2)
-                Next
+                If split.GetUpperBound(0) > 53 Then
+                    '2021
+                    For incstat As Integer = 1 To 18    '2021 - was 17 prior
+                        baseIndex = (incstat * 3) - 3
+                        thisMatch.Stat(incstat).Name = split(baseIndex)
+                        thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
+                        thisMatch.Stat(incstat).AwayNum = split(baseIndex + 2)
+                    Next
+                Else
+                    'old
+                    For incstat As Integer = 1 To 17
+                        baseIndex = (incstat * 3) - 3
+                        thisMatch.Stat(incstat).Name = split(baseIndex)
+                        thisMatch.Stat(incstat).HomeNum = split(baseIndex + 1)
+                        thisMatch.Stat(incstat).AwayNum = split(baseIndex + 2)
+                    Next
+                End If
             End If
             If splitMain.GetUpperBound(0) > 4 Then
                 'contains scorers data
                 thisMatch.HomeScorers = splitMain(5)
                 thisMatch.AwayScorers = splitMain(6)
             End If
-            If splitMain.GetUpperBound(0) > 11 Then
-                'contains Carries,Metres,Tackles data
-                thisMatch.HomeCarries = splitMain(7)
-                thisMatch.AwayCarries = splitMain(8)
-                thisMatch.HomeMetresMade = splitMain(9)
-                thisMatch.AwayMetresMade = splitMain(10)
-                thisMatch.HomeTackles = splitMain(11)
-                thisMatch.AwayTackles = splitMain(12)
+            If splitMain.GetUpperBound(0) > 13 Then
+                'contains Tackles, Breaks, Offloads Carries data
+                thisMatch.HomeTackles = splitMain(7)
+                thisMatch.AwayTackles = splitMain(8)
+                thisMatch.HomeBreaks = splitMain(9)
+                thisMatch.AwayBreaks = splitMain(10)
+                thisMatch.HomeOffloads = splitMain(11)
+                thisMatch.AwayOffloads = splitMain(12)
+                thisMatch.HomeCarries = splitMain(13)
+                thisMatch.AwayCarries = splitMain(14)
             End If
 
         End If
@@ -820,8 +838,8 @@ Public Class Form1
         'RBStats are in RB order
         thisMatch.Stat(SVFStatIndex.Wides).HomeNum = RBTeamStats(RBTeamStatIndex.Wides).HomeValue.ToString
         thisMatch.Stat(SVFStatIndex.Wides).AwayNum = RBTeamStats(RBTeamStatIndex.Wides).AwayValue.ToString
-        thisMatch.Stat(SVFStatIndex.ScoringChanges).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue + RBTeamStats(RBTeamStatIndex.FortyFive).HomeValue).ToString
-        thisMatch.Stat(SVFStatIndex.ScoringChanges).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue + RBTeamStats(RBTeamStatIndex.FortyFive).AwayValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoringChances).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).HomeValue + RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue + RBTeamStats(RBTeamStatIndex.FortyFive).HomeValue).ToString
+        thisMatch.Stat(SVFStatIndex.ScoringChances).AwayNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.ScoringChanceFromPlay).AwayValue + RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue + RBTeamStats(RBTeamStatIndex.FortyFive).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.FreesConverted).HomeNum = (RBTeamStats(RBTeamStatIndex.FreeScored).HomeValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreeTaken).HomeValue + RBTeamStats(RBTeamStatIndex.FortyFive).HomeValue).ToString
         thisMatch.Stat(SVFStatIndex.FreesConverted).AwayNum = (RBTeamStats(RBTeamStatIndex.FreeScored).AwayValue).ToString + "/" + (RBTeamStats(RBTeamStatIndex.FreeTaken).AwayValue + RBTeamStats(RBTeamStatIndex.FortyFive).AwayValue).ToString
         thisMatch.Stat(SVFStatIndex.ScoresFromPlay).HomeNum = (RBTeamStats(RBTeamStatIndex.ScoreFromPlay).HomeValue).ToString + "/" + thisMatch.HomeScores
@@ -927,6 +945,7 @@ Public Class Form1
             lablStatNameSL15.Text = thisMatch.Stat(15).Name
             lablStatNameSL16.Text = thisMatch.Stat(16).Name
             lablStatNameSL17.Text = thisMatch.Stat(17).Name
+            lablStatNameSL18.Text = thisMatch.Stat(18).Name
 
             lablStatHomeSL01.Text = thisMatch.Stat(1).HomeNum
             lablStatHomeSL02.Text = thisMatch.Stat(2).HomeNum
@@ -945,6 +964,7 @@ Public Class Form1
             lablStatHomeSL15.Text = thisMatch.Stat(15).HomeNum
             lablStatHomeSL16.Text = thisMatch.Stat(16).HomeNum
             lablStatHomeSL17.Text = thisMatch.Stat(17).HomeNum
+            lablStatHomeSL18.Text = thisMatch.Stat(18).HomeNum
 
             lablStatAwaySL01.Text = thisMatch.Stat(1).AwayNum
             lablStatAwaySL02.Text = thisMatch.Stat(2).AwayNum
@@ -963,15 +983,19 @@ Public Class Form1
             lablStatAwaySL15.Text = thisMatch.Stat(15).AwayNum
             lablStatAwaySL16.Text = thisMatch.Stat(16).AwayNum
             lablStatAwaySL17.Text = thisMatch.Stat(17).AwayNum
+            lablStatAwaySL18.Text = thisMatch.Stat(18).AwayNum
 
             lablHomeScorersSL.Text = thisMatch.HomeScorers.Replace("^", vbLf)
             lablAwayScorersSL.Text = thisMatch.AwayScorers.Replace("^", vbLf)
-            lablHomeCarriesSL.Text = thisMatch.HomeCarries.Replace("^", vbLf)
-            lablAwayCarriesSL.Text = thisMatch.AwayCarries.Replace("^", vbLf)
-            lablHomeMetresSL.Text = thisMatch.HomeMetresMade.Replace("^", vbLf)
-            lablAwayMetresSL.Text = thisMatch.AwayMetresMade.Replace("^", vbLf)
+
             lablHomeTacklesSL.Text = thisMatch.HomeTackles.Replace("^", vbLf)
             lablAwayTacklesSL.Text = thisMatch.AwayTackles.Replace("^", vbLf)
+            lablHomeBreaksSL.Text = thisMatch.HomeBreaks.Replace("^", vbLf)
+            lablAwayBreaksSL.Text = thisMatch.AwayBreaks.Replace("^", vbLf)
+            lablHomeOffloadsSL.Text = thisMatch.HomeOffloads.Replace("^", vbLf)
+            lablAwayOffloadsSL.Text = thisMatch.AwayOffloads.Replace("^", vbLf)
+            lablHomeCarriesSL.Text = thisMatch.HomeCarries.Replace("^", vbLf)
+            lablAwayCarriesSL.Text = thisMatch.AwayCarries.Replace("^", vbLf)
 
         End If
     End Sub

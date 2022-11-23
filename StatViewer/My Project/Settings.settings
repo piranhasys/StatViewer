@@ -51,7 +51,7 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="DataFilename" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Statviewer\Sky\SVMatchData.txt</Value>
+      <Value Profile="(Default)">C:\Statviewer\Piranha\SVMatchData.txt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -9,16 +9,16 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("StatViewer")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("StatViewer")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
+<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyCompany("Piranha Graphics")>
+<Assembly: AssemblyProduct("StatViewer")>
+<Assembly: AssemblyCopyright("Copyright ©  Piranha Graphics Limited 2014-2021")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("a9fd3f34-93c4-4553-bbae-ab3401bae341")> 
+<Assembly: Guid("a9fd3f34-93c4-4553-bbae-ab3401bae341")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.2.2")> 
-<Assembly: AssemblyFileVersion("1.0.2.2")> 
+<Assembly: AssemblyVersion("1.0.3.4")>
+<Assembly: AssemblyFileVersion("1.0.3.4")>
